@@ -10,6 +10,7 @@
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
+    <!-- 아직 마크업 단계이기에, 스타일링은 대충 구색만 갖췄으며, 추후에 figma에서 색상을 뽑아서 style.css에 변수로 등록해 쓸 예정. -->
     <!-- TAING logo -->
     <h1>
       <a href="메인페이지URL">
@@ -24,7 +25,6 @@
     <div class="">
       <label class="sr-only" for="input_id">아이디</label>
       <input
-        class=""
         type="text"
         id="input_id"
         name="input_id"
@@ -72,8 +72,8 @@
 
     <!-- auto login -->
     <div class="">
-      <input class="" type="checkbox" name="checkbox_autologin" id="checkbox_autologin" required />
-      <label class="" for="checkbox_autologin">
+      <input type="checkbox" name="checkbox_autologin" id="checkbox_autologin" required />
+      <label for="checkbox_autologin">
         <img src="/src/assets/login/check.svg" alt="select_autologin" />
         자동로그인
       </label>
@@ -81,17 +81,32 @@
 
     <!-- login_btn -->
     <button type="button" class="">로그인하기</button>
+    <!-- 비활성화 됐을 경우가 과연 필요한가? -->
     <button type="button" disabled class="">로그인하기</button>
 
     <!-- find_id & find_pw btn -->
-    <div>
-      onclick / navigate to find-id / instant. | (line). onclick / navigate to find-pw / instant.
+    <div class="flex justify-center items-center mt-4 text-sm text-gray-400">
+      <a
+        href="id찾기페이지URL"
+        class="relative pr-5 hover:text-gray-200 after:content-['|'] after:absolute after:right-0 after:text-gray-500"
+      >
+        아이디 찾기
+      </a>
+      <a href="pw찾기페이지URL" class="pl-4 hover:text-gray-200">
+        비밀번호 찾기
+      </a>
     </div>
 
     <!-- register section -->
-    Register 문구. Register 버튼 - onclick / navigate to register / instant.
+    <div class="flex justify-center items-center mt-4 text-sm text-gray-400">
+      <span class="text-gray-500">아직 계정이 없으신가요?</span>
+      <a href="회원가입페이지URL" class="px-3 text-gray-400 hover:text-gray-200">
+        회원가입하기
+      </a>
+    </div>
 
     <!-- utility section -->
+    <!-- 맨 마지막 순위 -->
     고객센터~인재채용. link된 icon들. copyright.
   </body>
 </html>
