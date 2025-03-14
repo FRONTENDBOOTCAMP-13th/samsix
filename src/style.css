@@ -1,6 +1,48 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@theme{
-  --font-sans: "Pretendard Variable", sans-serif;
+@theme {
+  --font-sans: 'Pretendard Variable', sans-serif;
+}
 
+@layer components {
+  .swiper-wrapper {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .swiper-slide {
+    width: 100%;
+    flex: 0 0 auto;
+    text-align: center;
+  }
+
+  /* 슬라이드 변경 */
+  #slide1:checked ~ .swiper-wrapper {
+    transform: translateX(0);
+  }
+
+  #slide2:checked ~ .swiper-wrapper {
+    transform: translateX(-100%);
+  }
+  #slide3:checked ~ .swiper-wrapper {
+    transform: translateX(-200%);
+  }
+  #slide4:checked ~ .swiper-wrapper {
+    transform: translateX(-300%);
+  }
+
+  label {
+    display: inline-block;
+    background: #898989;
+    cursor: pointer;
+  }
+
+  /* 라디오 버튼이 선택되었을 때, 해당하는 label 스타일 변경 */
+  #slide1:checked ~ .button-wrapper .swiper-pagination label:nth-child(1),
+  #slide2:checked ~ .button-wrapper .swiper-pagination label:nth-child(2),
+  #slide3:checked ~ .button-wrapper .swiper-pagination label:nth-child(3),
+  #slide4:checked ~ .button-wrapper .swiper-pagination label:nth-child(4) {
+    background-color: white;
+  }
 }
