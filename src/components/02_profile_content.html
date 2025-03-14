@@ -15,45 +15,63 @@
     <script type="module" src="/src/main.js"></script>
   </head>
   <body class="bg-black text-white">
+
+
+    <h3>타이틀 컴포넌트</h3>
     <div class="mt-[44px]">
       <div class="justify-items-center">
-        <h2 class="mt-[28px] text-base">프로필 선택</h2>
-        <h3 class="mt-[16px] text-[12.003px]">시청자 프로필을 선택해주세요.</h3>
+        <h2 class="pt-[28px] text-base">프로필 선택</h2>
+        <h3 class="pt-[16px] text-[.7502rem]">시청자 프로필을 선택해주세요.</h3>
       </div>
+
+      <hr />
+      <h3>프로필 컴포넌트</h3>
+
       <ul
-        class="grid grid-cols-2 justify-items-center w-auto mt-[2rem] mr-[2rem] ml-[2rem] gap-[24px] text-sm"
+        class="grid grid-cols-2 mx-auto md:grid-cols-4 w-fit mt-[2rem] mb-[2rem] gap-[24px] text-[.7502rem] text-gray-300"
       >
-        <li class="">
-          <figure>
-            <img class="" src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
-            <figcaption>슬비님</figcaption>
-          </figure>
-        </li>
-        <li>
+        <li class="w-fit">
           <figure>
             <img src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
-            <figcaption>범쌤</figcaption>
+            <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
           </figure>
         </li>
-        <li>
-          <figure>
+        <li class="w-fit">
+          <figure >
             <img src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
-            <figcaption>야무</figcaption>
+            <figcaption class="text-center mt-[.75rem]">범쌤</figcaption>
           </figure>
         </li>
-        <li>
+        <li class="w-fit justify-self-end">
           <figure>
             <img src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
-            <figcaption>이듬</figcaption>
+            <figcaption class="text-center mt-[.75rem]">야무</figcaption>
+          </figure>
+        </li>
+        <li class="w-fit">
+          <figure>
+            <img src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
+            <figcaption class="text-center mt-[.75rem]">이듬</figcaption>
           </figure>
         </li>
       </ul>
+
+      <hr />
+      <h3>버튼 컴포넌트</h3>
+
       <div class="mt-[2rem] text-center">
         <button
-          class="border-1 rounded-[4px] p-[12px] w-[8.4375rem] text-tv-gray-300 border-tv-gray-6oo"
+          class="text-[.7502rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] text-gray-300 border-gray-6oo"
         >
           프로필 편집
         </button>
+
+        <div class="mt-[2rem] text-center">
+          <button
+            class="text-[.7502rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] bg-gray-100 text-black border-gray-6oo"
+          >
+           완료
+          </button>
       </div>
     </div>
   </body>
