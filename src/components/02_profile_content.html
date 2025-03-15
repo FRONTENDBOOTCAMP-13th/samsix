@@ -15,63 +15,126 @@
     <script type="module" src="/src/main.js"></script>
   </head>
   <body class="bg-black text-white">
-
-
     <h3>타이틀 컴포넌트</h3>
     <div class="mt-[2.75rem] md:mt-[4.625rem] lg:mt-[8.125rem]">
       <div class="justify-items-center">
-        <h2 class="pt-[28px] md:pt-[0rem] text-base md:text-[1.4644rem] lg:text-[3.1573rem] font-[700]">프로필 선택</h2>
-        <h3 class="pt-[16px] md:pt-[.5rem] lg:pt-[1.25rem] text-[.7502rem] md:text-[1rem] lg:text-[1.7769rem] font-[600]">시청자 프로필을 선택해주세요.</h3>
+        <h2
+          class="pt-[28px] md:pt-[0rem] text-base md:text-[1.4644rem] lg:text-[3.1573rem] font-[700]"
+        >
+          프로필 선택
+        </h2>
+        <h3
+          class="pt-[16px] md:pt-[.5rem] lg:pt-[1.25rem] text-[.7502rem] md:text-[1rem] lg:text-[1.7769rem] font-[600]"
+        >
+          시청자 프로필을 선택해주세요.
+        </h3>
       </div>
+    </div>
 
-      <hr />
-      <h3>프로필 컴포넌트</h3>
+    <hr />
 
-      <ul
-        class="grid grid-cols-2 mx-auto md:grid-cols-4 w-fit mt-[2rem] mb-[2rem] md:mt-[1.75rem] md:mb-[2.75rem] lg:mt-[2.75rem] lg:mb-[3.125rem] gap-[1.5rem] md:gap-[2rem] lg:gap-[3.25rem] text-[.7502rem] lg:text-[1.7769rem] text-gray-300"
+    <h3>프로필 컴포넌트</h3>
+    <ul
+      class="grid grid-cols-2 mx-auto md:grid-cols-4 w-fit mt-[2rem] mb-[2rem] md:mt-[1.75rem] md:mb-[2.75rem] lg:mt-[2.75rem] lg:mb-[3.125rem] gap-[1.5rem] md:gap-[2rem] lg:gap-[3.25rem] text-[.7502rem] lg:text-[1.7769rem] text-gray-300"
+    >
+      <li class="w-fit">
+        <figure class="flex flex-col">
+          <img
+            class="inline-block md:hidden lg:hidden"
+            src="../assets/profile/profile_1_sm.png"
+            alt="캐릭터이미지-소녀"
+          />
+          <img
+            class="w-[8.25rem] hidden md:inline-block lg:hidden"
+            src="../assets/profile/profile_1_md.png"
+            alt="캐릭터이미지-소녀"
+          />
+          <img
+            class="w-[14.625rem] hidden md:hidden lg:inline-block"
+            src="../assets/profile/profile_1_lg.jpg"
+            alt="캐릭터이미지-소녀"
+          />
+          <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
+        </figure>
+      </li>
+      <li class="w-fit">
+        <figure class="flex flex-col">
+          <img
+            class="inline-block md:hidden lg:hidden"
+            src="../assets/profile/profile_1_sm.png"
+            alt="캐릭터이미지-소녀"
+          />
+          <img
+            class="w-[8.25rem] hidden md:inline-block lg:hidden"
+            src="../assets/profile/profile_1_md.png"
+            alt="캐릭터이미지-소녀"
+          />
+          <img
+            class="w-[14.625rem] hidden md:hidden lg:inline-block"
+            src="../assets/profile/profile_1_lg.jpg"
+            alt="캐릭터이미지-소녀"
+          />
+          <figcaption class="text-center mt-[.75rem]">범쌤</figcaption>
+        </figure>
+      </li>
+      <li class="w-fit justify-self-end">
+        <figure class="flex flex-col">
+          <img
+            class="inline-block md:hidden lg:hidden"
+            src="../assets/profile/profile_1_sm.png"
+            alt="캐릭터이미지-소녀"
+          />
+          <img
+            class="w-[8.25rem] hidden md:inline-block lg:hidden"
+            src="../assets/profile/profile_1_md.png"
+            alt="캐릭터이미지-소녀"
+          />
+          <img
+            class="w-[14.625rem] hidden md:hidden lg:inline-block"
+            src="../assets/profile/profile_1_lg.jpg"
+            alt="캐릭터이미지-소녀"
+          />
+          <figcaption class="text-center mt-[.75rem]">야무</figcaption>
+        </figure>
+      </li>
+      <li class="w-fit">
+        <figure class="flex flex-col">
+          <img
+            class="inline-block md:hidden lg:hidden"
+            src="../assets/profile/profile_1_sm.png"
+            alt="캐릭터이미지-소녀"
+          />
+          <img
+            class="w-[8.25rem] hidden md:inline-block lg:hidden"
+            src="../assets/profile/profile_1_md.png"
+            alt="캐릭터이미지-소녀"
+          />
+          <img
+            class="w-[14.625rem] hidden md:hidden lg:inline-block"
+            src="../assets/profile/profile_1_lg.jpg"
+            alt="캐릭터이미지-소녀"
+          />
+          <figcaption class="text-center mt-[.75rem]">이듬</figcaption>
+        </figure>
+      </li>
+    </ul>
+
+    <hr />
+    <h3>버튼 컴포넌트</h3>
+
+    <div class="mt-[2rem] text-center">
+      <button
+        class="text-[.7502rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] text-gray-300 border-gray-6oo"
       >
-        <li class="w-fit">
-          <figure>
-            <img class="" src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
-            <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
-          </figure>
-        </li>
-        <li class="w-fit">
-          <figure >
-            <img src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
-            <figcaption class="text-center mt-[.75rem]">범쌤</figcaption>
-          </figure>
-        </li>
-        <li class="w-fit justify-self-end">
-          <figure>
-            <img src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
-            <figcaption class="text-center mt-[.75rem]">야무</figcaption>
-          </figure>
-        </li>
-        <li class="w-fit">
-          <figure>
-            <img src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
-            <figcaption class="text-center mt-[.75rem]">이듬</figcaption>
-          </figure>
-        </li>
-      </ul>
-
-      <hr />
-      <h3>버튼 컴포넌트</h3>
+        프로필 편집
+      </button>
 
       <div class="mt-[2rem] text-center">
         <button
-          class="text-[.7502rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] text-gray-300 border-gray-6oo"
+          class="text-[.7502rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] bg-gray-100 text-black border-gray-6oo"
         >
-          프로필 편집
+          완료
         </button>
-
-        <div class="mt-[2rem] text-center">
-          <button
-            class="text-[.7502rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] bg-gray-100 text-black border-gray-6oo"
-          >
-           완료
-          </button>
       </div>
     </div>
   </body>
