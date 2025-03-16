@@ -83,21 +83,19 @@
 
           <!-- 자동 로그인 -->
           <div class="flex items-center mb-6">
-            <div class="relative">
+            <label for="checkbox_autologin" class="flex items-center cursor-pointer text-white">
               <input type="checkbox" id="checkbox_autologin" class="sr-only peer" />
-              <label for="checkbox_autologin" class="flex items-center cursor-pointer text-white">
-                <span
-                  class="inline-block w-5 h-5 rounded-full border border-[#404040] mr-2 flex-shrink-0 relative peer-checked:bg-[#ff153c]"
-                >
-                  <img
-                    src="/src/assets/login/check.svg"
-                    alt="select_autologin"
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 hidden peer-checked:block"
-                  />
-                </span>
-                자동로그인
-              </label>
-            </div>
+              <span
+                class="inline-block w-5 h-5 rounded-full border-2 border-[#404040] mr-2 flex-shrink-0 relative bg-[var(--gray--600)] peer-checked:bg-[var(--brand--red-2)]"
+              >
+                <img
+                  src="/src/assets/login/check.svg"
+                  alt="select_autologin"
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                />
+              </span>
+              자동 로그인
+            </label>
           </div>
 
           <!-- 로그인 버튼 -->
@@ -181,7 +179,7 @@
         </div>
 
         <!-- 저작권 정보 -->
-        <p class="text-xs text-[#565656]">© TVING Corp. ALL RIGHTS RESERVED.</p>
+        <p class="text-xs text-[#565656]">© TAING Corp. ALL RIGHTS RESERVED.</p>
       </div>
     </footer>
   </body>
