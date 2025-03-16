@@ -10,7 +10,7 @@
     <script type="module" src="/src/main.js"></script>
   </head>
   <body class="min-h-screen min-w-[22.5rem] flex flex-col bg-black">
-    <!-- 헤더 섹션 -->
+    <!-- 헤더 -->
     <header class="pt-5 md:pt-8 lg:pt-10 px-5 md:px-8 lg:px-10">
       <!-- TAING 로고 -->
       <a href="메인페이지URL">
@@ -24,7 +24,8 @@
 
     <!-- 메인 콘텐츠 -->
     <main class="w-full flex flex-col items-center px-5 md:px-8 lg:px-10 mt-12 md:mt-16 lg:mt-20">
-      <div class="w-full md:max-w-3xl">
+      <!-- 모바일은 width가 유연하게 늘어나고, 태블릿, 데스크탑에서는 width 고정. -->
+      <section class="w-full md:max-w-3xl">
         <!-- 타이틀 -->
         <h1 class="text-center text-xl md:text-2xl lg:text-3xl font-bold mb-8 md:mb-10 lg:mb-12">
           TAING ID 로그인
@@ -32,7 +33,7 @@
 
         <form>
           <!-- 아이디 입력 -->
-          <div class="mb-4">
+          <fieldset class="mb-4">
             <label class="sr-only" for="input_id">아이디</label>
             <input
               type="text"
@@ -41,18 +42,22 @@
               required
               placeholder="아이디"
               aria-errormessage="error_id"
-              class="peer w-full bg-[#212121] border border-[#404040] rounded text-white py-3.5 px-4 text-base focus:outline-none focus:border-[#565656]"
+              class="peer w-full bg-[#212121] border border-[#404040] rounded text-white py-3.5 px-4 text-base"
             />
-            <p class="text-red-500 text-xs mt-1 hidden peer-focus:peer-invalid:block" id="error_id" aria-live="polite">
+            <p
+              class="text-red-500 text-xs mt-1 hidden peer-focus:peer-invalid:block"
+              id="error_id"
+              aria-live="polite"
+            >
               <span>아이디 또는 이메일 주소를 입력하세요.</span>
             </p>
-          </div>
+          </fieldset>
 
           <!-- 비밀번호 입력 -->
-          <div class="relative mb-6">
+          <fieldset class="relative mb-6">
             <label class="sr-only" for="input_pw">비밀번호</label>
             <input
-              class="peer w-full bg-[#212121] border border-[#404040] rounded py-3.5 px-4 pr-10 text-white text-base focus:outline-none focus:border-[#565656]"
+              class="peer w-full bg-[#212121] border border-[#404040] rounded py-3.5 px-4 pr-10 text-white text-base"
               type="password"
               pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,}"
               id="input_pw"
@@ -68,7 +73,7 @@
               aria-label="비밀번호 보기"
               onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'"
             >
-              <img src="/src/assets/login/PW visible icon.svg" alt="" class="w-5 h-5" />
+              <img src="/src/assets/login/PW visible icon.svg" alt="" class="size-5" />
             </button>
             <p
               class="text-red-500 text-xs mt-1 hidden peer-focus:peer-invalid:block"
@@ -79,14 +84,14 @@
                 >비밀번호는 영문 소문자, 숫자, 특수문자 포함 최소 8자리 이상 입력해야 합니다.</span
               >
             </p>
-          </div>
+          </fieldset>
 
           <!-- 자동 로그인 -->
-          <div class="flex items-center mb-6">
+          <fieldset class="flex items-center mb-6">
             <label for="checkbox_autologin" class="flex items-center cursor-pointer text-white">
               <input type="checkbox" id="checkbox_autologin" class="sr-only peer" />
               <span
-                class="inline-block w-5 h-5 rounded-full border-2 border-[#404040] mr-2 flex-shrink-0 relative bg-[var(--gray--600)] peer-checked:bg-[var(--brand--red-2)]"
+                class="inline-block size-5 rounded-full border-2 border-[#404040] mr-2 flex-shrink-0 relative bg-[var(--gray--600)] peer-checked:bg-[var(--brand--red-2)]"
               >
                 <img
                   src="/src/assets/login/check.svg"
@@ -96,7 +101,7 @@
               </span>
               자동 로그인
             </label>
-          </div>
+          </fieldset>
 
           <!-- 로그인 버튼 -->
           <button
@@ -107,43 +112,45 @@
           </button>
 
           <!-- 아이디/비밀번호 찾기 -->
-          <div class="flex justify-center items-center mb-4 text-sm">
+          <nav class="flex justify-center items-center mb-4 text-sm">
             <a href="id찾기페이지URL" class="text-[#898989] hover:text-[#c4c4c4]"> 아이디 찾기 </a>
             <span class="mx-2 text-[#6b6b6b]">|</span>
             <a href="pw찾기페이지URL" class="text-[#898989] hover:text-[#c4c4c4]">
               비밀번호 찾기
             </a>
-          </div>
+          </nav>
 
           <!-- 회원가입 섹션 -->
-          <div class="flex justify-center items-center text-sm mb-12">
+          <aside class="flex justify-center items-center text-sm mb-12">
             <span class="text-[#6b6b6b]">아직 계정이 없으신가요?</span>
             <a href="회원가입페이지URL" class="ml-2 text-[#898989] hover:text-[#c4c4c4]">
               회원가입하기
             </a>
-          </div>
+          </aside>
         </form>
-      </div>
+      </section>
     </main>
 
     <!-- 푸터 섹션 -->
     <footer
-      class="w-full p-5 md:px-8 lg:px-10 pb-6 border-t-gray-800 border-2 border-l-0 border-r-0 border-b-0"
+      class="w-full p-5 md:px-8 lg:px-10 border-t-gray-800 border-2 border-l-0 border-r-0 border-b-0"
     >
       <!-- 유틸리티 링크 -->
-      <div class="text-left">
-        <div class="flex max-md:flex-col gap-x-3 gap-y-2 mb-4 text-xs text-[#6b6b6b]">
-          <a href="#" class="hover:text-[#a6a6a6]">고객센터</a>
-          <a href="#" class="hover:text-[#a6a6a6]">이용약관</a>
-          <a href="#" class="hover:text-[#a6a6a6]">개인정보처리방침</a>
-          <a href="#" class="hover:text-[#a6a6a6]">청소년 보호정책</a>
-          <a href="#" class="hover:text-[#a6a6a6]">법적고지</a>
-          <a href="#" class="hover:text-[#a6a6a6]">이벤트</a>
-          <a href="#" class="hover:text-[#a6a6a6]">인재채용</a>
-        </div>
+      <nav class="text-left">
+        <ul class="flex max-md:flex-col gap-x-3 gap-y-2 mb-4 text-xs text-[#6b6b6b]">
+          <li><a href="#" class="hover:text-[#a6a6a6]">고객센터</a></li>
+          <li><a href="#" class="hover:text-[#a6a6a6]">이용약관</a></li>
+          <li><a href="#" class="hover:text-[#a6a6a6]">개인정보처리방침</a></li>
+          <li><a href="#" class="hover:text-[#a6a6a6]">청소년 보호정책</a></li>
+          <li><a href="#" class="hover:text-[#a6a6a6]">법적고지</a></li>
+          <li><a href="#" class="hover:text-[#a6a6a6]">이벤트</a></li>
+          <li><a href="#" class="hover:text-[#a6a6a6]">인재채용</a></li>
+        </ul>
 
         <!-- 태블릿, 데스크탑에만 표시되는 추가 정보 -->
-        <div class="hidden md:block text-[0.625rem] text-[#565656] mb-4 leading-relaxed">
+        <address
+          class="hidden md:block text-[0.625rem] text-[#565656] mb-4 leading-relaxed not-italic"
+        >
           <p>
             대표이사 : YANG JIEUL | 사업자등록번호 : 188-88-01893 | 통신판매신고번호 :
             2020-서울마포-3641호
@@ -160,27 +167,35 @@
             ENM 시청자 상담실 (편성 문의 및 시청자 의견) : 080-080-0780 | Mnet
             고객센터(방송편성문의) : 1855-1631
           </p>
-        </div>
+        </address>
 
         <!-- 소셜 미디어 링크 -->
-        <div class="flex gap-4 mb-4">
-          <a href="/" aria-label="유튜브" class="text-[#565656] hover:text-[#898989]">
-            <img src="/src/assets/login/youtube.svg" alt="" class="w-5 h-5" />
-          </a>
-          <a href="/" aria-label="인스타그램" class="text-[#565656] hover:text-[#898989]">
-            <img src="/src/assets/login/instagram.svg" alt="" class="w-5 h-5" />
-          </a>
-          <a href="/" aria-label="트위터" class="text-[#565656] hover:text-[#898989]">
-            <img src="/src/assets/login/twitter.svg" alt="" class="w-5 h-5" />
-          </a>
-          <a href="/" aria-label="페이스북" class="text-[#565656] hover:text-[#898989]">
-            <img src="/src/assets/login/facebook.svg" alt="" class="w-5 h-5" />
-          </a>
-        </div>
+        <ul class="flex gap-4 mb-4">
+          <li>
+            <a href="/" aria-label="유튜브" class="text-[#565656] hover:text-[#898989]">
+              <img src="/src/assets/login/youtube.svg" alt="" class="size-5" />
+            </a>
+          </li>
+          <li>
+            <a href="/" aria-label="인스타그램" class="text-[#565656] hover:text-[#898989]">
+              <img src="/src/assets/login/instagram.svg" alt="" class="size-5" />
+            </a>
+          </li>
+          <li>
+            <a href="/" aria-label="트위터" class="text-[#565656] hover:text-[#898989]">
+              <img src="/src/assets/login/twitter.svg" alt="" class="size-5" />
+            </a>
+          </li>
+          <li>
+            <a href="/" aria-label="페이스북" class="text-[#565656] hover:text-[#898989]">
+              <img src="/src/assets/login/facebook.svg" alt="" class="size-5" />
+            </a>
+          </li>
+        </ul>
 
         <!-- 저작권 정보 -->
-        <p class="text-xs text-[#565656]">© TAING Corp. ALL RIGHTS RESERVED.</p>
-      </div>
+        <small class="text-xs text-[#565656] block">© TAING Corp. ALL RIGHTS RESERVED.</small>
+      </nav>
     </footer>
   </body>
 </html>
