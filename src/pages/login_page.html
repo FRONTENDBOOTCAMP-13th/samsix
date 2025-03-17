@@ -1,17 +1,202 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko-KR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title></title>
+    <title>Login Page</title>
     <link rel="icon" href="/vite.svg" />
-    <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2">
+    <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" />
     <link rel="stylesheet" href="/font/pretendardvariable.css" />
-    <link rel="preload" as="font" href="/font/woff2/SUIT-Variable.woff2" />
-    <link rel="stylesheet" href="/font/SUIT-Variable.css" />
     <script type="module" src="/src/main.js"></script>
   </head>
-  <body>
-    <h1>Login Page</h1>
+  <body class="min-h-screen min-w-[22.5rem] flex flex-col bg-black-origin">
+    <!-- 헤더 (로고) -->
+    <header class="pt-5 md:pt-8 lg:pt-10 px-5 md:px-8 lg:px-10">
+      <a href="메인페이지URL">
+        <img
+          src="/src/assets/login/TAING Logo.svg"
+          alt="TAING 메인 이동"
+          class="h-6 md:h-8 lg:h-10"
+        />
+      </a>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="w-full flex flex-col items-center px-5 md:px-8 lg:px-10 mt-12 md:mt-16 lg:mt-20">
+      <!-- 모바일은 width가 유연하게 늘어나고, 태블릿, 데스크탑에서는 width 고정. -->
+      <section class="w-full md:max-w-3xl">
+        <!-- 타이틀 -->
+        <h1
+          class="text-center text-heading-x-l md:text-heading-x-x-l lg:text-heading-x-x-x-l font-bold mb-8 md:mb-10 lg:mb-12 text-white"
+        >
+          TAING ID 로그인
+        </h1>
+
+        <form>
+          <!-- 아이디 입력 -->
+          <fieldset class="mb-4">
+            <label class="sr-only" for="input_id">아이디</label>
+            <input
+              type="text"
+              id="input_id"
+              name="input_id"
+              required
+              placeholder="아이디"
+              aria-errormessage="error_id"
+              class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded text-white py-3.5 px-4 text-label-medium"
+            />
+            <p
+              class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 hidden peer-focus:peer-invalid:block"
+              id="error_id"
+              aria-live="polite"
+            >
+              <span>아이디 또는 이메일 주소를 입력하세요.</span>
+            </p>
+          </fieldset>
+
+          <!-- 비밀번호 입력 -->
+          <fieldset class="relative mb-6">
+            <label class="sr-only" for="input_pw">비밀번호</label>
+            <input
+              class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded py-3.5 px-4 pr-10 text-white text-label-medium"
+              type="password"
+              pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,}"
+              id="input_pw"
+              name="input_pw"
+              required
+              placeholder="비밀번호"
+              aria-errormessage="error_pw"
+            />
+            <button
+              type="button"
+              id="togglePassword"
+              class="absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300"
+              aria-label="비밀번호 보기"
+              onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'"
+            >
+              <img src="/src/assets/login/PW visible icon.svg" alt="" class="size-5" />
+            </button>
+            <p
+              class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 hidden peer-focus:peer-invalid:block"
+              id="error_pw"
+              aria-live="polite"
+            >
+              <span
+                >비밀번호는 영문 소문자, 숫자, 특수문자 포함 최소 8자리 이상 입력해야 합니다.</span
+              >
+            </p>
+          </fieldset>
+
+          <!-- 자동 로그인 -->
+          <fieldset class="flex items-center mb-6">
+            <label for="checkbox_autologin" class="flex items-center cursor-pointer text-white">
+              <input type="checkbox" id="checkbox_autologin" class="sr-only peer" />
+              <span
+                class="inline-block size-5 rounded-full border-2 border-gray-700 mr-2 flex-shrink-0 relative bg-gray-600 peer-checked:bg-brand-red-2"
+              >
+                <img
+                  src="/src/assets/login/check.svg"
+                  alt="select_autologin"
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                />
+              </span>
+              자동 로그인
+            </label>
+          </fieldset>
+
+          <!-- 로그인 버튼 -->
+          <button
+            type="button"
+            class="w-full bg-brand-red-1 hover:bg-brand-red-2 text-white rounded py-3.5 font-medium mb-6 text-label-medium"
+          >
+            로그인하기
+          </button>
+
+          <!-- 아이디/비밀번호 찾기 -->
+          <nav class="flex justify-center items-center mb-4 text-paragraph-medium">
+            <a href="id찾기페이지URL" class="text-gray-400 hover:text-gray-200"> 아이디 찾기 </a>
+            <span class="mx-2 text-gray-500">|</span>
+            <a href="pw찾기페이지URL" class="text-gray-400 hover:text-gray-200"> 비밀번호 찾기 </a>
+          </nav>
+
+          <!-- 회원가입 섹션 -->
+          <aside class="flex justify-center items-center text-paragraph-medium mb-12">
+            <span class="text-gray-500">아직 계정이 없으신가요?</span>
+            <a href="회원가입페이지URL" class="ml-2 text-gray-400 hover:text-gray-200">
+              회원가입하기
+            </a>
+          </aside>
+        </form>
+      </section>
+    </main>
+
+    <!-- 푸터 섹션 -->
+    <footer
+      class="w-full p-5 md:px-8 lg:px-10 border-t-gray-800 border-2 border-l-0 border-r-0 border-b-0"
+    >
+      <!-- 유틸리티 링크 -->
+      <nav class="text-left">
+        <ul class="flex max-md:flex-col gap-x-3 gap-y-2 mb-4 text-paragraph-small text-gray-500">
+          <li><a href="#" class="hover:text-gray-300">고객센터</a></li>
+          <li><a href="#" class="hover:text-gray-300">이용약관</a></li>
+          <li><a href="#" class="hover:text-gray-300">개인정보처리방침</a></li>
+          <li><a href="#" class="hover:text-gray-300">청소년 보호정책</a></li>
+          <li><a href="#" class="hover:text-gray-300">법적고지</a></li>
+          <li><a href="#" class="hover:text-gray-300">이벤트</a></li>
+          <li><a href="#" class="hover:text-gray-300">인재채용</a></li>
+        </ul>
+
+        <!-- 태블릿, 데스크탑에만 표시되는 추가 정보 -->
+        <address
+          class="hidden md:block text-label-small text-gray-600 mb-4 leading-relaxed not-italic"
+        >
+          <p>
+            대표이사 : YANG JIEUL | 사업자등록번호 : 188-88-01893 | 통신판매신고번호 :
+            2020-서울마포-3641호
+          </p>
+          <p>
+            사업장 : 서울특별시 마포구 상암산로 34, DMC디지털큐브 15층(상암동) | 호스팅사업자 :
+            씨제이올리브네트웍스(주)
+          </p>
+          <p>
+            고객센터 (평일 09시~17시/점심시간 13시~14시) | 대표메일 : taing@cj.net | 전화번호(ARS) :
+            1670-1525 (평일/주말 상담 운영)
+          </p>
+          <p>
+            ENM 시청자 상담실 (편성 문의 및 시청자 의견) : 080-080-0780 | Mnet
+            고객센터(방송편성문의) : 1855-1631
+          </p>
+        </address>
+
+        <!-- 소셜 미디어 링크 -->
+        <ul class="flex gap-4 mb-4">
+          <li>
+            <a href="/" aria-label="유튜브" class="text-gray-600 hover:text-gray-400">
+              <img src="/src/assets/login/youtube.svg" alt="" class="size-5" />
+            </a>
+          </li>
+          <li>
+            <a href="/" aria-label="인스타그램" class="text-gray-600 hover:text-gray-400">
+              <img src="/src/assets/login/instagram.svg" alt="" class="size-5" />
+            </a>
+          </li>
+          <li>
+            <a href="/" aria-label="트위터" class="text-gray-600 hover:text-gray-400">
+              <img src="/src/assets/login/twitter.svg" alt="" class="size-5" />
+            </a>
+          </li>
+          <li>
+            <a href="/" aria-label="페이스북" class="text-gray-600 hover:text-gray-400">
+              <img src="/src/assets/login/facebook.svg" alt="" class="size-5" />
+            </a>
+          </li>
+        </ul>
+
+        <!-- 저작권 정보 -->
+        <small class="text-paragraph-small text-gray-600 block"
+          >© TAING Corp. ALL RIGHTS RESERVED.</small
+        >
+      </nav>
+    </footer>
   </body>
 </html>
