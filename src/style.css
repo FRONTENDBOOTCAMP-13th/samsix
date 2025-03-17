@@ -45,16 +45,19 @@
   }
 
   .main-card {
-    @apply flex flex-col flex-nowrap gap-2 w-[5.75rem] sm:w-[8.125rem] lg:w-[15rem];
+    @apply flex flex-col flex-nowrap gap-2 w-[5.75rem] md:w-[8.125rem] lg:w-[15rem];
 
     .contents-name {
-      @apply text-gray-300 text-xs sm:text-sm lg:text-base;
+      @apply text-gray-300 text-xs md:text-sm lg:text-base;
     }
     .contents-episode {
-      @apply text-gray-300 text-[.625rem] sm:text-xs lg:text-sm;
+      @apply text-gray-300 text-[.625rem] md:text-xs lg:text-sm;
     }
     .Quick-VOD {
-      @apply bg-[#C73E4E] w-[fit-content] m-1.5 h-[fit-content] flex text-center items-center px-2 py-1 rounded-sm text-[10px] sm:text-xs lg:text-sm absolute;
+      @apply bg-[#C73E4E] w-[fit-content] m-1.5 h-[fit-content] flex text-center items-center px-2 py-1 rounded-sm text-[10px] md:text-xs lg:text-sm absolute;
+    }
+    .contents-rank {
+      @apply text-white font-sans font-medium text-3xl md:text-5xl lg:text-7xl italic mr-[10%];
     }
   }
 
