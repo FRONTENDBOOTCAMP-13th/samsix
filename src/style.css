@@ -5,30 +5,61 @@
 }
 
 @layer components {
-  .swiper-wrapper {
+  .screen-wrapper {
     display: flex;
     width: 100%;
     transition: transform 0.5s ease-in-out;
   }
 
-  .swiper-slide {
-    width: 100%;
-    flex: 0 0 auto;
-    text-align: center;
+  .main-card {
+    @apply flex flex-col flex-nowrap gap-2 w-[5.75rem] sm:w-[8.125rem] lg:w-[15rem];
+
+    .contents-name {
+      @apply text-gray-300 text-xs sm:text-sm lg:text-base;
+    }
+    .contents-episode {
+      @apply text-gray-300 text-[.625rem] sm:text-xs lg:text-sm;
+    }
+    .Quick-VOD {
+      @apply bg-[#C73E4E] w-[fit-content] m-1.5 h-[fit-content] flex text-center items-center px-2 py-1 rounded-sm text-[10px] sm:text-xs lg:text-sm absolute;
+    }
   }
 
-  /* 슬라이드 변경 */
-  #slide1:checked ~ .swiper-wrapper {
+  @keyframes slideAnimation {
+    0%,
+    20% {
+      transform: translateX(0);
+    }
+    25%,
+    45% {
+      transform: translateX(-100%);
+    }
+    50%,
+    70% {
+      transform: translateX(-200%);
+    }
+    75%,
+    95% {
+      transform: translateX(-300%);
+    }
+    100% {
+      transform: translateX(0);
+    } /* 처음으로 */
+  }
+
+  #slide1:checked ~ .screen-wrapper {
     transform: translateX(0);
   }
 
-  #slide2:checked ~ .swiper-wrapper {
+  #slide2:checked ~ .screen-wrapper {
     transform: translateX(-100%);
   }
-  #slide3:checked ~ .swiper-wrapper {
+
+  #slide3:checked ~ .screen-wrapper {
     transform: translateX(-200%);
   }
-  #slide4:checked ~ .swiper-wrapper {
+
+  #slide4:checked ~ .screen-wrapper {
     transform: translateX(-300%);
   }
 
@@ -39,10 +70,10 @@
   }
 
   /* 라디오 버튼이 선택되었을 때, 해당하는 label 스타일 변경 */
-  #slide1:checked ~ .button-wrapper .swiper-pagination label:nth-child(1),
-  #slide2:checked ~ .button-wrapper .swiper-pagination label:nth-child(2),
-  #slide3:checked ~ .button-wrapper .swiper-pagination label:nth-child(3),
-  #slide4:checked ~ .button-wrapper .swiper-pagination label:nth-child(4) {
+  #slide1:checked ~ .slide-container .slide-wrapper .swiper-button .swiper-pagination label:nth-child(1),
+  #slide2:checked ~ .slide-container .slide-wrapper .swiper-button .swiper-pagination label:nth-child(2),
+  #slide3:checked ~ .slide-container .slide-wrapper .swiper-button .swiper-pagination label:nth-child(3),
+  #slide4:checked ~ .slide-container .slide-wrapper .swiper-button .swiper-pagination label:nth-child(4) {
     background-color: white;
   }
 }
