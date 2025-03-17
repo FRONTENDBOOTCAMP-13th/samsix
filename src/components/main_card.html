@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인 카드 컴포넌트</title>
+    <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" crossorigin="anonymous" />
+    <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="bg-black text-white">
+    <!-- 제목과 카드 묶음 -->
+    <div class="flex flex-col flex-nowrap gap-3 pl-5 my-5">
+      <h2 class="text-lg sm:text-xl lg:text-2xl">타잉에서 꼭 봐야하는 콘텐츠</h2>
+      <div class="grid grid-cols-[repeat(8,_1fr)] overflow-hidden gap-4">
+        <ul class="contents">
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/treasure_hunt_lg.png" alt="보물찾기" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">보물찾기</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/love_catcher_lg.png" alt="러브캐처" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">러브캐처 인 발리</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/drunk_urban_women_lg.png" alt="술꾼도시여자들2" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">술꾼도시여자들2</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/tulsa_king_lg.png" alt="털사 킹" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">털사 킹</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/nothing_to_do_lg.png" alt="아무것도 하고 싶지 않아" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">아무것도 하고 싶지 않아</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/black_dog_lg.png" alt="블랙독" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">블랙독</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/blues_lg.png" alt="우리들의 블루스" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">우리들의 블루스</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/kilimanjaro_lg.png" alt="인생에 한 번쯤, 킬리만자로" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">인생에 한 번쯤, 킬리만자로</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Quick VOD -->
+    <div class="flex flex-col flex-nowrap gap-3 pl-5 my-5">
+      <h2 class="text-lg sm:text-xl lg:text-2xl">Quick VOD</h2>
+      <div class="grid grid-cols-[repeat(8,_1fr)] overflow-hidden gap-4">
+        <ul class="contents">
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative sm:w-[14rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/Quick_VOD/jtbc_news_lg.png" alt="JTBC 뉴스룸" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">JTBC 뉴스룸</span>
+                  <span class="contents-episode">0화</span>
+                </figcaption>
+                <div class="bg-[#C73E4E] w-[fit-content] m-1.5 h-8 flex text-center items-center px-2.5 rounded-sm text-sm absolute">
+                  <span>Quick VOD</span>
+                </div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative sm:w-[14rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/Quick_VOD/i_decided_to_live_lg.png" alt="휴먼다큐 '나는 살기로 했다'" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">휴먼다큐 &lt;나는 살기로 했다&gt;</span>
+                  <span class="contents-episode">10화</span>
+                </figcaption>
+                <div class="bg-[#C73E4E] w-[fit-content] m-1.5 h-8 flex text-center items-center px-2.5 rounded-sm text-sm absolute">
+                  <span>Quick VOD</span>
+                </div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative sm:w-[14rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/Quick_VOD/health_lg.png" alt="건강면세점" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">건강면세점</span>
+                  <span class="contents-episode">130화</span>
+                </figcaption>
+                <div class="bg-[#C73E4E] w-[fit-content] m-1.5 h-8 flex text-center items-center px-2.5 rounded-sm text-sm absolute">
+                  <span>Quick VOD</span>
+                </div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative sm:w-[14rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/Quick_VOD/different_class_lg.png" alt="차이나는 클라스" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">차이나는 클라스</span>
+                  <span class="contents-episode">254화</span>
+                </figcaption>
+                <div class="bg-[#C73E4E] w-[fit-content] m-1.5 h-8 flex text-center items-center px-2.5 rounded-sm text-sm absolute">
+                  <span>Quick VOD</span>
+                </div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative sm:w-[14rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/Quick_VOD/almaeng_lg.png" alt="알맹이" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">알맹이</span>
+                  <span class="contents-episode">208화</span>
+                </figcaption>
+                <div class="bg-[#C73E4E] w-[fit-content] m-1.5 h-8 flex text-center items-center px-2.5 rounded-sm text-sm absolute">
+                  <span>Quick VOD</span>
+                </div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative sm:w-[14rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/Quick_VOD/mom_spring_lg.png" alt="엄마의 봄날" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">엄마의 봄날</span>
+                  <span class="contents-episode">380화</span>
+                </figcaption>
+                <div class="bg-[#C73E4E] w-[fit-content] m-1.5 h-8 flex text-center items-center px-2.5 rounded-sm text-sm absolute">
+                  <span>Quick VOD</span>
+                </div>
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="bg-[#C73E4E] w-[fit-content] h-8 flex text-center items-center px-2.5 rounded-sm text-sm">
+      <span>Quick VOD</span>
+    </div>
+  </body>
+</html>
