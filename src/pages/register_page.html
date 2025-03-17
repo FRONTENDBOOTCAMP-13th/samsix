@@ -26,11 +26,15 @@
       <section class="w-full md:max-w-3xl">
         <!-- 타이틀 -->
         <h1
-          class="text-center text-heading-x-l md:text-heading-x-x-l lg:text-heading-x-x-x-l font-bold mb-8 md:mb-10 lg:mb-12 text-white"
+          class="text-center text-heading-x-l md:text-heading-x-x-l lg:text-heading-x-x-x-l font-bold text-white-origin"
         >
           티빙 회원가입
         </h1>
-        <p></p>
+        <p
+          class="text-center text-label-small md:text-label-medium lg:text-label-large text-gray-400 font-semibold mb-6"
+        >
+          아이디와 이메일로 간편하게 티빙을 시작하세요!
+        </p>
 
         <form>
           <!-- 아이디 입력 -->
@@ -89,7 +93,7 @@
             </p>
           </fieldset>
 
-          <!-- 비밀번호 확인 컴포넌트 -->
+          <!-- 비밀번호 확인 -->
           <fieldset class="relative mb-4">
             <label class="sr-only" for="input_pw_confirm">비밀번호 확인</label>
             <input
@@ -135,6 +139,7 @@
             }
           </script>
 
+          <!-- 이메일 입력 -->
           <fieldset>
             <!-- 이메일 입력 -->
             <label class="sr-only" for="input_email">이메일</label>
@@ -154,15 +159,82 @@
             >
               <span>이메일 주소를 입력하세요.</span>
             </p>
+          </fieldset>
 
-            <!-- 확인 버튼 -->
-            <button
+          <fieldset class="flex items-center mb-6">
+            <label for="checkbox_autologin" class="flex items-center cursor-pointer text-white">
+              <input type="checkbox" id="checkbox_autologin" class="sr-only peer" />
+              <span
+                class="inline-block size-5 rounded-full border-2 border-gray-700 mr-2 flex-shrink-0 relative bg-gray-600"
+              >
+                <img
+                  src="/src/assets/login/check.svg"
+                  alt="select_autologin"
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                />
+                <img src="/src/assets/login/check-red.svg" alt="" class="peer-checked:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+              </span>
+              자동 로그인
+            </label>
+          </fieldset>
+
+          <div class="bg-black text-white p-4">
+            <!-- 전체 동의 체크박스 -->
+            <div class="mb-4">
+              <label class="flex items-center cursor-pointer">
+                <input type="checkbox" id="checkAll" class="sr-only peer" />
+                <span class="inline-block w-5 h-5 mr-2 flex-shrink-0 relative">
+                  <img
+                    src="/src/assets/login/check.svg"
+                    alt=""
+                    class="absolute inset-0 w-full h-full peer-not-checked:block peer-checked:hidden"
+                  />
+                  <img
+                    src="/src/assets/login/check-red.svg"
+                    alt=""
+                    class="absolute inset-0 w-full h-full peer-checked:block peer-not-checked:hidden"
+                  />
+                </span>
+                <span class="text-sm font-medium"
+                  >필수 및 선택 항목을 모두 포함하여 동의합니다.</span
+                >
+              </label>
+            </div>
+
+            <!-- 하위 체크박스 목록 -->
+            <ul class="space-y-3 pl-6">
+              <li>
+                <label class="flex items-center cursor-pointer">
+                  <input
+                    type="checkbox"
+                    class="sr-only peer checkbox-item"
+                    onchange="updateMainCheckbox()"
+                  />
+                  <span class="inline-block w-5 h-5 mr-2 flex-shrink-0 relative">
+                    <img
+                      src="/src/assets/login/check.svg"
+                      alt=""
+                      class="absolute inset-0 w-full h-full peer-not-checked:block peer-checked:hidden"
+                    />
+                    <img
+                      src="/src/assets/login/check-red.svg"
+                      alt=""
+                      class="absolute inset-0 w-full h-full peer-checked:block peer-not-checked:hidden"
+                    />
+                  </span>
+                  <span class="text-sm">만 14세 이상입니다.</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 확인 버튼 -->
+          <!-- <button
               type="submit"
               class="w-full bg-brand-red-1 peer-valid:hover:bg-brand-red-2 text-white rounded py-3.5 font-bold my-6 text-label-medium peer-invalid:bg-gray-700 peer-invalid:text-gray-400"
             >
               확인
-            </button>
-          </fieldset>
+            </button> -->
         </form>
       </section>
     </main>
