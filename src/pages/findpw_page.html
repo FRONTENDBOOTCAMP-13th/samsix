@@ -26,14 +26,27 @@
       <section class="w-full md:max-w-3xl">
         <!-- 타이틀 -->
         <h1
-          class="text-center text-heading-x-l md:text-heading-x-x-l lg:text-heading-x-x-x-l font-bold mb-8 md:mb-10 lg:mb-12 text-white"
+          class="text-center text-heading-x-l md:text-heading-x-x-l lg:text-heading-x-x-x-l font-bold mb-6 md:mb-8 lg:mb-10 text-white"
         >
-          TAING ID 로그인
+          비밀번호 찾기
         </h1>
 
+        <!-- 항목 & 설명 -->
+        <div class="leading-7 pb-3">
+          <h2 class="font-semibold text-white-origin">아이디로 찾기</h2>
+          <p class="text-gray-400">
+            아이디 확인 후 <strong>등록된 이메일 주소</strong>로 비밀번호 재설정을 위한 인증 메일이
+            발송됩니다.
+          </p>
+          <p class="text-gray-400">
+            이메일을 확인하여 <strong>12시간 이내에 비밀번호 재설정</strong>을 완료해주세요.
+          </p>
+        </div>
+
+        <!-- 아이디 입력 & 버튼 -->
         <form>
-          <!-- 아이디 입력 -->
-          <fieldset class="mb-4">
+          <fieldset>
+            <!-- 아이디 입력 -->
             <label class="sr-only" for="input_id">아이디</label>
             <input
               type="text"
@@ -49,87 +62,17 @@
               id="error_id"
               aria-live="polite"
             >
-              <span>아이디 또는 이메일 주소를 입력하세요.</span>
+              <span>아이디를 입력하세요.</span>
             </p>
-          </fieldset>
 
-          <!-- 비밀번호 입력 -->
-          <fieldset class="relative mb-6">
-            <label class="sr-only" for="input_pw">비밀번호</label>
-            <input
-              class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded py-3.5 px-4 pr-10 text-white text-label-medium"
-              type="password"
-              pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,}"
-              id="input_pw"
-              name="input_pw"
-              required
-              placeholder="비밀번호"
-              aria-errormessage="error_pw"
-            />
+            <!-- 확인 버튼 -->
             <button
-              type="button"
-              id="togglePassword"
-              class="absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300"
-              aria-label="비밀번호 보기"
-              onclick=" this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; const img = this.querySelector('img'); if (this.previousElementSibling.type === 'text') { img.src = '/src/assets/login/PW visible icon.svg'; this.setAttribute('aria-label', '비밀번호 숨기기'); } else { img.src = '/src/assets/login/PW unvisible icon.svg'; this.setAttribute('aria-label', '비밀번호 보기'); } "
+              type="submit"
+              class="w-full bg-brand-red-1 peer-valid:hover:bg-brand-red-2 text-white rounded py-3.5 font-bold mt-6 mb-12 text-label-medium peer-invalid:bg-gray-700 peer-invalid:text-gray-400"
             >
-              <img src="/src/assets/login/PW unvisible icon.svg" alt="" class="size-5" />
+              확인
             </button>
-            <p
-              class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 hidden peer-focus:peer-invalid:block"
-              id="error_pw"
-              aria-live="polite"
-            >
-              <span
-                >비밀번호는 영문 소문자, 숫자, 특수문자 포함 최소 8자리 이상 입력해야 합니다.</span
-              >
-            </p>
           </fieldset>
-
-          <!-- 자동 로그인 -->
-          <fieldset class="flex items-center mb-6">
-            <label
-              for="checkbox_autologin"
-              class="flex items-center cursor-pointer text-white bg-transparent"
-            >
-              <input type="checkbox" id="checkbox_autologin" class="sr-only peer" />
-              <span
-                class="inline-block size-5 rounded-full border-2 border-gray-700 mr-2 flex-shrink-0 relative bg-gray-600 peer-checked:bg-brand-red-2"
-              >
-                <img
-                  src="/src/assets/login/check.svg"
-                  alt="select_autologin"
-                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                />
-              </span>
-              자동 로그인
-            </label>
-          </fieldset>
-
-          <!-- 로그인 버튼 -->
-          <button
-            type="button"
-            class="w-full bg-brand-red-1 hover:bg-brand-red-2 text-white rounded py-3.5 font-bold mb-6 text-label-medium"
-          >
-            로그인하기
-          </button>
-
-          <!-- 아이디/비밀번호 찾기 -->
-          <nav class="flex justify-center items-center mb-4 text-paragraph-medium">
-            <a href="/src/pages/findid_page.html" class="text-gray-400 hover:text-gray-200">
-              아이디 찾기
-            </a>
-            <span class="mx-2 text-gray-500">|</span>
-            <a href="/src/pages/findpw_page.html" class="text-gray-400 hover:text-gray-200"> 비밀번호 찾기 </a>
-          </nav>
-
-          <!-- 회원가입 섹션 -->
-          <aside class="flex justify-center items-center text-paragraph-medium mb-12">
-            <span class="text-gray-500">아직 계정이 없으신가요?</span>
-            <a href="회원가입페이지URL" class="ml-2 text-gray-400 hover:text-gray-200">
-              회원가입하기
-            </a>
-          </aside>
         </form>
       </section>
     </main>
