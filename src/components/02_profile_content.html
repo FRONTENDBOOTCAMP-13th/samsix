@@ -64,13 +64,21 @@
         <!-- 잠금아이콘 -->
         <label
           for="profile1"
-          class="absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none"
+          class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none"
         >
           <img
             class="w-[3.125rem] lg:w-[3.75rem]"
             src="../assets/profile/Profile_lock.svg"
             alt="프로필 잠금 아이콘"
           />
+        </label>
+
+        <!-- 연필아이콘 -->
+        <label
+          for="edit-profile1"
+          class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer"
+        >
+          <img src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집" />
         </label>
 
         <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
@@ -103,13 +111,21 @@
         <!-- 잠금아이콘 -->
         <label
           for="profile2"
-          class="absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none"
+          class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none"
         >
           <img
             class="w-[3.125rem] lg:w-[3.75rem]"
             src="../assets/profile/Profile_lock.svg"
             alt="프로필 잠금 아이콘"
           />
+        </label>
+
+        <!-- 연필아이콘 -->
+        <label
+          for="edit-profile2"
+          class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer"
+        >
+          <img src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집" />
         </label>
 
         <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
@@ -142,13 +158,21 @@
         <!-- 잠금아이콘 -->
         <label
           for="profile3"
-          class="absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none"
+          class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none"
         >
           <img
             class="w-[3.125rem] lg:w-[3.75rem]"
             src="../assets/profile/Profile_lock.svg"
             alt="프로필 잠금 아이콘"
           />
+        </label>
+
+        <!-- 연필아이콘 -->
+        <label
+          for="edit-profile3"
+          class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer"
+        >
+          <img src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집" />
         </label>
 
         <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
@@ -181,7 +205,7 @@
         <!-- 잠금아이콘 -->
         <label
           for="profile4"
-          class="absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none"
+          class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none"
         >
           <img
             class="w-[3.125rem] lg:w-[3.75rem]"
@@ -190,16 +214,23 @@
           />
         </label>
 
+        <!-- 연필아이콘 -->
+        <label
+          for="edit-profile4"
+          class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer"
+        >
+          <img src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집" />
+        </label>
+
         <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
       </li>
     </ul>
 
     <hr />
     <h3>버튼 컴포넌트</h3>
-
     <div class="mt-[2rem] flex justify-center text-center">
       <!-- 숨겨진 체크박스 -->
-      <input type="checkbox" id="edit-toggle" class="hidden peer" />
+      <input type="checkbox" id="edit-toggle" class="peer hidden" />
       <!-- 프로필 편집 버튼 -->
       <label
         for="edit-toggle"
@@ -214,6 +245,54 @@
       >
         완료
       </label>
+
+      <!-- 프로필 변경 선택창 (편집 모드에서만 표시) -->
+      <!-- <div
+        class="hidden peer-checked/edit:block absolute mt-8 bg-gray-800 p-4 rounded-md transition-transform translate-y-5"
+      >
+        <h3 class="text-lg text-white text-center">새 프로필 선택</h3>
+        <ul class="grid grid-cols-3 gap-4 mt-4">
+          <li>
+            <input type="radio" id="new-profile1" name="new-profile" class="peer hidden" />
+            <label
+              for="new-profile1"
+              class="block cursor-pointer border border-gray-500 p-2 rounded-md peer-checked:border-white"
+            >
+              <img
+                src="../assets/profile/profile_1_lg.jpg"
+                class="w-24 rounded-md"
+                alt="새 프로필1"
+              />
+            </label>
+          </li>
+          <li>
+            <input type="radio" id="new-profile2" name="new-profile" class="peer hidden" />
+            <label
+              for="new-profile2"
+              class="block cursor-pointer border border-gray-500 p-2 rounded-md peer-checked:border-white"
+            >
+              <img
+                src="../assets/profile/profile_2_lg.png"
+                class="w-24 rounded-md"
+                alt="새 프로필2"
+              />
+            </label>
+          </li>
+          <li>
+            <input type="radio" id="new-profile3" name="new-profile" class="peer hidden" />
+            <label
+              for="new-profile3"
+              class="block cursor-pointer border border-gray-500 p-2 rounded-md peer-checked:border-white"
+            >
+              <img
+                src="../assets/profile/profile_3_lg.png"
+                class="w-24 rounded-md"
+                alt="새 프로필3"
+              />
+            </label>
+          </li>
+        </ul>
+      </div> -->
     </div>
   </body>
 </html>
