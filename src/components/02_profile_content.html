@@ -38,7 +38,7 @@
       class="grid grid-cols-2 mx-auto md:grid-cols-4 w-fit mt-[2rem] mb-[2rem] md:mt-[1.75rem] md:mb-[2.75rem] lg:mt-[2.75rem] lg:mb-[3.125rem] gap-[1.5rem] md:gap-[2rem] lg:gap-[3.25rem] text-[.7502rem] lg:text-[1.7769rem] text-gray-300"
     >
       <li class="w-fit">
-        <figure class="flex flex-col">
+        <figure class="flex flex-col overflow-hidden">
           <img
             class="inline-block md:hidden lg:hidden"
             src="../assets/profile/profile_1_sm.png"
@@ -50,7 +50,7 @@
             alt="캐릭터이미지-소녀"
           />
           <img
-            class="w-[14.625rem] hidden md:hidden lg:inline-block"
+            class="w-[14.625rem] hidden md:hidden lg:inline-block rounded-[.375rem]"
             src="../assets/profile/profile_1_lg.jpg"
             alt="캐릭터이미지-소녀"
           />
@@ -58,7 +58,7 @@
         </figure>
       </li>
       <li class="w-fit">
-        <figure class="flex flex-col">
+        <figure class="flex flex-col overflow-hidden">
           <img
             class="inline-block md:hidden lg:hidden"
             src="../assets/profile/profile_1_sm.png"
@@ -70,7 +70,7 @@
             alt="캐릭터이미지-소녀"
           />
           <img
-            class="w-[14.625rem] hidden md:hidden lg:inline-block"
+            class="w-[14.625rem] hidden md:hidden lg:inline-block rounded-[.375rem]"
             src="../assets/profile/profile_1_lg.jpg"
             alt="캐릭터이미지-소녀"
           />
@@ -78,7 +78,7 @@
         </figure>
       </li>
       <li class="w-fit justify-self-end">
-        <figure class="flex flex-col">
+        <figure class="flex flex-col overflow-hidden">
           <img
             class="inline-block md:hidden lg:hidden"
             src="../assets/profile/profile_1_sm.png"
@@ -90,7 +90,7 @@
             alt="캐릭터이미지-소녀"
           />
           <img
-            class="w-[14.625rem] hidden md:hidden lg:inline-block"
+            class="w-[14.625rem] hidden md:hidden lg:inline-block rounded-[.375rem]"
             src="../assets/profile/profile_1_lg.jpg"
             alt="캐릭터이미지-소녀"
           />
@@ -98,7 +98,7 @@
         </figure>
       </li>
       <li class="w-fit">
-        <figure class="flex flex-col">
+        <figure class="flex flex-col overflow-hidden">
           <img
             class="inline-block md:hidden lg:hidden"
             src="../assets/profile/profile_1_sm.png"
@@ -110,7 +110,7 @@
             alt="캐릭터이미지-소녀"
           />
           <img
-            class="w-[14.625rem] hidden md:hidden lg:inline-block"
+            class="w-[14.625rem] hidden md:hidden lg:inline-block rounded-[.375rem]"
             src="../assets/profile/profile_1_lg.jpg"
             alt="캐릭터이미지-소녀"
           />
@@ -122,20 +122,23 @@
     <hr />
     <h3>버튼 컴포넌트</h3>
 
-    <div class="mt-[2rem] text-center">
-      <button
-        class="text-[.7502rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] text-gray-300 border-gray-6oo"
+    <div class="mt-[2rem] flex justify-center text-center">
+      <!-- 숨겨진 체크박스 -->
+      <input type="checkbox" id="edit-toggle" class="hidden peer" />
+      <!-- 프로필 편집 버튼 -->
+      <label
+        for="edit-toggle"
+        class="cursor-pointer block peer-checked:hidden text-[.7502rem] lg:text-[1.7769rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] md:w-[9.75rem] lg:w-[17rem] text-gray-300 border-gray-6oo"
       >
         프로필 편집
-      </button>
-
-      <div class="mt-[2rem] text-center">
-        <button
-          class="text-[.7502rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] bg-gray-100 text-black border-gray-6oo"
-        >
-          완료
-        </button>
-      </div>
+      </label>
+      <!-- 완료 버튼 (체크되었을 때 보임) -->
+      <label
+        for="edit-toggle"
+        class="cursor-pointer hidden peer-checked:block text-[.7502rem] lg:text-[1.7769rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] md:w-[9.75rem] lg:w-[17rem] bg-gray-100 text-black border-gray-6oo"
+      >
+        완료
+      </label>
     </div>
   </body>
 </html>
