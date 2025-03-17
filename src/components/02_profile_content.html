@@ -37,7 +37,12 @@
     <ul
       class="grid grid-cols-2 mx-auto md:grid-cols-4 w-fit mt-[2rem] mb-[2rem] md:mt-[1.75rem] md:mb-[2.75rem] lg:mt-[2.75rem] lg:mb-[3.125rem] gap-[1.5rem] md:gap-[2rem] lg:gap-[3.25rem] text-[.7502rem] lg:text-[1.7769rem] text-gray-300"
     >
-      <li class="w-fit">
+      <!-- 프로필카드 1 -->
+      <li class="relative w-fit">
+        <!-- 라디오버튼(숨김) -->
+        <input type="radio" id="profile1" name="profile" class="peer hidden" />
+
+        <!-- 프로필이미지 -->
         <figure class="flex flex-col overflow-hidden">
           <img
             class="inline-block md:hidden lg:hidden"
@@ -54,10 +59,29 @@
             src="../assets/profile/profile_1_lg.jpg"
             alt="캐릭터이미지-소녀"
           />
-          <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
         </figure>
+
+        <!-- 잠금아이콘 -->
+        <label
+          for="profile1"
+          class="absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none"
+        >
+          <img
+            class="w-[3.125rem] lg:w-[3.75rem]"
+            src="../assets/profile/Profile_lock.svg"
+            alt="프로필 잠금 아이콘"
+          />
+        </label>
+
+        <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
       </li>
-      <li class="w-fit">
+
+      <!-- 프로필카드 2 -->
+      <li class="relative w-fit">
+        <!-- 라디오버튼(숨김) -->
+        <input type="radio" id="profile2" name="profile" class="peer hidden" />
+
+        <!-- 프로필이미지 -->
         <figure class="flex flex-col overflow-hidden">
           <img
             class="inline-block md:hidden lg:hidden"
@@ -74,10 +98,29 @@
             src="../assets/profile/profile_1_lg.jpg"
             alt="캐릭터이미지-소녀"
           />
-          <figcaption class="text-center mt-[.75rem]">범쌤</figcaption>
         </figure>
+
+        <!-- 잠금아이콘 -->
+        <label
+          for="profile2"
+          class="absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none"
+        >
+          <img
+            class="w-[3.125rem] lg:w-[3.75rem]"
+            src="../assets/profile/Profile_lock.svg"
+            alt="프로필 잠금 아이콘"
+          />
+        </label>
+
+        <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
       </li>
-      <li class="w-fit justify-self-end">
+
+      <!-- 프로필카드 3 -->
+      <li class="relative w-fit">
+        <!-- 라디오버튼(숨김) -->
+        <input type="radio" id="profile3" name="profile" class="peer hidden" />
+
+        <!-- 프로필이미지 -->
         <figure class="flex flex-col overflow-hidden">
           <img
             class="inline-block md:hidden lg:hidden"
@@ -94,10 +137,29 @@
             src="../assets/profile/profile_1_lg.jpg"
             alt="캐릭터이미지-소녀"
           />
-          <figcaption class="text-center mt-[.75rem]">야무</figcaption>
         </figure>
+
+        <!-- 잠금아이콘 -->
+        <label
+          for="profile3"
+          class="absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none"
+        >
+          <img
+            class="w-[3.125rem] lg:w-[3.75rem]"
+            src="../assets/profile/Profile_lock.svg"
+            alt="프로필 잠금 아이콘"
+          />
+        </label>
+
+        <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
       </li>
-      <li class="w-fit">
+
+      <!-- 프로필카드 4 -->
+      <li class="relative w-fit">
+        <!-- 라디오버튼(숨김) -->
+        <input type="radio" id="profile4" name="profile" class="peer hidden" />
+
+        <!-- 프로필이미지 -->
         <figure class="flex flex-col overflow-hidden">
           <img
             class="inline-block md:hidden lg:hidden"
@@ -114,8 +176,21 @@
             src="../assets/profile/profile_1_lg.jpg"
             alt="캐릭터이미지-소녀"
           />
-          <figcaption class="text-center mt-[.75rem]">이듬</figcaption>
         </figure>
+
+        <!-- 잠금아이콘 -->
+        <label
+          for="profile4"
+          class="absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none"
+        >
+          <img
+            class="w-[3.125rem] lg:w-[3.75rem]"
+            src="../assets/profile/Profile_lock.svg"
+            alt="프로필 잠금 아이콘"
+          />
+        </label>
+
+        <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
       </li>
     </ul>
 
@@ -128,7 +203,7 @@
       <!-- 프로필 편집 버튼 -->
       <label
         for="edit-toggle"
-        class="cursor-pointer block peer-checked:hidden text-[.7502rem] lg:text-[1.7769rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] md:w-[9.75rem] lg:w-[17rem] text-gray-300 border-gray-6oo"
+        class="cursor-pointer block peer-checked:hidden text-[.7502rem] lg:text-[1.7769rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] md:w-[9.75rem] lg:w-[17rem] text-gray-300 border-gray-6oo bg-transparent"
       >
         프로필 편집
       </label>
