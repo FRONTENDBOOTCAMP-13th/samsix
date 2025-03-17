@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Content</title>
+    <link rel="icon" href="/vite.svg" />
+    <link
+      rel="preload"
+      as="font"
+      href="/font/woff2/PretendardVariable.woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="bg-black text-white">
+
+
+    <h3>타이틀 컴포넌트</h3>
+    <div class="mt-[2.75rem] md:mt-[4.625rem] lg:mt-[8.125rem]">
+      <div class="justify-items-center">
+        <h2 class="pt-[28px] md:pt-[0rem] text-base md:text-[1.4644rem] lg:text-[3.1573rem] font-[700]">프로필 선택</h2>
+        <h3 class="pt-[16px] md:pt-[.5rem] lg:pt-[1.25rem] text-[.7502rem] md:text-[1rem] lg:text-[1.7769rem] font-[600]">시청자 프로필을 선택해주세요.</h3>
+      </div>
+
+      <hr />
+      <h3>프로필 컴포넌트</h3>
+
+      <ul
+        class="grid grid-cols-2 mx-auto md:grid-cols-4 w-fit mt-[2rem] mb-[2rem] md:mt-[1.75rem] md:mb-[2.75rem] lg:mt-[2.75rem] lg:mb-[3.125rem] gap-[1.5rem] md:gap-[2rem] lg:gap-[3.25rem] text-[.7502rem] lg:text-[1.7769rem] text-gray-300"
+      >
+        <li class="w-fit">
+          <figure>
+            <img class="" src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
+            <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
+          </figure>
+        </li>
+        <li class="w-fit">
+          <figure >
+            <img src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
+            <figcaption class="text-center mt-[.75rem]">범쌤</figcaption>
+          </figure>
+        </li>
+        <li class="w-fit justify-self-end">
+          <figure>
+            <img src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
+            <figcaption class="text-center mt-[.75rem]">야무</figcaption>
+          </figure>
+        </li>
+        <li class="w-fit">
+          <figure>
+            <img src="../assets/profile/profile_1_sm.png" alt="캐릭터이미지-소녀" />
+            <figcaption class="text-center mt-[.75rem]">이듬</figcaption>
+          </figure>
+        </li>
+      </ul>
+
+      <hr />
+      <h3>버튼 컴포넌트</h3>
+
+      <div class="mt-[2rem] text-center">
+        <button
+          class="text-[.7502rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] text-gray-300 border-gray-6oo"
+        >
+          프로필 편집
+        </button>
+
+        <div class="mt-[2rem] text-center">
+          <button
+            class="text-[.7502rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] bg-gray-100 text-black border-gray-6oo"
+          >
+           완료
+          </button>
+      </div>
+    </div>
+  </body>
+</html>
