@@ -14,7 +14,7 @@
     <header class="pt-5 md:pt-8 lg:pt-10 px-5 md:px-8 lg:px-10">
       <a href="/src/pages/main_page.html">
         <img
-          src="/src/assets/login/TAING Logo.svg"
+          src="/src/assets/login/taing_logo.svg"
           alt="TAING 메인 이동"
           class="h-6 md:h-8 lg:h-10"
         />
@@ -70,9 +70,9 @@
         id="togglePassword"
         class="absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300"
         aria-label="비밀번호 보기"
-        onclick=" this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; const img = this.querySelector('img'); if (this.previousElementSibling.type === 'text') { img.src = '/src/assets/login/PW visible icon.svg'; this.setAttribute('aria-label', '비밀번호 숨기기'); } else { img.src = '/src/assets/login/PW unvisible icon.svg'; this.setAttribute('aria-label', '비밀번호 보기'); } "
+        onclick=" this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; const img = this.querySelector('img'); if (this.previousElementSibling.type === 'text') { img.src = '/src/assets/login/visible_pwicon.svg'; this.setAttribute('aria-label', '비밀번호 숨기기'); } else { img.src = '/src/assets/login/unvisible_pwicon.svg'; this.setAttribute('aria-label', '비밀번호 보기'); } "
       >
-        <img src="/src/assets/login/PW unvisible icon.svg" alt="" class="size-5" />
+        <img src="/src/assets/login/unvisible_pwicon.svg" alt="" class="size-5" />
       </button>
       <p
         class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 hidden peer-focus:peer-invalid:block"
