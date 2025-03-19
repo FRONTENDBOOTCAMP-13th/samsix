@@ -184,3 +184,8 @@ body:has(#edit-toggle:checked) .profile-lock {
 body:has(#edit-toggle:checked) .profile-edit {
   display: flex;
 }
+
+/* modal창을 띄웠을 때, 뒷 배경을 어둡게 바꿈. */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
