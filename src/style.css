@@ -124,6 +124,10 @@
     }
   }
 
+  dialog.panel-dialog::backdrop {
+    background: rgba(0, 0, 0, 90%);
+  }
+
   /* 애니메이션 정의 */
   @keyframes text-animation {
     0%,
