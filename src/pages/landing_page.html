@@ -11,9 +11,9 @@
   </head>
   <body class="bg-black text-white">
     <!-- 헤더 (로고 이미지) -->
-    <header class="absolute z-10 flex items-center h-[2.375rem] md:h-[3.5rem] lg:h-[6.25rem] pr-4 pl-4 md:pr-[2.5rem] md:pl-[2.5rem] lg:pr-[4.375rem] lg:pl-[4.375rem]">
+    <header class="absolute z-10 flex items-center h-[2.375rem] md:h-[3.5rem] lg:h-[6.25rem] px-4 md:px-[2.5rem] lg:px-[4.375rem]">
       <h1 class="sr-only">TAING: 타잉 오리지널부터 드라마, 예능, 영화, 스포츠까지!</h1>
-      <a class="w-[2.875rem] md:w-[4.8125rem] lg:w-[8.25rem]" href="/">
+      <a class="w-[2.875rem] md:w-[4.8125rem] lg:w-[8.25rem]" href="./landing_page.html" aria-label="타잉으로 이동">
         <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="46" height="16" viewBox="0 0 46 16" fill="none">
           <g clip-path="url(#clip0_3311_1360)">
             <mask id="mask0_3311_1360" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="2" width="46" height="12">
@@ -44,21 +44,15 @@
 
     <main class="flex flex-col flex-nowrap gap-20">
       <!-- 배너 -->
-      <article class="relative">
-        <!-- 배너 이미지 (그라디언트) -->
-        <picture class="absolute">
-          <source srcset="../assets/banner/gradation_img_sm.png 561w" media="(max-width: 768px)" />
-          <source srcset="../assets/banner/gradation_img_md.png 768w" media="(max-width: 1024px)" />
-          <img class="w-full h-full object-fill" src="../assets/banner/gradation_img_lg.png" alt="" />
-        </picture>
-        <!-- 배너 이미지 (원본) -->
-        <picture class="">
+      <section class="relative">
+        <!-- 배너 이미지 -->
+        <picture class="gradient-picture">
           <source srcset="../assets/banner/landing_img_sm.png 561w" media="(max-width: 768px)" />
           <source srcset="../assets/banner/landing_img_md.png 768w" media="(max-width: 1024px)" />
           <img class="w-full h-full object-fill" src="../assets/banner/landing_img_lg.png" alt="타잉 오리지널 콘텐츠" />
         </picture>
 
-        <div class="absolute w-full left-[50%] top-[25%] -translate-x-[50%] flex flex-col gap-5 lg:gap-10">
+        <div class="absolute w-full left-1/2 top-1/4 -translate-x-1/2 flex flex-col gap-5 lg:gap-10">
           <h2 class="text-center font-semibold md:text-lg lg:text-4xl">타잉 오리지널 콘텐츠,<br />방송, 영화, 해외 시리즈까지!<br />재미를 플레이해보세요.</h2>
           <p class="text-center text-xs md:text-sm lg:text-2xl -mt-3 text-gray-300">간편하게 가입하고, 원하실 때 해지할 수 있어요.</p>
           <a href="/" class="mx-auto flex gap-2 justify-center items-center pb-2 pl-3 pr-4 lg:pb-5 lg:pl-7 lg:pr-9 w-fit rounded-sm lg:rounded-xl bg-[#E93945]">
@@ -71,9 +65,9 @@
             <span class="mt-1.5 lg:mt-4 text-sm md:text-base lg:text-3xl">새로워진 타잉을 만나보세요!</span>
           </a>
         </div>
-      </article>
+      </section>
 
-      <article>
+      <section>
         <h2 class="text-center text-3xl lg:text-4xl font-semibold mb-4 lg:mb-5">타잉에만 있는 재미</h2>
         <p class="text-center text-base lg:text-lg text-gray-100 mb-0.5 lg:mb-1">오리지널 콘텐츠를 만나보세요!</p>
         <p class="text-center text-sm lg:text-base text-gray-300 mb-10">차별화된 웰메이드 오리지널 콘텐츠</p>
@@ -114,9 +108,9 @@
             </div>
           </div>
         </div>
-      </article>
+      </section>
 
-      <article>
+      <section>
         <h2 class="text-center text-3xl lg:text-4xl font-semibold mb-4 lg:mb-5">내가 찾던 재미</h2>
         <p class="text-center text-base lg:text-lg text-gray-100 mb-0.5 lg:mb-1">보고 싶은 콘텐츠를 발견하세요!</p>
         <p class="text-center text-sm lg:text-base text-gray-300 mb-10">최신, 인기 TV프로그램, 영화, 해외시리즈, 파라마운트+ 오리지널 및 독점</p>
@@ -206,7 +200,7 @@
             </picture>
           </div>
         </div>
-      </article>
+      </section>
     </main>
 
     <aside>
