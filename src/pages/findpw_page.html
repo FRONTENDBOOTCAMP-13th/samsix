@@ -36,7 +36,7 @@
             <!-- 아이디 입력 -->
             <label class="sr-only" for="input_id">아이디</label>
             <input type="text" id="input_id" pattern="[a-zA-Z][a-zA-Z0-9]{5,11}" name="input_id" required placeholder="아이디" aria-required="true" aria-errormessage="error_id" class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded text-white py-3.5 px-4 text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" />
-            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 hidden peer-focus:peer-invalid:block" id="error_id" aria-live="polite">
+            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 block peer-placeholder-shown:hidden peer-valid:hidden" id="error_id" aria-live="polite">
               <span>아이디를 입력하세요.</span>
             </p>
 
