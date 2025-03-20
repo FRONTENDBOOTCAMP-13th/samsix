@@ -73,3 +73,16 @@ const closeDialog = () => panelDialog.close();
 // 이벤트 바인딩 부분
 showDialogButton.addEventListener('click', openDialog);
 closeDialogButton.addEventListener('click', closeDialog);
+
+function updatePlaceholder() {
+  const input = document.getElementById('taingSearch');
+  if (window.innerWidth < 768) {
+    // Tailwind 기준 sm (md 미만)
+    input.placeholder = '검색';
+  } else {
+    input.placeholder = 'TV프로그램, 영화 제목 및 출연진으로 검색해보세요';
+  }
+}
+
+window.addEventListener('resize', updatePlaceholder);
+window.addEventListener('DOMContentLoaded', updatePlaceholder);
