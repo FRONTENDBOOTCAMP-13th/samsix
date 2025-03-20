@@ -167,6 +167,23 @@
         </ul>
       </nav>
     </header>
+
+    <!-- 모달 창 -->
+    <div class="dialog-area">
+      <dialog class="panel-dialog mx-auto my-auto bg-transparent" aria-label="">
+        <picture>
+          <source srcset="../assets/modal/modal_sm.png" media="(max-width: 768px)" />
+          <source srcset="../assets/modal/modal_md.png" media="(max-width: 1024px)" />
+          <img src="../assets/modal/modal_lg.png" alt="기대해! 재미 가득 라인업" />
+        </picture>
+        <div class="flex justify-between text-sm md:text-base lg:text-lg px-6 md:px-10 lg:px-30 py-3 text-white">
+          <button type="button" class="close-dialog">오늘 하루 보지 않기</button>
+          <span class="" aria-hidden="true">|</span>
+          <button type="button" class="close-dialog">닫기</button>
+        </div>
+      </dialog>
+    </div>
+
     <main class="flex flex-col gap-3 md:gap-5 lg:gap-9">
       <!-- 배너 스와이퍼 컴포넌트 -->
       <article class="-mb-3 md:-mb-5 lg:-mb-9">
@@ -887,7 +904,6 @@
                 <a href="#">
                   <picture class="main-card gap-0 w-[9.0625rem] md:w-[13.375rem] lg:w-[21.625rem]">
                     <source srcset="../assets/poster/events/let_me_in_sm.png 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/events/let_me_in_md.png 225w" media="(max-width: 1024px)" />
                     <img class="h-auto w-[9.0625rem] md:w-[13.375rem] lg:w-[21.625rem]" src="../assets/poster/events/let_me_in_lg.png" loading="lazy" alt="소설 원작 렛미인 감상하고 원작 도서 세트 받기" />
                   </picture>
                 </a>
