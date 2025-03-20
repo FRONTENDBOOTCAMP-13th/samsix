@@ -212,3 +212,16 @@ body:has(#edit-toggle:checked) .profile-edit {
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+/* 검색바: 검색창 X 버튼 제거 */
+#taingSearch {
+  input[type='search']::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+.text-red {
+  span {
+    color: #ff153c;
+  }
+}
