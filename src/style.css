@@ -39,20 +39,118 @@
   --text-paragraph-x-l: 1.78rem;
 }
 
+/* 애니메이션 정의 */
+@keyframes slideleft {
+  /* 랜딩 페이지 왼쪽 방향으로 무한히 슬라이드 */
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slideright {
+  /* 랜딩 페이지 오른쪽 방향으로 무한히 슬라이드 */
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-animation {
+  /* 메인 페이지 배너 슬라이드 */
+  0%,
+  20% {
+    transform: translateX(0);
+  }
+  25%,
+  45% {
+    transform: translateX(-100%);
+  }
+  50%,
+  70% {
+    transform: translateX(-200%);
+  }
+  75%,
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes indicator-animation {
+  /* 메인 페이지 인디케이터 상태 */
+  0%,
+  24.9% {
+    background-color: #ffffff; /* 흰색 */
+    transform: scale(1);
+  }
+  25%,
+  100% {
+    background-color: #898989; /* 회색 */
+    transform: scale(1);
+  }
+}
+
 @layer components {
-  .screen-wrapper {
-    display: flex;
-    width: 100%;
-    transition: transform 0.5s ease-in-out;
+  /* 랜딩 페이지 */
+  .gradient-picture {
+    /* 배너 이미지의 그라데이션 효과 */
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 1) 90%);
+    }
+  }
+
+  /* 메인 페이지 */
+  .card-flex {
+    @apply flex flex-col flex-nowrap gap-3 pl-5;
+    h2 {
+      @apply text-lg md:text-xl lg:text-2xl;
+    }
+  }
+
+  .slides {
+    @apply flex w-full h-full animate-[slide-animation_20s_infinite];
+
+    .slide {
+      @apply w-full h-full flex-shrink-0 flex;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, /* 50%까지 완전 투명 */ rgba(0, 0, 0, 1) 90% /* 90%부터 검정 */);
+      }
+    }
   }
 
   .main-card {
-    @apply flex flex-col flex-nowrap gap-2 overflow-hidden w-[5.75rem] md:w-[8.125rem] lg:w-[15rem];
+    /*  w-[5.75rem] md:w-[8.125rem] lg:w-[15rem] */
+    @apply flex flex-col flex-nowrap gap-2 overflow-hidden;
 
     .contents-name {
       @apply text-gray-300 text-xs md:text-sm lg:text-base;
     }
-    .contents-episode {
+    .contents-description {
       @apply text-gray-300 text-[.625rem] md:text-xs lg:text-sm;
     }
     .Quick-VOD {
@@ -66,149 +164,40 @@
     }
   }
 
-  @keyframes slideleft {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  @keyframes slideright {
-    0% {
-      transform: translateX(-50%);
-    }
-    100% {
-      transform: translateX(0%);
-    }
-  }
-
-  /* 슬라이더 애니메이션 */
-  @keyframes slide-animation {
-    0%,
-    20% {
-      transform: translateX(0);
-    }
-    25%,
-    45% {
-      transform: translateX(-100%);
-    }
-    50%,
-    70% {
-      transform: translateX(-200%);
-    }
-    75%,
-    95% {
-      transform: translateX(-300%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-  /* 각 슬라이드에 맞는 인디케이터 상태 */
-  @keyframes indicator-animation {
-    0%,
-    24.9% {
-      background-color: #ffffff; /* 흰색 */
-      transform: scale(1);
-    }
-    25%,
-    100% {
-      background-color: #898989; /* 회색 */
-      transform: scale(1);
-    }
-  }
-  .slides {
-    @apply flex w-full h-full animate-[slide-animation_20s_infinite];
-    .slide {
-      @apply w-full h-full flex-shrink-0 flex;
-    }
-  }
-
-  dialog.panel-dialog::backdrop {
-    background: rgba(0, 0, 0, 90%);
-  }
-
-  /* 애니메이션 정의 */
-  @keyframes text-animation {
-    0%,
-    24.9% {
-      display: block; /* 보이도록 설정 */
-    }
-    25%,
-    100% {
-      display: none; /* 숨김 처리 */
-    }
-  }
-
-  .p-container {
-    p {
-      animation: text-animation 20s infinite; /* 16초 애니메이션 반복 */
-    }
-    /* 각 p 요소의 애니메이션 */
-    p:nth-of-type(1) {
-      animation-delay: 0s; /* 첫 번째 문장 */
-    }
-
-    p:nth-of-type(2) {
-      animation-delay: 5s; /* 두 번째 문장 */
-    }
-
-    p:nth-of-type(3) {
-      animation-delay: 10s; /* 세 번째 문장 */
-    }
-
-    p:nth-of-type(4) {
-      animation-delay: 15s; /* 네 번째 문장 */
-    }
-  }
-
-  /* 인디케이터 스타일 */
-  .indicators {
-    /* position: absolute;
-    bottom: 10%;
-    left: 15%; */
-    /* transform: translateX(-50%); */
-    display: flex;
-    gap: 0.3125rem;
+  .main-dialog::backdrop {
+    background: rgba(0, 0, 0, 75%);
   }
 
   .indicator {
+    /* 인디케이터 스타일 */
     width: 10px;
     height: 10px;
     background: #898989;
     border-radius: 50%;
+
+    &:nth-child(1) {
+      animation: indicator-animation 20s infinite;
+    }
+    &:nth-child(2) {
+      animation: indicator-animation 20s infinite 5s;
+    }
+    &:nth-child(3) {
+      animation: indicator-animation 20s infinite 10s;
+    }
+    &:nth-child(4) {
+      animation: indicator-animation 20s infinite 15s;
+    }
+  }
+  /* edit-toggle이 체크되었을 때 위 요소들에 영향을 줌 */
+  body:has(#edit-toggle:checked) .profile-lock {
+    display: none;
+  }
+  body:has(#edit-toggle:checked) .profile-edit {
+    display: flex;
   }
 
-  .indicator:nth-child(1) {
-    animation: indicator-animation 20s infinite;
+  /* modal창을 띄웠을 때, 뒷 배경을 어둡게 바꿈. */
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
   }
-  .indicator:nth-child(2) {
-    animation: indicator-animation 20s infinite 5s;
-  }
-  .indicator:nth-child(3) {
-    animation: indicator-animation 20s infinite 10s;
-  }
-  .indicator:nth-child(4) {
-    animation: indicator-animation 20s infinite 15s;
-  }
-
-  /* 일시정지 버튼 스타일 */
-  .pause-button {
-    cursor: pointer;
-  }
-}
-
-/* edit-toggle이 체크되었을 때 위 요소들에 영향을 줌 */
-body:has(#edit-toggle:checked) .profile-lock {
-  display: none;
-}
-body:has(#edit-toggle:checked) .profile-edit {
-  display: flex;
-}
-
-/* modal창을 띄웠을 때, 뒷 배경을 어둡게 바꿈. */
-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
 }
