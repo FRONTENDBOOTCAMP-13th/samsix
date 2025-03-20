@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@plugin "tailwind-scrollbar-hide";
+/* scrollbar-hide */
 
 @theme {
   --font-sans: 'Pretendard Variable', sans-serif;
