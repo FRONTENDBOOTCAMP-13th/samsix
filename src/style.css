@@ -64,6 +64,23 @@
     }
   }
 
+  @keyframes slideleft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes slideright {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
   /* 슬라이더 애니메이션 */
   @keyframes slide-animation {
     0%,
