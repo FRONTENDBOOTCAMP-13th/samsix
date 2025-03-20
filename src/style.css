@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@plugin "tailwind-scrollbar-hide";
+/* scrollbar-hide */
 
 @theme {
   --font-sans: 'Pretendard Variable', sans-serif;
@@ -64,6 +66,23 @@
     }
   }
 
+  @keyframes slideleft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes slideright {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
   /* 슬라이더 애니메이션 */
   @keyframes slide-animation {
     0%,
@@ -105,6 +124,10 @@
     .slide {
       @apply w-full h-full flex-shrink-0 flex;
     }
+  }
+
+  dialog.panel-dialog::backdrop {
+    background: rgba(0, 0, 0, 90%);
   }
 
   /* 애니메이션 정의 */
