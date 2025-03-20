@@ -123,6 +123,30 @@
     }
   }
 
+  .pop-menu {
+    margin-top: 0.125rem;
+    display: none;
+    position: absolute;
+    width: 150px;
+    right: 0;
+    top: 100%;
+    background: #131313;
+    border: 1px solid #565656;
+    color: #ffffff;
+    font-size: x-small;
+    color: #cccccc;
+
+    img {
+      width: 25%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  [popover]:popover-open + .pop-menu {
+    display: block;
+  }
+
   .slides {
     @apply flex w-full h-full animate-[slide-animation_20s_infinite];
 
