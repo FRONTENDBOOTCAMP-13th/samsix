@@ -1,5 +1,13 @@
 import '../style.css';
 
+// 이런 식으로 정리하면 좋다. 시간이 남으면...하자.
+// import { handleImageSize } from './function1.js';
+// import { handleOtherFunction } from './function2.js';
+// document.addEventListener('DOMContentLoaded', function () {
+//   handleImageSize();  // function1.js의 handleImageSize 함수 실행
+//   handleOtherFunction();  // function2.js의 handleOtherFunction 함수 실행
+// });
+
 // toggle_password.js
 window.togglePasswordVisibility = function (button) {
   const input = button.previousElementSibling;
