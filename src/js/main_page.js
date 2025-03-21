@@ -113,30 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('뷰포트 너비:', viewportWidth, '이미지 너비 설정:', newWidth);
   }
 
-  const modal = document.getElementById('searchModal');
-  const toggleBtn = document.getElementById('modalToggleBtn');
-  const openBtn = document.getElementById('openModalBtn');
-  const closeBtn = document.getElementById('closeModalBtn');
-
-  toggleBtn.addEventListener('click', () => {
-    if (!modal.open) {
-      modal.showModal();
-      searchIcon.classList.add('hidden');
-      closeIcon.classList.remove('hidden');
-    } else {
-      modal.close();
-      searchIcon.classList.remove('hidden');
-      closeIcon.classList.add('hidden');
-    }
-  });
-
-  // 모달 바깥 클릭하면 닫기
-  modal.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.close();
-    }
-  });
-
   // 모든 이미지에 대해 원본 크기 저장 및 크기 설정
   titleImages.forEach((img) => {
     // 이미지가 이미 로드되었는지 확인
