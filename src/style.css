@@ -3,6 +3,7 @@
 @import './css/main_page.css';
 @import './css/profile_page.css';
 @import './css/search_page.css';
+@import './css/landing_page.css';
 @plugin "tailwind-scrollbar-hide";
 /* scrollbar-hide */
 
