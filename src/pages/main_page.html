@@ -12,7 +12,7 @@
   <body class="bg-black text-white">
     <!-- 헤더 내비게이션 바 -->
     <header class="sticky top-0 z-50 w-full">
-      <nav class="flex justify-between text-white p-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.25rem] bg-black">
+      <nav class="flex justify-between text-gray-200 p-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.8125rem] bg-black">
         <ul class="flex md:gap-7 lg:gap-[3.25rem] items-center md:text-xs lg:text-xl">
           <!-- 로고 -->
           <li>
@@ -46,7 +46,7 @@
           </li>
 
           <!-- 실시간 -->
-          <li class="hidden md:block">
+          <li class="hidden md:block hover:text-white hover-stroke-white">
             <a href="#" class="flex items-center">
               <svg width="20" height="20" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block mr-1 lg:mr-2.5 lg:w-[2.125rem] lg:h-[2.125rem]">
                 <path d="M11.0003 23.3676H6.5166V16.1426H7.63859V22.3943H11.0018L11.0003 23.3676Z" fill="#C4C4C4" stroke="#C4C4C4" stroke-width="0.2" stroke-linejoin="round" />
@@ -68,17 +68,17 @@
           </li>
 
           <!-- TV프로그램 -->
-          <li class="hidden md:block">
+          <li class="hidden md:block hover:text-white">
             <a href="#">TV프로그램</a>
           </li>
 
           <!-- 영화 -->
-          <li class="hidden md:block">
+          <li class="hidden md:block hover:text-white">
             <a href="#">영화</a>
           </li>
 
           <!-- Paramount+ -->
-          <li class="hidden md:block">
+          <li class="hidden md:block hover-white">
             <a href="#">
               <svg width="84" height="25" viewBox="0 0 112 34" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:w-[7rem] lg:h-[2.125rem]">
                 <g clip-path="url(#clip0_3307_6801)">
@@ -107,10 +107,11 @@
         </ul>
 
         <ul class="flex md:gap-7 lg:gap-10 items-center">
-          <!-- 검색(돋보기) -->
+          <!-- 검색 모달 버튼 -->
           <li>
-            <a href="./search_page.html">
-              <svg width="18" height="18" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-6 md:h-6 lg:w-10 lg:h-10">
+            <button id="modalToggleBtn" class="cursor-pointer inline-flex align-middle" type="button">
+              <!-- 검색버튼(돋보기) -->
+              <svg id="openModalBtn" width="18" height="18" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-6 md:h-6 lg:w-10 lg:h-10 hover-stroke-white">
                 <g clip-path="url(#clip0_3307_6807)">
                   <g opacity="0.997">
                     <path d="M26.6973 27.9629L33.573 34.9486" stroke="#C4C4C4" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" />
@@ -123,10 +124,17 @@
                   </clipPath>
                 </defs>
               </svg>
-            </a>
+              <!-- 닫기버튼(X) -->
+              <svg id="closeModalBtn" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" class="md:w-7 md:h-7 lg:w-[3.125rem] lg:h-[3.125rem] hover-white hidden">
+                <path
+                  d="M15.0105 15.7879L10.9994 11.7767L6.98825 15.7879C6.93759 15.8396 6.87699 15.8803 6.81019 15.9082C6.7434 15.936 6.67175 15.9504 6.59938 15.9501C6.49039 15.9503 6.38389 15.9182 6.29323 15.8577C6.20256 15.7972 6.13186 15.7113 6.0902 15.6106C6.04854 15.5099 6.03762 15.3984 6.05905 15.2916C6.08048 15.1847 6.13324 15.087 6.21051 15.0101L10.2216 10.999L6.21051 6.98786C6.11032 6.88413 6.05484 6.74535 6.05609 6.60114C6.05735 6.45694 6.11525 6.31855 6.21723 6.21657C6.3192 6.1146 6.45705 6.05669 6.60126 6.05544C6.74547 6.05419 6.88451 6.10994 6.98825 6.21013L10.9994 10.2213L15.0105 6.21013C15.1142 6.10994 15.2533 6.05419 15.3975 6.05544C15.5417 6.05669 15.6796 6.1146 15.7815 6.21657C15.8835 6.31855 15.9414 6.45694 15.9427 6.60114C15.9439 6.74535 15.8884 6.88413 15.7882 6.98786L11.7771 10.999L15.7882 15.0101C15.8408 15.0609 15.8827 15.1213 15.9115 15.1884C15.9403 15.2556 15.9555 15.3281 15.9561 15.4011C15.9567 15.4742 15.9429 15.5462 15.9153 15.6138C15.8876 15.6814 15.8466 15.7427 15.795 15.7943C15.7433 15.8459 15.6821 15.887 15.6145 15.9146C15.5469 15.9423 15.4743 15.9561 15.4013 15.9554C15.3282 15.9548 15.2562 15.9402 15.1891 15.9114C15.122 15.8826 15.0612 15.8404 15.0105 15.7879Z"
+                  fill="#C4C4C4"
+                />
+              </svg>
+            </button>
           </li>
           <!-- 타잉 아이콘 -->
-          <li class="relative">
+          <li class="relative hover:scale-[110%]">
             <button class="cursor-pointer inline-flex align-middle" type="button" popovertarget="empty-popover">
               <svg width="18" height="18" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-6 md:h-6 lg:w-10 lg:h-10">
                 <g clip-path="url(#clip0_3307_6815)">
@@ -185,6 +193,80 @@
         </ul>
       </nav>
     </header>
+
+    <!-- 검색: 모달창 -->
+    <dialog id="searchModal" class="mx-auto mt-[3rem] md:mt-[3.5625rem] md:mb-[3.25rem] lg:mt-[6.25rem] lg:mb-20 py-5 md:pt-7 md:pb-[3.25rem] lg:pt-[3.25rem] lg:pb-[4.375rem] bg-brand-dark-bg-1 text-white">
+      <div class="flex flex-col w-full">
+        <!-- 검색창 -->
+        <div class="relative w-full mx-auto border-b-2">
+          <!-- 검색창 -->
+          <input type="search" id="taingSearch" placeholder="검색" class="flex py-3 lg:py-4 pr-[1.5625rem] md:pr-[2rem] lg:pr-[3.375rem] placeholder:text-base placeholder:md:text-[1.333rem] placeholder:lg:text-[2rem] text-base md:text-[1.333rem] lg:text-[2rem] w-[15.25rem] md:w-[32.625rem] lg:w-[62.5rem] focus:outline-none appearance-none" />
+          <!-- 돋보기버튼 -->
+          <button class="absolute right-0 bottom-0 py-3 lg:py-4" aria-label="검색버튼(돋보기)-누르세요">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none" class="w-[1.375rem] md:w-7 md:h-[1.875rem] lg:w-[3.125rem] lg:h-[3.25rem] cursor-pointer">
+              <g clip-path="url(#clip0_3311_2014)">
+                <g opacity="0.997">
+                  <path d="M14.6836 15.8796L18.4652 19.7217" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" />
+                  <path d="M10.2141 17.1964C13.7941 17.1964 16.6962 14.2942 16.6962 10.7143C16.6962 7.13427 13.7941 4.23212 10.2141 4.23212C6.63409 4.23212 3.73193 7.13427 3.73193 10.7143C3.73193 14.2942 6.63409 17.1964 10.2141 17.1964Z" stroke="white" stroke-width="1.5" />
+                </g>
+              </g>
+              <defs>
+                <clipPath id="clip0_3311_2014">
+                  <rect width="22" height="22" fill="white" transform="translate(0 0.5)" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+        </div>
+        <!-- 인기검색어 -->
+        <div class="grid md:grid-cols-2 w-full md:divide-x md:divide-gray-800 mx-auto mt-10 md:mt-12 lg:mt-[3.25rem]">
+          <div class="hidden w-fit md:block justify-center items-center md:pr-[2.1875rem] lg:pr-[3.75rem]">
+            <div>
+              <h2 class="text-gray-200 font-semibold lg:text-2xl">최근 검색어</h2>
+              <p class="w-[14.125rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] text-[.7502rem] lg:text-[1.25rem] text-gray-300">검색 내역이 없습니다.</p>
+            </div>
+          </div>
+          <div class="flex flex-col w-fit md:block justify-center items-center md:pl-[2.1875rem] lg:pl-[3.75rem]">
+            <div>
+              <h2 class="text-gray-200 font-semibold lg:text-2xl">실시간 인기 검색어</h2>
+              <ul class="text-red grid grid-rows-10 w-[14.125rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] text-[.7502rem] lg:text-[1.25rem] text-gray-300">
+                <li>
+                  <a href="/"><span>1</span>재벌집 막내아들</a>
+                </li>
+                <li>
+                  <a href="/"><span>2</span>미스터트롯2: 새로운 전설의 시작</a>
+                </li>
+                <li>
+                  <a href="/"><span>3</span>유 퀴즈 온 더 블럭</a>
+                </li>
+                <li>
+                  <a href="/"><span>4</span>대행사</a>
+                </li>
+                <li>
+                  <a href="/"><span>5</span>SHOW ME THE MONEY 11</a>
+                </li>
+                <li>
+                  <a href="/"><span>6</span>미씽: 그들이 있었다2</a>
+                </li>
+                <li>
+                  <a href="/"><span>7</span>술꾼도시여자들2</a>
+                </li>
+                <li>
+                  <a href="/"><span>8</span>캐나다 체크인</a>
+                </li>
+                <li>
+                  <a href="/"><span>9</span>미씽: 그들이 있었다 - 그들을 다만나다</a>
+                </li>
+                <li>
+                  <a href="/"><span>10</span>술꾼도시여자들</a>
+                </li>
+              </ul>
+              <p class="mt-4 text-[.7502rem] text-gray-500" id="time-display"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
 
     <!-- 모달 창 -->
     <div>

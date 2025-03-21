@@ -112,6 +112,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const modal = document.getElementById('searchModal');
+  const toggleBtn = document.getElementById('modalToggleBtn');
+  const openBtn = document.getElementById('openModalBtn');
+  const closeBtn = document.getElementById('closeModalBtn');
+
+  toggleBtn.addEventListener('click', () => {
+    if (!modal.open) {
+      modal.showModal();
+      searchIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    } else {
+      modal.close();
+      searchIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+  });
+
+  // 모달 바깥 클릭하면 닫기
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.close();
+    }
+  });
+
   // DOM 선택 부분
   const closeDialogButtons = document.querySelectorAll('.close-dialog'); // 여러 개의 close-dialog 버튼 선택
   const dialog = document.querySelector('.main-dialog');
@@ -202,4 +226,3 @@ const closeDialog = () => panelDialog.close();
 // 이벤트 바인딩 부분
 showDialogButton.addEventListener('click', openDialog);
 closeDialogButton.addEventListener('click', closeDialog);
-
