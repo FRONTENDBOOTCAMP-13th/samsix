@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+/* edit-toggle이 체크되었을 때 위 요소들에 영향을 줌 */
+body:has(#edit-toggle:checked) .profile-lock {
+  display: none;
+}
+body:has(#edit-toggle:checked) .profile-edit {
+  display: flex;
+}
