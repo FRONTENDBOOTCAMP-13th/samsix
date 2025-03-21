@@ -1,3 +1,5 @@
+import './style.css';
+
 // toggle_password.js
 window.togglePasswordVisibility = function (button) {
   const input = button.previousElementSibling;
@@ -13,7 +15,6 @@ window.togglePasswordVisibility = function (button) {
     button.setAttribute('aria-label', '비밀번호 보기');
   }
 };
-
 // 비밀번호 일치 여부 확인 함수
 function checkPasswordMatch() {
   const pw = document.getElementById('input_pw').value;
@@ -28,24 +29,7 @@ function checkPasswordMatch() {
     errorMsg.classList.add('hidden');
   }
 }
-
-// 비밀번호 검증 코드
-const pwInput = document.getElementById('input_pw');
-const pwConfirmInput = document.getElementById('input_pw_confirm');
-
-if (pwInput && pwConfirmInput) {
-  // 두 입력 필드 모두에 이벤트 리스너 추가
-  pwInput.addEventListener('input', checkPasswordMatch);
-  pwConfirmInput.addEventListener('input', checkPasswordMatch);
-
-  // 키보드 이벤트에도 추가 (기존 onkeyup과 동일한 동작을 위해)
-  pwInput.addEventListener('keyup', checkPasswordMatch);
-  pwConfirmInput.addEventListener('keyup', checkPasswordMatch);
-}
-const togglePassword = document.getElementById('togglePassword');
-const togglePasswordConfirm = document.getElementById('togglePasswordConfirm');
-
-// 체크박스 관련 코드
+// 체크박스 관련 함수들 추가
 // 전체 동의 체크박스 토글 함수
 window.toggleAllCheckboxes = function () {
   const mainCheckbox = document.getElementById('checkbox_all');
@@ -94,6 +78,19 @@ window.toggleLinkedCheckboxes = function (checkbox, linkedIds) {
   // 전체 체크박스 상태도 업데이트
   window.updateAllCheckbox();
 };
+// 비밀번호 검증 코드
+const pwInput = document.getElementById('input_pw');
+const pwConfirmInput = document.getElementById('input_pw_confirm');
+
+if (pwInput && pwConfirmInput) {
+  // 두 입력 필드 모두에 이벤트 리스너 추가
+  pwInput.addEventListener('input', checkPasswordMatch);
+  pwConfirmInput.addEventListener('input', checkPasswordMatch);
+
+  // 키보드 이벤트에도 추가 (기존 onkeyup과 동일한 동작을 위해)
+  pwInput.addEventListener('keyup', checkPasswordMatch);
+  pwConfirmInput.addEventListener('keyup', checkPasswordMatch);
+}
 
 // 체크박스 초기화 코드 추가
 // 전체 체크박스 초기 상태 설정
@@ -123,7 +120,9 @@ subCheckboxes.forEach((checkbox) => {
   }
 });
 
-// 모달 관련 코드
+const togglePassword = document.getElementById('togglePassword');
+const togglePasswordConfirm = document.getElementById('togglePasswordConfirm');
+
 // DOM 선택 부분
 const showDialogButton = document.querySelector('.show-dialog');
 const closeDialogButton = document.querySelector('.close-dialog');
