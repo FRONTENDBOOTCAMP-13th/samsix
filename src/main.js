@@ -168,7 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
       checkbox.addEventListener('change', window.updateAllCheckbox);
     }
   });
+  const togglePassword = document.getElementById('togglePassword');
+  const togglePasswordConfirm = document.getElementById('togglePasswordConfirm');
 });
+
 // search-bar 컴포넌트에서 placeholder 변경
 function updatePlaceholder() {
   const input = document.getElementById('taingSearch');
@@ -202,4 +205,3 @@ const closeDialog = () => panelDialog.close();
 // 이벤트 바인딩 부분
 showDialogButton.addEventListener('click', openDialog);
 closeDialogButton.addEventListener('click', closeDialog);
-
