@@ -8,6 +8,22 @@ import '../style.css';
 //   handleOtherFunction();  // function2.js의 handleOtherFunction 함수 실행
 // });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const showDialogButton = document.querySelector('.show-dialog');
+  const closeDialogButton = document.querySelector('.close-dialog');
+  const panelDialog = document.querySelector('.panel-dialog');
+
+  if (showDialogButton && closeDialogButton && panelDialog) {
+    const openDialog = () => panelDialog.showModal();
+    const closeDialog = () => panelDialog.close();
+
+    showDialogButton.addEventListener('click', openDialog);
+    closeDialogButton.addEventListener('click', closeDialog);
+  } else {
+    console.error('모달 관련 요소를 찾을 수 없습니다.');
+  }
+});
+
 // toggle_password.js
 window.togglePasswordVisibility = function (button) {
   const input = button.previousElementSibling;
@@ -130,14 +146,3 @@ subCheckboxes.forEach((checkbox) => {
 
 const togglePassword = document.getElementById('togglePassword');
 const togglePasswordConfirm = document.getElementById('togglePasswordConfirm');
-
-// DOM 선택 부분
-const showDialogButton = document.querySelector('.show-dialog');
-const closeDialogButton = document.querySelector('.close-dialog');
-const panelDialog = document.querySelector('.panel-dialog');
-// 함수 구현 부분
-const openDialog = () => panelDialog.showModal();
-const closeDialog = () => panelDialog.close();
-// 이벤트 바인딩 부분
-showDialogButton.addEventListener('click', openDialog);
-closeDialogButton.addEventListener('click', closeDialog);
