@@ -1,3 +1,5 @@
+import '../style.css';
+
 // 문서의 모든 요소가 다 로드가 됐을 시, 실행
 document.addEventListener('DOMContentLoaded', () => {
   // 슬라이더 관련 코드
