@@ -1,3 +1,5 @@
+import '../style.css';
+
 // 검색모달창 열고 닫기
 const modal = document.getElementById('searchModal');
 const toggleBtn = document.getElementById('modalToggleBtn');
