@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // DOM 선택 부분
   const closeDialogButtons = document.querySelectorAll('.close-dialog'); // 여러 개의 close-dialog 버튼 선택
-  const dialog = document.querySelector('.panel-dialog');
+  const dialog = document.querySelector('.main-dialog');
 
   if (dialog) {
     const closeDialog = () => dialog.close();
