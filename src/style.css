@@ -225,3 +225,56 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
 }
+
+/* edit-toggle이 체크되었을 때 위 요소들에 영향을 줌 */
+body:has(#edit-toggle:checked) .profile-lock {
+  display: none;
+}
+body:has(#edit-toggle:checked) .profile-edit {
+  display: flex;
+}
+
+/* modal창을 띄웠을 때, 뒷 배경을 어둡게 바꿈. */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 검색바: 검색창 X 버튼 제거 */
+#taingSearch::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* 인기검색어 li 스타일 */
+.text-red {
+  a {
+    &:hover {
+      color: var(--color-gray-200, #c4c4c4);
+    }
+  }
+  span {
+    color: #ff153c;
+    display: inline-block;
+    width: 1.25rem;
+    @media (min-width: 768px) {
+      width: 2.1875rem;
+    }
+  }
+}
+
+/* hover: svg가 white로 채워지도록 */
+.hover-white {
+  &:hover {
+    path {
+      fill: white;
+    }
+  }
+}
+
+/* hover: svg의 stroke가 white로 채워지도록 */
+.hover-stroke-white {
+  &:hover {
+    path {
+      stroke: white;
+    }
+  }
+}

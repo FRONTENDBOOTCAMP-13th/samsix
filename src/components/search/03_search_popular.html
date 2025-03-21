@@ -13,23 +13,6 @@
     />
     <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
     <script type="module" src="/src/main.js"></script>
-    <script>
-      window.onload = function () {
-        // 현재 날짜와 시간 가져오기
-        let now = new Date();
-        let formattedTime = now.toLocaleString(); // 사용자의 로컬 시간 형식으로 변환
-
-        // HTML 요소에 삽입
-        document.getElementById('time-display').textContent = formattedTime;
-      };
-    </script>
-    <style>
-      ul {
-        span {
-          color: #ff153c;
-        }
-      }
-    </style>
   </head>
   <body class="bg-black text-white">
     <h1>인기검색어 컴포넌트</h1>
@@ -38,7 +21,7 @@
         class="hidden w-fit md:block justify-center items-center md:pr-[2.1875rem] lg:pr-[3.75rem]"
       >
         <div class="">
-          <h3 class="text-gray-200 font-semibold">최근 검색어</h3>
+          <h2 class="text-gray-200 font-semibold">최근 검색어</h2>
           <p class="w-[14.125rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] text-[.7502rem] text-gray-300">
             검색 내역이 없습니다.
           </p>
@@ -48,9 +31,9 @@
         class="flex flex-col w-fit md:block justify-center items-center md:pl-[2.1875rem] lg:pl-[3.75rem]"
       >
         <div class="">
-          <h3 class="text-gray-200 font-semibold">실시간 인기 검색어</h3>
+          <h2 class="text-gray-200 font-semibold">실시간 인기 검색어</h2>
           <ul
-            class="grid grid-rows-10 w-[14.125rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] text-[.7502rem] text-gray-300"
+            class="text-red grid grid-rows-10 w-[14.125rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] text-[.7502rem] text-gray-300"
           >
             <li>
               <a href="/"><span>1</span>&emsp;재벌집 막내아들</a>
@@ -82,10 +65,9 @@
             <li>
               <a href="/"><span>10</span>&emsp;술꾼도시여자들</a>
             </li>
-            <p class="mt-4" id="time-display"></p>
           </ul>
+          <p class="mt-4 text-[.7502rem] text-gray-500" id="time-display"></p>
         </div>
-        ㅋ
       </div>
     </div>
   </body>
