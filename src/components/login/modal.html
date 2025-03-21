@@ -10,6 +10,25 @@
     <script type="module" src="/src/main.js"></script>
   </head>
   <body class="bg-black text-white">
+    <!-- 로그아웃 버튼 -->
+    <button type="button" class="show-dialog hidden md:block">로그아웃</button>
+    <!-- 로그아웃 modal -->
+    <dialog class="panel-dialog rounded-sm shadow-2xl opacity-0 open:opacity-100 transition-opacity duration-200 p-0 border-none min-w-2xs w-1/4 bg-gray-700 fixed inset-0 m-auto" aria-labelledby="logout-confirmation">
+      <!-- contents의 여백 & 텍스트 정렬 -->
+      <div class="p-3 text-center">
+        <!-- 제목 -->
+        <p class="text-white-origin my-6 text-label-large" id="logout-confirmation">로그아웃 하시겠습니까?</p>
+
+        <!-- 버튼 그룹 -->
+        <div class="flex justify-center items-center mb-2 font-semibold">
+          <a href="/src/pages/main_page.html" class="text-gray-300 hover:bg-brand-red-2 hover:text-white-origin px-5 py-2 rounded-sm text-label-medium">확인</a>
+          <!-- 구분선 -->
+          <div class="h-4 border-r border-gray-500 mx-5"></div>
+          <button type="button" class="close-dialog text-gray-300 hover:bg-gray-600 hover:text-white-origin px-5 py-2 rounded-sm text-label-medium">취소</button>
+        </div>
+      </div>
+    </dialog>
+    <!-- 선진님 - main-page modal -->
     <div class="dialog-area">
       <button type="button" class="show-dialog">모달창 보기</button>
       <dialog class="panel-dialog mx-auto my-auto bg-transparent" aria-label="">
