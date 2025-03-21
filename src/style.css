@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './css/login.css'
 @plugin "tailwind-scrollbar-hide";
 /* scrollbar-hide */
 
