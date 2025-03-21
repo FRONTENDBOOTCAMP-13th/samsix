@@ -312,6 +312,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const togglePassword = document.getElementById('togglePassword');
+  const togglePasswordConfirm = document.getElementById('togglePasswordConfirm');
+});
+
+// search-bar 컴포넌트에서 placeholder 변경
+function updatePlaceholder() {
+  const input = document.getElementById('taingSearch');
+  if (window.innerWidth < 768) {
+    // Tailwind 기준 sm (md 미만)
+    input.placeholder = '검색';
+  } else {
+    input.placeholder = 'TV프로그램, 영화 제목 및 출연진으로 검색해보세요';
+  }
+}
+
   // 현재 시간 표시
   let now = new Date();
   let formattedTime = now.toLocaleString();
@@ -338,4 +353,3 @@ const closeDialog = () => panelDialog.close();
 // 이벤트 바인딩 부분
 showDialogButton.addEventListener('click', openDialog);
 closeDialogButton.addEventListener('click', closeDialog);
-
