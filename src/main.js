@@ -65,90 +65,180 @@ window.toggleLinkedCheckboxes = function (checkbox, linkedIds) {
   window.updateAllCheckbox();
 };
 
+// search-bar 컴포넌트에서 placeholder 변경
+function updatePlaceholder() {
+  const input = document.getElementById('taingSearch');
+  if (input) {
+    if (window.innerWidth < 768) {
+      // Tailwind 기준 sm (md 미만)
+      input.placeholder = '검색';
+    } else {
+      input.placeholder = 'TV프로그램, 영화 제목 및 출연진으로 검색해보세요';
+    }
+  }
+}
+
 // 문서의 모든 요소가 다 로드가 됐을 시, 실행
 document.addEventListener('DOMContentLoaded', () => {
-  let currentIndex = 0;
+  // 슬라이더 관련 코드
   const slides = document.querySelectorAll('.slide');
   const indicators = document.querySelectorAll('.indicator');
-  const totalSlides = slides.length;
   const slideContainer = document.querySelector('.slides');
-  let autoSlide = setInterval(nextSlide, 3000);
   const controlBtn = document.querySelector('.control-btn');
-  let isPlaying = true;
 
-  function updateSlide() {
-    slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    indicators.forEach((ind, i) => ind.classList.toggle('active', i === currentIndex));
-  }
+  if (slides.length > 0 && slideContainer) {
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let autoSlide = setInterval(nextSlide, 3000);
+    let isPlaying = true;
 
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateSlide();
-  }
+    function updateSlide() {
+      slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+      indicators.forEach((ind, i) => ind.classList.toggle('active', i === currentIndex));
+    }
 
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateSlide();
-  }
-
-  document.querySelector('.next').addEventListener('click', () => {
-    nextSlide();
-    resetTimer();
-  });
-  document.querySelector('.prev').addEventListener('click', () => {
-    prevSlide();
-    resetTimer();
-  });
-
-  indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-      currentIndex = index;
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
       updateSlide();
-      resetTimer();
-    });
-  });
-
-  controlBtn.addEventListener('click', () => {
-    if (isPlaying) {
-      clearInterval(autoSlide);
-      controlBtn.textContent = '▶';
-    } else {
-      autoSlide = setInterval(nextSlide, 3000);
-      controlBtn.textContent = '⏸';
     }
-    isPlaying = !isPlaying;
-  });
 
-  function resetTimer() {
-    if (isPlaying) {
-      clearInterval(autoSlide);
-      autoSlide = setInterval(nextSlide, 3000);
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateSlide();
+    }
+
+    function resetTimer() {
+      if (isPlaying) {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(nextSlide, 3000);
+      }
+    }
+
+    // 슬라이더 컨트롤 이벤트 리스너
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetTimer();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetTimer();
+      });
+    }
+
+    if (indicators) {
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          currentIndex = index;
+          updateSlide();
+          resetTimer();
+        });
+      });
+    }
+
+    if (controlBtn) {
+      controlBtn.addEventListener('click', () => {
+        if (isPlaying) {
+          clearInterval(autoSlide);
+          controlBtn.textContent = '▶';
+        } else {
+          autoSlide = setInterval(nextSlide, 3000);
+          controlBtn.textContent = '⏸';
+        }
+        isPlaying = !isPlaying;
+      });
     }
   }
 
-  // img 반응형 크기 조절
-  document.addEventListener('DOMContentLoaded', function () {
-    const img = document.getElementById('myIMG');
-    const bbox = img.getBoundingClientRect(); // 원본 크기 가져오기
-    console.log(bbox);
-    const originalWidth = bbox.width || 600; // 기본값 설정
+  // 이미지 반응형 크기 조절
+  const titleImages = document.querySelectorAll('.img-title');
 
-    document.documentElement.style.setProperty('--img-width', `${originalWidth}px`);
+  // 이미지의 원본 크기를 저장하는 함수
+  function storeOriginalSize(img) {
+    if (!img.dataset.originalWidth) {
+      img.dataset.originalWidth = img.naturalWidth;
+      console.log('원본 이미지 크기:', img.dataset.originalWidth);
+    }
+  }
+
+  // 뷰포트 크기에 따라 이미지 크기를 조절하는 함수
+  function adjustImageSize(img) {
+    const originalWidth = parseInt(img.dataset.originalWidth);
+    const viewportWidth = window.innerWidth;
+
+    let newWidth;
+
+    // 뷰포트 크기에 따라 이미지 크기 조절
+    if (viewportWidth >= 1024) {
+      // 원본 크기 (100%)
+      newWidth = originalWidth;
+    } else if (viewportWidth >= 768) {
+      // 원본의 2/3 크기
+      newWidth = Math.round((originalWidth * 2) / 3);
+    } else {
+      // 원본의 1/2 크기
+      newWidth = Math.round(originalWidth / 2);
+    }
+
+    // 이미지 크기 설정
+    img.style.width = newWidth + 'px';
+    console.log('뷰포트 너비:', viewportWidth, '이미지 너비 설정:', newWidth);
+  }
+
+  // 모든 이미지에 대해 원본 크기 저장 및 크기 설정
+  titleImages.forEach((img) => {
+    // 이미지가 이미 로드되었는지 확인
+    if (img.complete) {
+      storeOriginalSize(img);
+      adjustImageSize(img);
+    } else {
+      // 이미지가 로드될 때까지 기다림
+      img.onload = function () {
+        storeOriginalSize(img);
+        adjustImageSize(img);
+      };
+    }
   });
 
-  // DOM 선택 부분
-  const closeDialogButtons = document.querySelectorAll('.close-dialog'); // 여러 개의 close-dialog 버튼 선택
-  const dialog = document.querySelector('.main-dialog');
+  // 창 크기 변경 시 모든 이미지 크기 재조정
+  window.addEventListener('resize', function () {
+    titleImages.forEach((img) => adjustImageSize(img));
+  });
 
-  if (dialog) {
-    const closeDialog = () => dialog.close();
+  // 다이얼로그 관련 코드
+  const closeDialogButtons = document.querySelectorAll('.close-dialog');
+  const mainDialog = document.querySelector('.main-dialog');
 
-    dialog.showModal(); // 페이지 로드 시 모달을 띄운다.
+  if (mainDialog) {
+    const closeMainDialog = () => mainDialog.close();
+    mainDialog.showModal(); // 페이지 로드 시 모달을 띄운다.
 
     // 모든 close-dialog 버튼에 closeDialog 이벤트 바인딩
     closeDialogButtons.forEach((button) => {
-      button.addEventListener('click', closeDialog);
+      button.addEventListener('click', closeMainDialog);
     });
+  }
+
+  // 패널 다이얼로그 관련 코드
+  const showDialogButton = document.querySelector('.show-dialog');
+  const panelDialog = document.querySelector('.panel-dialog');
+
+  if (showDialogButton && panelDialog) {
+    const openPanelDialog = () => panelDialog.showModal();
+    const closePanelDialog = () => panelDialog.close();
+
+    showDialogButton.addEventListener('click', openPanelDialog);
+
+    const panelCloseButton = document.querySelector('.panel-dialog .close-dialog');
+    if (panelCloseButton) {
+      panelCloseButton.addEventListener('click', closePanelDialog);
+    }
   }
 
   // 비밀번호 검증 코드
@@ -192,37 +282,18 @@ document.addEventListener('DOMContentLoaded', () => {
       checkbox.addEventListener('change', window.updateAllCheckbox);
     }
   });
-});
-// search-bar 컴포넌트에서 placeholder 변경
-function updatePlaceholder() {
-  const input = document.getElementById('taingSearch');
-  if (window.innerWidth < 768) {
-    // Tailwind 기준 sm (md 미만)
-    input.placeholder = '검색';
-  } else {
-    input.placeholder = 'TV프로그램, 영화 제목 및 출연진으로 검색해보세요';
-  }
-}
 
-window.onload = function () {
-  // 현재 날짜와 시간 가져오기
+  // 현재 시간 표시
   let now = new Date();
-  let formattedTime = now.toLocaleString(); // 사용자의 로컬 시간 형식으로 변환
+  let formattedTime = now.toLocaleString();
+  const timeDisplay = document.getElementById('time-display');
+  if (timeDisplay) {
+    timeDisplay.textContent = formattedTime;
+  }
 
-  // HTML 요소에 삽입
-  document.getElementById('time-display').textContent = formattedTime;
-};
+  // 검색창 플레이스홀더 업데이트
+  updatePlaceholder();
+});
 
+// 창 크기 변경 시 플레이스홀더 업데이트
 window.addEventListener('resize', updatePlaceholder);
-window.addEventListener('DOMContentLoaded', updatePlaceholder);
-
-// DOM 선택 부분
-const showDialogButton = document.querySelector('.show-dialog');
-const closeDialogButton = document.querySelector('.close-dialog');
-const panelDialog = document.querySelector('.panel-dialog');
-// 함수 구현 부분
-const openDialog = () => panelDialog.showModal();
-const closeDialog = () => panelDialog.close();
-// 이벤트 바인딩 부분
-showDialogButton.addEventListener('click', openDialog);
-closeDialogButton.addEventListener('click', closeDialog);

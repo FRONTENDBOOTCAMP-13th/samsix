@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>랜딩 페이지 모달</title>
+    <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" crossorigin="anonymous" />
+    <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="bg-black text-white">
+    <div class="dialog-area">
+      <button type="button" class="show-dialog">모달창 보기</button>
+      <dialog class="main-dialog mx-auto my-auto bg-transparent" aria-label="">
+        <div class="text-white">안녕하세요!</div>
+        <div class="flex justify-between text-sm md:text-base lg:text-lg px-6 md:px-10 lg:px-30 py-3 text-white">
+          <button type="button" class="close-dialog">오늘 하루 보지 않기</button>
+          <span aria-hidden="true">|</span>
+          <button type="button" class="close-dialog">닫기</button>
+        </div>
+      </dialog>
+    </div>
+  </body>
+</html>

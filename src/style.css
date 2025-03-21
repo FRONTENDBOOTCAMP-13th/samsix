@@ -149,15 +149,6 @@
 
   .img-title {
     @apply h-auto absolute bottom-[30%] left-[5%];
-    width: var(--img-width);
-
-    @media (max-width: 768px) {
-      width: calc(var(--img-width) * 1 / 2);
-      background-color: red;
-    }
-    @media (max-width: 1024px) {
-      width: calc(var(--img-width) * 2 / 3);
-    }
   }
 
   .indicator-container {
