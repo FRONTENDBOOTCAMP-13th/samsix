@@ -1,6 +1,295 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@plugin "tailwind-scrollbar-hide";
+/* scrollbar-hide */
 
-@theme{
-  --font-sans: "Pretendard Variable", sans-serif;
+@theme {
+  --font-sans: 'Pretendard Variable', sans-serif;
 
+  /* Color styles */
+  --color-black-origin: #000000;
+  --color-white-origin: #ffffff;
+  --color-gray-100: #e1e1e1;
+  --color-gray-200: #c4c4c4;
+  --color-gray-300: #a6a6a6;
+  --color-gray-400: #898989;
+  --color-gray-500: #6b6b6b;
+  --color-gray-600: #565656;
+  --color-gray-700: #404040;
+  --color-gray-800: #2b2b2b;
+  --color-gray-900: #151515;
+  --color-brand-red-1: #ff153c;
+  --color-brand-red-2: #e93945;
+  --color-brand-dark-bg-1: #191919;
+  --color-brand-dark-bg-2: #212121;
+
+  /* Text-size styles */
+  --text-heading-medium: 1rem;
+  --text-heading-large: 1.33rem;
+  --text-heading-x-l: 1.78rem;
+  --text-heading-x-x-l: 2.37rem;
+  --text-heading-x-x-x-l: 3.16rem;
+  --text-label-small: 0.75rem;
+  --text-label-medium: 1rem;
+  --text-label-large: 1.33rem;
+  --text-label-x-l: 1.78rem;
+  --text-label-x-x-l: 2.37rem;
+  --text-paragraph-small: 0.75rem;
+  --text-paragraph-medium: 1rem;
+  --text-paragraph-large: 1.33rem;
+  --text-paragraph-x-l: 1.78rem;
+}
+
+/* 애니메이션 정의 */
+@keyframes slideleft {
+  /* 랜딩 페이지 왼쪽 방향으로 무한히 슬라이드 */
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slideright {
+  /* 랜딩 페이지 오른쪽 방향으로 무한히 슬라이드 */
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-animation {
+  /* 메인 페이지 배너 슬라이드 */
+  0%,
+  20% {
+    transform: translateX(0);
+  }
+  25%,
+  45% {
+    transform: translateX(-100%);
+  }
+  50%,
+  70% {
+    transform: translateX(-200%);
+  }
+  75%,
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 로그인 페이지 관련 fade-in 효과 적용 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes indicator-animation {
+  /* 메인 페이지 인디케이터 상태 */
+  0%,
+  24.9% {
+    background-color: #ffffff; /* 흰색 */
+    transform: scale(1);
+  }
+  25%,
+  100% {
+    background-color: #898989; /* 회색 */
+    transform: scale(1);
+  }
+}
+
+@layer components {
+  /* 랜딩 페이지 */
+  .gradient-picture {
+    /* 배너 이미지의 그라데이션 효과 */
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 1) 90%);
+    }
+  }
+
+  /* 메인 페이지 */
+  .card-flex {
+    @apply flex flex-col flex-nowrap gap-3 pl-5;
+    h2 {
+      @apply text-lg md:text-xl lg:text-2xl;
+    }
+  }
+
+  .pop-menu {
+    margin-top: 0.125rem;
+    display: none;
+    position: absolute;
+    width: 150px;
+    right: 0;
+    top: 100%;
+    background: #131313;
+    border: 1px solid #565656;
+    color: #ffffff;
+    font-size: x-small;
+    color: #cccccc;
+
+    img {
+      width: 25%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  [popover]:popover-open + .pop-menu {
+    display: block;
+  }
+
+  .slides {
+    @apply flex w-full h-full animate-[slide-animation_20s_infinite];
+
+    .slide {
+      @apply w-full h-full flex-shrink-0 flex;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, /* 50%까지 완전 투명 */ rgba(0, 0, 0, 1) 90% /* 90%부터 검정 */);
+      }
+    }
+  }
+
+  .main-card {
+    /*  w-[5.75rem] md:w-[8.125rem] lg:w-[15rem] */
+    @apply flex flex-col flex-nowrap gap-2 overflow-hidden;
+
+    .contents-name {
+      @apply text-gray-300 text-xs md:text-sm lg:text-base;
+    }
+    .contents-description {
+      @apply text-gray-300 text-[.625rem] md:text-xs lg:text-sm;
+    }
+    .Quick-VOD {
+      @apply bg-[#C73E4E] w-[fit-content] m-1.5 h-[fit-content] flex text-center items-center px-2 py-1 rounded-sm text-[10px] md:text-xs lg:text-sm absolute;
+    }
+    .contents-rank {
+      @apply text-white font-sans font-medium text-3xl md:text-5xl lg:text-7xl italic mr-[10%];
+    }
+    .new-sign {
+      @apply bg-[#E93945] w-1 h-1 md:w-[.3125rem] md:h-[.3125rem] lg:w-1.5 lg:h-1.5 -translate-y-1.5 md:-translate-y-2 lg:-translate-y-2.5 rounded-[50%];
+    }
+  }
+
+  .main-dialog::backdrop {
+    background: rgba(0, 0, 0, 75%);
+  }
+
+  .indicator {
+    /* 인디케이터 스타일 */
+    width: 10px;
+    height: 10px;
+    background: #898989;
+    border-radius: 50%;
+
+    &:nth-child(1) {
+      animation: indicator-animation 20s infinite;
+    }
+    &:nth-child(2) {
+      animation: indicator-animation 20s infinite 5s;
+    }
+    &:nth-child(3) {
+      animation: indicator-animation 20s infinite 10s;
+    }
+    &:nth-child(4) {
+      animation: indicator-animation 20s infinite 15s;
+    }
+  }
+  /* edit-toggle이 체크되었을 때 위 요소들에 영향을 줌 */
+  body:has(#edit-toggle:checked) .profile-lock {
+    display: none;
+  }
+  body:has(#edit-toggle:checked) .profile-edit {
+    display: flex;
+  }
+
+  /* modal창을 띄웠을 때, 뒷 배경을 어둡게 바꿈. */
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* edit-toggle이 체크되었을 때 위 요소들에 영향을 줌 */
+body:has(#edit-toggle:checked) .profile-lock {
+  display: none;
+}
+body:has(#edit-toggle:checked) .profile-edit {
+  display: flex;
+}
+
+/* modal창을 띄웠을 때, 뒷 배경을 어둡게 바꿈. */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 검색바: 검색창 X 버튼 제거 */
+#taingSearch::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* 인기검색어 li 스타일 */
+.text-red {
+  a {
+    &:hover {
+      color: var(--color-gray-200, #c4c4c4);
+    }
+  }
+  span {
+    color: #ff153c;
+    display: inline-block;
+    width: 1.25rem;
+    @media (min-width: 768px) {
+      width: 2.1875rem;
+    }
+  }
+}
+
+/* hover: svg가 white로 채워지도록 */
+.hover-white {
+  &:hover {
+    path {
+      fill: white;
+    }
+  }
+}
+
+/* hover: svg의 stroke가 white로 채워지도록 */
+.hover-stroke-white {
+  &:hover {
+    path {
+      stroke: white;
+    }
+  }
 }

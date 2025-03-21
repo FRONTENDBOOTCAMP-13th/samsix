@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login Page</title>
+    <link rel="icon" href="/vite.svg" />
+    <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" />
+    <link rel="stylesheet" href="/font/pretendardvariable.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="min-h-screen min-w-[22.5rem] flex flex-col bg-black-origin">
+    <!-- 헤더 (로고) -->
+    <header class="pt-5 md:pt-8 lg:pt-10 px-5 md:px-8 lg:px-10" role="banner">
+      <a href="/src/pages/main_page.html">
+        <img src="/src/assets/login/taing_logo.svg" alt="TAING 메인 이동" class="h-6 md:h-8 lg:h-10" />
+      </a>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="w-full flex flex-col items-center px-5 md:px-8 lg:px-10 mt-12 md:mt-16 lg:mt-20 animate-fadeIn" role="main">
+      <section class="w-full md:max-w-3xl" role="region" aria-labelledby="signup-title">
+        <!-- 타이틀 -->
+        <h1 id="signup-title" class="text-center text-heading-x-l md:text-heading-x-x-l lg:text-heading-x-x-x-l font-bold text-white-origin">타잉 회원가입</h1>
+        <p class="text-center text-label-small md:text-label-medium lg:text-label-large text-gray-400 font-semibold mb-6">아이디와 이메일로 간편하게 타잉을 시작하세요!</p>
+
+        <form class="group/btn" role="form" aria-labelledby="signup-title">
+          <!-- 아이디 입력 -->
+          <fieldset class="mb-4">
+            <label class="sr-only" for="input_id">아이디</label>
+            <input type="text" pattern="[a-zA-Z][a-zA-Z0-9]{5,11}" id="input_id" name="input_id" required aria-required="true" placeholder="아이디" aria-errormessage="error_id" class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded text-white py-3.5 px-4 text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" />
+            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 block peer-placeholder-shown:hidden peer-valid:hidden" id="error_id" aria-live="polite">
+              <span>아이디는 영문 또는 영문, 숫자 조합 6~12자리까지 입력 가능합니다.</span>
+            </p>
+          </fieldset>
+
+          <!-- 비밀번호 입력 -->
+          <fieldset class="relative mb-4">
+            <label class="sr-only" for="input_pw">비밀번호</label>
+            <input class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded py-3.5 px-4 pr-10 text-white text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" type="password" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,15}" id="input_pw" name="input_pw" required aria-required="true" placeholder="비밀번호" aria-errormessage="error_pw" />
+            <button
+              type="button"
+              id="togglePassword"
+              class="absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300"
+              aria-label="비밀번호 보기"
+              onclick=" this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; const img = this.querySelector('img'); if (this.previousElementSibling.type === 'text') { img.src = '/src/assets/login/visible_pwicon.svg'; this.setAttribute('aria-label', '비밀번호 숨기기'); } else { img.src = '/src/assets/login/unvisible_pwicon.svg'; this.setAttribute('aria-label', '비밀번호 보기'); } "
+            >
+              <img src="/src/assets/login/unvisible_pwicon.svg" alt="" class="size-5" />
+            </button>
+            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 block peer-placeholder-shown:hidden peer-valid:hidden" id="error_pw" aria-live="polite">
+              <span>비밀번호는 영문 소문자, 숫자, 특수문자 포함 최소 8~15자리까지 입력 가능합니다.</span>
+            </p>
+          </fieldset>
+
+          <!-- 비밀번호 확인 -->
+          <fieldset class="relative mb-4">
+            <label class="sr-only" for="input_pw_confirm">비밀번호 확인</label>
+            <input class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded py-3.5 px-4 pr-10 text-white text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" type="password" id="input_pw_confirm" name="input_pw_confirm" required aria-required="true" placeholder="비밀번호 확인" aria-errormessage="error_pw_confirm" />
+            <!-- 같은 블록에 동일한 이름이 있으면 충돌하기 때문에 -> scope 변경(중괄호로 새 블록 스코프 생성) -->
+            <button
+              type="button"
+              id="togglePasswordConfirm"
+              class="absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300"
+              aria-label="비밀번호 확인 보기"
+              onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; { const img = this.querySelector('img'); if (this.previousElementSibling.type === 'text') { img.src = '/src/assets/login/visible_pwicon.svg'; this.setAttribute('aria-label', '비밀번호 숨기기');} else { img.src = '/src/assets/login/unvisible_pwicon.svg'; this.setAttribute('aria-label', '비밀번호 보기'); } }"
+            >
+              <img src="/src/assets/login/unvisible_pwicon.svg" alt="" class="size-5" />
+            </button>
+            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 hidden" id="error_pw_confirm" aria-live="polite">
+              <span>비밀번호가 일치하지 않습니다.</span>
+            </p>
+          </fieldset>
+
+          <!-- 이메일 입력 -->
+          <fieldset>
+            <label class="sr-only" for="input_email">이메일</label>
+            <input type="email" id="input_email" name="input_email" required aria-required="true" placeholder="이메일" aria-errormessage="error_email" class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded text-white py-3.5 px-4 text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" />
+            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 block peer-placeholder-shown:hidden peer-valid:hidden" id="error_email" aria-live="polite">
+              <span>이메일 주소를 입력하세요.</span>
+            </p>
+          </fieldset>
+
+          <!-- 체크박스 그룹 -->
+          <ul>
+            <!-- 체크박스 - 전체 동의 -->
+            <li class="flex items-center mt-6 mb-3">
+              <label for="checkbox_all" class="flex items-center cursor-pointer text-gray-500 font-bold bg-transparent">
+                <input type="checkbox" id="checkbox_all" class="sr-only peer main-checkbox" onchange="toggleAllCheckboxes()" aria-controls="checkbox_1 checkbox_2 checkbox_3 checkbox_4 checkbox_5 checkbox_6 checkbox_7 checkbox_8" />
+                <span class="inline-block size-5 rounded-full border-gray-700 mr-2 flex-shrink-0 relative bg-gray-600 peer-checked:bg-brand-red-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white peer-focus-visible:outline-offset-2">
+                  <svg width="15" height="15" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <path d="M2 5L4 7L8 3" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                필수 및 선택 항목을 모두 포함하여 동의합니다.
+              </label>
+            </li>
+            <!-- 체크박스 1 -->
+            <li class="flex items-center group">
+              <label for="checkbox_1" class="flex items-center cursor-pointer text-gray-500 bg-transparent">
+                <input type="checkbox" id="checkbox_1" required aria-required="true" class="peer sr-only sub-checkbox focus-visible:outline-none" onchange="updateAllCheckbox()" />
+                <span class="inline-block size-5 flex-shrink-0 relative mr-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white-origin peer-focus-visible:outline-offset-2 rounded-sm">
+                  <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <path d="M2 5L4 7L8 3" stroke="gray" class="group-[&:has(input:checked)]:stroke-brand-red-2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                만 14세 이상입니다.
+              </label>
+            </li>
+
+            <!-- 체크박스 2 -->
+            <li class="flex items-center group">
+              <label for="checkbox_2" class="flex items-center cursor-pointer text-gray-500 bg-transparent">
+                <input type="checkbox" id="checkbox_2" required aria-required="true" class="peer sr-only sub-checkbox focus-visible:outline-none" onchange="updateAllCheckbox()" />
+                <span class="inline-block size-5 flex-shrink-0 relative mr-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white-origin peer-focus-visible:outline-offset-2 rounded-sm">
+                  <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <path d="M2 5L4 7L8 3" stroke="gray" class="group-[&:has(input:checked)]:stroke-brand-red-2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                [필수] 서비스 이용약관 동의
+              </label>
+            </li>
+
+            <!-- 체크박스 3 -->
+            <li class="flex items-center group">
+              <label for="checkbox_3" class="flex items-center cursor-pointer text-gray-500 bg-transparent">
+                <input type="checkbox" id="checkbox_3" required aria-required="true" class="peer sr-only sub-checkbox focus-visible:outline-none" onchange="updateAllCheckbox()" />
+                <span class="inline-block size-5 flex-shrink-0 relative mr-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white-origin peer-focus-visible:outline-offset-2 rounded-sm">
+                  <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <path d="M2 5L4 7L8 3" stroke="gray" class="group-[&:has(input:checked)]:stroke-brand-red-2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                [필수] 개인정보 수집 및 서비스 활용 동의
+              </label>
+            </li>
+
+            <!-- 체크박스 4 -->
+            <li class="flex items-center group">
+              <label for="checkbox_4" class="flex items-center cursor-pointer text-gray-500 bg-transparent">
+                <input type="checkbox" id="checkbox_4" required aria-required="true" class="peer sr-only sub-checkbox focus-visible:outline-none" onchange="updateAllCheckbox()" />
+                <span class="inline-block size-5 flex-shrink-0 relative mr-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white-origin peer-focus-visible:outline-offset-2 rounded-sm">
+                  <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <path d="M2 5L4 7L8 3" stroke="gray" class="group-[&:has(input:checked)]:stroke-brand-red-2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                [필수] 채널 홈페이지 개인정보 제 3자 제공동의
+              </label>
+            </li>
+
+            <!-- 체크박스 5 -->
+            <li class="flex items-center group">
+              <label for="checkbox_5" class="flex items-center cursor-pointer text-gray-500 bg-transparent">
+                <input type="checkbox" id="checkbox_5" class="peer sr-only sub-checkbox focus-visible:outline-none" onchange="updateAllCheckbox()" />
+                <span class="inline-block size-5 flex-shrink-0 relative mr-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white-origin peer-focus-visible:outline-offset-2 rounded-sm">
+                  <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <path d="M2 5L4 7L8 3" stroke="gray" class="group-[&:has(input:checked)]:stroke-brand-red-2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                [선택] 개인정보 제 3자 제공동의
+              </label>
+            </li>
+
+            <!-- 체크박스 6 -->
+            <li class="flex items-center group">
+              <label for="checkbox_6" class="flex items-center cursor-pointer text-gray-500 bg-transparent">
+                <input type="checkbox" id="checkbox_6" class="peer sr-only sub-checkbox focus-visible:outline-none" onchange="toggleLinkedCheckboxes(this, ['checkbox_7', 'checkbox_8'])" />
+                <span class="inline-block size-5 flex-shrink-0 relative mr-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white-origin peer-focus-visible:outline-offset-2 rounded-sm">
+                  <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <path d="M2 5L4 7L8 3" stroke="gray" class="group-[&:has(input:checked)]:stroke-brand-red-2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                [선택] 개인정보 수집 및 서비스 활용 동의
+              </label>
+            </li>
+
+            <!-- 체크박스 7 -->
+            <li class="pl-7 flex items-center group">
+              <label for="checkbox_7" class="flex items-center cursor-pointer text-gray-500 bg-transparent">
+                <input type="checkbox" id="checkbox_7" class="peer sr-only sub-checkbox focus-visible:outline-none" onchange="updateAllCheckbox()" />
+                <span class="inline-block size-5 flex-shrink-0 relative mr-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white-origin peer-focus-visible:outline-offset-2 rounded-sm">
+                  <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <path d="M2 5L4 7L8 3" stroke="gray" class="group-[&:has(input:checked)]:stroke-brand-red-2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                [선택] 마케팅 정보 SMS 수신동의
+              </label>
+            </li>
+
+            <!-- 체크박스 8 -->
+            <li class="pl-7 flex items-center group">
+              <label for="checkbox_8" class="flex items-center cursor-pointer text-gray-500 bg-transparent">
+                <input type="checkbox" id="checkbox_8" class="peer sr-only sub-checkbox focus-visible:outline-none" onchange="updateAllCheckbox()" />
+                <span class="inline-block size-5 flex-shrink-0 relative mr-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white-origin peer-focus-visible:outline-offset-2 rounded-sm">
+                  <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <path d="M2 5L4 7L8 3" stroke="gray" class="group-[&:has(input:checked)]:stroke-brand-red-2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                [선택] 마케팅 정보 이메일 수신동의
+              </label>
+            </li>
+          </ul>
+
+          <!-- 회원가입 버튼 -->
+          <button type="submit" class="w-full bg-gray-700 text-gray-400 rounded py-3.5 font-bold mt-6 mb-12 text-label-large group-valid/btn:bg-brand-red-1 group-valid/btn:text-white-origin group-valid/btn:hover:bg-brand-red-2 transition-colors duration-200">가입하기</button>
+          <span id="button-description" class="sr-only">아이디, 비밀번호, 비밀번호 확인, 이메일 입력 후 활성화됩니다.</span>
+        </form>
+      </section>
+    </main>
+
+    <!-- 푸터 섹션 -->
+    <footer class="w-full p-5 md:px-8 lg:px-10 border-t-gray-800 border-2 border-l-0 border-r-0 border-b-0">
+      <!-- 유틸리티 링크 -->
+      <nav class="text-left">
+        <ul class="flex max-md:flex-col gap-x-3 gap-y-2 mb-4 text-paragraph-small text-gray-500">
+          <li><a href="#" class="hover:text-gray-300">고객센터</a></li>
+          <li><a href="#" class="hover:text-gray-300">이용약관</a></li>
+          <li><a href="#" class="hover:text-gray-300">개인정보처리방침</a></li>
+          <li><a href="#" class="hover:text-gray-300">청소년 보호정책</a></li>
+          <li><a href="#" class="hover:text-gray-300">법적고지</a></li>
+          <li><a href="#" class="hover:text-gray-300">이벤트</a></li>
+          <li><a href="#" class="hover:text-gray-300">인재채용</a></li>
+        </ul>
+
+        <!-- 태블릿, 데스크탑에만 표시되는 추가 정보 -->
+        <address class="hidden md:block text-label-small text-gray-600 mb-4 leading-relaxed not-italic">
+          <p>대표이사 : YANG JIEUL | 사업자등록번호 : 188-88-01893 | 통신판매신고번호 : 2020-서울마포-3641호</p>
+          <p>사업장 : 서울특별시 마포구 상암산로 34, DMC디지털큐브 15층(상암동) | 호스팅사업자 : 씨제이올리브네트웍스(주)</p>
+          <p>고객센터 (평일 09시~17시/점심시간 13시~14시) | 대표메일 : taing@cj.net | 전화번호(ARS) : 1670-1525 (평일/주말 상담 운영)</p>
+          <p>ENM 시청자 상담실 (편성 문의 및 시청자 의견) : 080-080-0780 | Mnet 고객센터(방송편성문의) : 1855-1631</p>
+        </address>
+
+        <!-- 소셜 미디어 링크 -->
+        <ul class="flex gap-4 mb-4">
+          <li>
+            <a href="/" aria-label="유튜브" class="text-gray-600 hover:text-gray-400">
+              <img src="/src/assets/login/youtube.svg" alt="" class="size-5" />
+            </a>
+          </li>
+          <li>
+            <a href="/" aria-label="인스타그램" class="text-gray-600 hover:text-gray-400">
+              <img src="/src/assets/login/instagram.svg" alt="" class="size-5" />
+            </a>
+          </li>
+          <li>
+            <a href="/" aria-label="트위터" class="text-gray-600 hover:text-gray-400">
+              <img src="/src/assets/login/twitter.svg" alt="" class="size-5" />
+            </a>
+          </li>
+          <li>
+            <a href="/" aria-label="페이스북" class="text-gray-600 hover:text-gray-400">
+              <img src="/src/assets/login/facebook.svg" alt="" class="size-5" />
+            </a>
+          </li>
+        </ul>
+
+        <!-- 저작권 정보 -->
+        <small class="text-paragraph-small text-gray-600 block">© TAING Corp. ALL RIGHTS RESERVED.</small>
+      </nav>
+    </footer>
+  </body>
+</html>

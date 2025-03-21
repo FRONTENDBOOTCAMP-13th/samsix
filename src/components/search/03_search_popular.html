@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Content</title>
+    <link rel="icon" href="/vite.svg" />
+    <link
+      rel="preload"
+      as="font"
+      href="/font/woff2/PretendardVariable.woff2"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="bg-black text-white">
+    <h1>인기검색어 컴포넌트</h1>
+    <div class="grid md:grid-cols-2 w-fit md:divide-x md:divide-gray-800 mx-auto mt-10 md:mt-12">
+      <div
+        class="hidden w-fit md:block justify-center items-center md:pr-[2.1875rem] lg:pr-[3.75rem]"
+      >
+        <div class="">
+          <h2 class="text-gray-200 font-semibold">최근 검색어</h2>
+          <p class="w-[14.125rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] text-[.7502rem] text-gray-300">
+            검색 내역이 없습니다.
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col w-fit md:block justify-center items-center md:pl-[2.1875rem] lg:pl-[3.75rem]"
+      >
+        <div class="">
+          <h2 class="text-gray-200 font-semibold">실시간 인기 검색어</h2>
+          <ul
+            class="text-red grid grid-rows-10 w-[14.125rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] text-[.7502rem] text-gray-300"
+          >
+            <li>
+              <a href="/"><span>1</span>&emsp;재벌집 막내아들</a>
+            </li>
+            <li>
+              <a href="/"><span>2</span>&emsp;미스터트롯2: 새로운 전설의 시작</a>
+            </li>
+            <li>
+              <a href="/"><span>3</span>&emsp;유 퀴즈 온 더 블럭</a>
+            </li>
+            <li>
+              <a href="/"><span>4</span>&emsp;대행사</a>
+            </li>
+            <li>
+              <a href="/"><span>5</span>&emsp;SHOW ME THE MONEY 11</a>
+            </li>
+            <li>
+              <a href="/"><span>6</span>&emsp;미씽: 그들이 있었다2</a>
+            </li>
+            <li>
+              <a href="/"><span>7</span>&emsp;술꾼도시여자들2</a>
+            </li>
+            <li>
+              <a href="/"><span>8</span>&emsp;캐나다 체크인</a>
+            </li>
+            <li>
+              <a href="/"><span>9</span>&emsp;미씽: 그들이 있었다 - 그들을 다만나다</a>
+            </li>
+            <li>
+              <a href="/"><span>10</span>&emsp;술꾼도시여자들</a>
+            </li>
+          </ul>
+          <p class="mt-4 text-[.7502rem] text-gray-500" id="time-display"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인 카드 컴포넌트</title>
+    <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" crossorigin="anonymous" />
+    <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="bg-black text-white">
+    <!-- 제목과 카드 묶음 -->
+    <div class="flex flex-col flex-nowrap gap-3 pl-5 my-5">
+      <h2 class="text-lg md:text-xl lg:text-2xl">타잉에서 꼭 봐야하는 콘텐츠</h2>
+      <div class="grid grid-cols-[repeat(8,_1fr)] overflow-hidden gap-4">
+        <ul class="contents">
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/treasure_hunt_lg.png" alt="보물찾기" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">보물찾기</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/love_catcher_lg.png" alt="러브캐처" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">러브캐처 인 발리</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/drunk_urban_women_lg.png" alt="술꾼도시여자들2" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">술꾼도시여자들2</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/tulsa_king_lg.png" alt="털사 킹" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">털사 킹</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/nothing_to_do_lg.png" alt="아무것도 하고 싶지 않아" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">아무것도 하고 싶지 않아</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/black_dog_lg.png" alt="블랙독" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">블랙독</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/blues_lg.png" alt="우리들의 블루스" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">우리들의 블루스</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card">
+                <img src="../assets/poster/contents/kilimanjaro_lg.png" alt="인생에 한 번쯤, 킬리만자로" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">인생에 한 번쯤, 킬리만자로</span>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Quick VOD -->
+    <div class="flex flex-col flex-nowrap gap-3 pl-5 my-5">
+      <h2 class="text-lg md:text-xl lg:text-2xl">Quick VOD</h2>
+      <div class="grid grid-cols-[repeat(8,_1fr)] overflow-hidden gap-4">
+        <ul class="contents">
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative md:w-[14rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/Quick_VOD/jtbc_news_lg.png" alt="JTBC 뉴스룸" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">JTBC 뉴스룸</span>
+                  <span class="contents-episode">0화</span>
+                </figcaption>
+                <div class="bg-[#C73E4E] w-[fit-content] m-1.5 h-8 flex text-center items-center px-2.5 rounded-sm text-sm absolute">
+                  <span>Quick VOD</span>
+                </div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative md:w-[14rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/Quick_VOD/i_decided_to_live_lg.png" alt="휴먼다큐 '나는 살기로 했다'" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">휴먼다큐 &lt;나는 살기로 했다&gt;</span>
+                  <span class="contents-episode">10화</span>
+                </figcaption>
+                <div class="bg-[#C73E4E] w-[fit-content] m-1.5 h-8 flex text-center items-center px-2.5 rounded-sm text-sm absolute">
+                  <span>Quick VOD</span>
+                </div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative md:w-[14rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/Quick_VOD/health_lg.png" alt="건강면세점" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">건강면세점</span>
+                  <span class="contents-episode">130화</span>
+                </figcaption>
+                <div class="bg-[#C73E4E] w-[fit-content] m-1.5 h-8 flex text-center items-center px-2.5 rounded-sm text-sm absolute">
+                  <span>Quick VOD</span>
+                </div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative md:w-[14rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/Quick_VOD/different_class_lg.png" alt="차이나는 클라스" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">차이나는 클라스</span>
+                  <span class="contents-episode">254화</span>
+                </figcaption>
+                <div class="bg-[#C73E4E] w-[fit-content] m-1.5 h-8 flex text-center items-center px-2.5 rounded-sm text-sm absolute">
+                  <span>Quick VOD</span>
+                </div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative md:w-[14rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/Quick_VOD/almaeng_lg.png" alt="알맹이" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">알맹이</span>
+                  <span class="contents-episode">208화</span>
+                </figcaption>
+                <div class="bg-[#C73E4E] w-[fit-content] m-1.5 h-8 flex text-center items-center px-2.5 rounded-sm text-sm absolute">
+                  <span>Quick VOD</span>
+                </div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative md:w-[14rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/Quick_VOD/mom_spring_lg.png" alt="엄마의 봄날" />
+                <figcaption class="flex flex-col">
+                  <span class="contents-name">엄마의 봄날</span>
+                  <span class="contents-episode">380화</span>
+                </figcaption>
+                <div class="bg-[#C73E4E] w-[fit-content] m-1.5 h-8 flex text-center items-center px-2.5 rounded-sm text-sm absolute">
+                  <span>Quick VOD</span>
+                </div>
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="bg-[#C73E4E] w-[fit-content] h-8 flex text-center items-center px-2.5 rounded-sm text-sm">
+      <span>Quick VOD</span>
+    </div>
+
+    <!-- 실시간 인기 프로그램 -->
+    <div class="flex flex-col flex-nowrap gap-3 pl-5 my-5">
+      <h2 class="text-lg md:text-xl lg:text-2xl">실시간 인기 프로그램</h2>
+      <div class="grid grid-cols-[repeat(8,_1fr)] overflow-hidden gap-4">
+        <ul class="contents">
+          <li>
+            <a href="#">
+              <figure class="main-card w-[5.75rem] relative md:w-[8.125rem] lg:w-[240px] mb-8 mt-3">
+                <img src="../assets/poster/popular_programs/chaebol_son_lg.png" alt="재벌집 막내아들" />
+                <figcaption class="flex absolute -bottom-5 md:-bottom-6 lg:-bottom-8">
+                  <div class="contents-name inline-flex items-baseline">
+                    <span class="contents-rank">1</span>
+                    <div class="truncate w-[4rem] md:w-[6rem] lg:w-[10rem]">재벌집 막내아들</div>
+                  </div>
+                </figcaption>
+                <div class="absolute bg-[#E93945] w-2 h-2 md:w-3 md:h-3 lg:w-5 lg:h-5 -top-0.5 -right-0.5 md:-top-1 md:-right-1 lg:-top-2 lg:-right-2 rounded-[50%]" aria-label="new"></div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[5.75rem] relative md:w-[8.125rem] lg:w-[240px] mb-8 mt-3">
+                <img src="../assets/poster/popular_programs/drunk_urban_women_lg.png" alt="술꾼도시여자들2" />
+                <figcaption class="flex absolute -bottom-5 md:-bottom-6 lg:-bottom-8">
+                  <div class="contents-name inline-flex items-baseline">
+                    <span class="contents-rank">2</span>
+                    <div class="truncate w-[4rem] md:w-[6rem] lg:w-[10rem]">술꾼도시여자들2</div>
+                  </div>
+                </figcaption>
+                <div class="hidden absolute bg-[#E93945] w-2 h-2 md:w-3 md:h-3 lg:w-5 lg:h-5 -top-0.5 -right-0.5 md:-top-1 md:-right-1 lg:-top-2 lg:-right-2 rounded-[50%]" aria-label="new"></div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[5.75rem] relative md:w-[8.125rem] lg:w-[240px] mb-8 mt-3">
+                <img src="../assets/poster/popular_programs/twilight_lg.png" alt="환혼" />
+                <figcaption class="flex absolute -bottom-5 md:-bottom-6 lg:-bottom-8">
+                  <div class="contents-name inline-flex items-baseline">
+                    <span class="contents-rank">3</span>
+                    <div class="truncate w-[4rem] md:w-[6rem] lg:w-[10rem]">환혼</div>
+                  </div>
+                </figcaption>
+                <div class="absolute bg-[#E93945] w-2 h-2 md:w-3 md:h-3 lg:w-5 lg:h-5 -top-0.5 -right-0.5 md:-top-1 md:-right-1 lg:-top-2 lg:-right-2 rounded-[50%]" aria-label="new"></div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[5.75rem] relative md:w-[8.125rem] lg:w-[240px] mb-8 mt-3">
+                <img src="../assets/poster/popular_programs/Canada_checkin_lg.png" alt="캐나다 체크인" />
+                <figcaption class="flex absolute -bottom-5 md:-bottom-6 lg:-bottom-8">
+                  <div class="contents-name inline-flex items-baseline">
+                    <span class="contents-rank">4</span>
+                    <div class="truncate w-[4rem] md:w-[6rem] lg:w-[10rem]">캐나다 체크인</div>
+                  </div>
+                </figcaption>
+                <div class="absolute bg-[#E93945] w-2 h-2 md:w-3 md:h-3 lg:w-5 lg:h-5 -top-0.5 -right-0.5 md:-top-1 md:-right-1 lg:-top-2 lg:-right-2 rounded-[50%]" aria-label="new"></div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[5.75rem] relative md:w-[8.125rem] lg:w-[240px] mb-8 mt-3">
+                <img src="../assets/poster/popular_programs/Saturday_lg.png" alt="놀라운 토요일" />
+                <figcaption class="flex absolute -bottom-5 md:-bottom-6 lg:-bottom-8">
+                  <div class="contents-name inline-flex items-baseline">
+                    <span class="contents-rank">5</span>
+                    <div class="truncate w-[4rem] md:w-[6rem] lg:w-[10rem]">놀라운 토요일</div>
+                  </div>
+                </figcaption>
+                <div class="absolute bg-[#E93945] w-2 h-2 md:w-3 md:h-3 lg:w-5 lg:h-5 -top-0.5 -right-0.5 md:-top-1 md:-right-1 lg:-top-2 lg:-right-2 rounded-[50%]" aria-label="new"></div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[5.75rem] relative md:w-[8.125rem] lg:w-[240px] mb-8 mt-3">
+                <img src="../assets/poster/popular_programs/Show_me_the_money_lg.png" alt="SHOW ME THE MONEY" />
+                <figcaption class="flex absolute -bottom-5 md:-bottom-6 lg:-bottom-8">
+                  <div class="contents-name inline-flex items-baseline">
+                    <span class="contents-rank">6</span>
+                    <div class="truncate w-[4rem] md:w-[6rem] lg:w-[10rem]">SHOW ME THE MONEY</div>
+                  </div>
+                </figcaption>
+                <div class="absolute bg-[#E93945] w-2 h-2 md:w-3 md:h-3 lg:w-5 lg:h-5 -top-0.5 -right-0.5 md:-top-1 md:-right-1 lg:-top-2 lg:-right-2 rounded-[50%]" aria-label="new"></div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[5.75rem] relative md:w-[8.125rem] lg:w-[240px] mb-8 mt-3">
+                <img src="../assets/poster/popular_programs/love_catcher_lg.png" alt="러브캐처 인 발리" />
+                <figcaption class="flex absolute -bottom-5 md:-bottom-6 lg:-bottom-8">
+                  <div class="contents-name inline-flex items-baseline">
+                    <span class="contents-rank">7</span>
+                    <div class="truncate w-[4rem] md:w-[6rem] lg:w-[10rem]">러브캐처 인 발리</div>
+                  </div>
+                </figcaption>
+                <div class="hidden absolute bg-[#E93945] w-2 h-2 md:w-3 md:h-3 lg:w-5 lg:h-5 -top-0.5 -right-0.5 md:-top-1 md:-right-1 lg:-top-2 lg:-right-2 rounded-[50%]" aria-label="new"></div>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[5.75rem] relative md:w-[8.125rem] lg:w-[240px] mb-8 mt-3">
+                <img src="../assets/poster/popular_programs/useful_job_lg.png" alt="알뜰신잡" />
+                <figcaption class="flex absolute -bottom-5 md:-bottom-6 lg:-bottom-8">
+                  <div class="contents-name inline-flex items-baseline">
+                    <span class="contents-rank">8</span>
+                    <div class="truncate w-[4rem] md:w-[6rem] lg:w-[10rem]">알뜰신잡</div>
+                  </div>
+                </figcaption>
+                <div class="absolute bg-[#E93945] w-2 h-2 md:w-3 md:h-3 lg:w-5 lg:h-5 -top-0.5 -right-0.5 md:-top-1 md:-right-1 lg:-top-2 lg:-right-2 rounded-[50%]" aria-label="new"></div>
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 인기 LIVE 채널 -->
+    <div class="flex flex-col flex-nowrap gap-3 pl-5 my-5">
+      <h2 class="text-lg md:text-xl lg:text-2xl">인기 LIVE 채널</h2>
+      <div class="grid grid-cols-[repeat(8,_1fr)] overflow-hidden gap-4">
+        <ul class="contents">
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative md:w-[14.0625rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/LIVE/JTBC_lg.png" alt="JTBC 뉴스룸" />
+                <figcaption class="flex flex-col">
+                  <div class="contents-name inline-flex items-start -mt-2">
+                    <span class="contents-rank">1</span>
+                    <div class="flex flex-col mt-[2%]">
+                      <span class="contents-name">JTBC</span>
+                      <span class="text-gray-400 text-[.625rem] md:text-xs lg:text-sm">JTBC 뉴스룸</span>
+                      <span class="text-gray-500 text-[.625rem] md:text-xs lg:text-sm">27.9%</span>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative md:w-[14.0625rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/LIVE/tvN_lg.png" alt="줄 서는 식당 43회" />
+                <figcaption class="flex flex-col">
+                  <div class="contents-name inline-flex items-start -mt-2">
+                    <span class="contents-rank">2</span>
+                    <div class="flex flex-col mt-[2%]">
+                      <span class="contents-name">tvN</span>
+                      <span class="text-gray-400 text-[.625rem] md:text-xs lg:text-sm">줄 서는 식당 43회</span>
+                      <span class="text-gray-500 text-[.625rem] md:text-xs lg:text-sm">26.3%</span>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative md:w-[14.0625rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/LIVE/YTN_lg.png" alt="뉴스가 있는 저녁" />
+                <figcaption class="flex flex-col">
+                  <div class="contents-name inline-flex items-start -mt-2">
+                    <span class="contents-rank">3</span>
+                    <div class="flex flex-col mt-[2%]">
+                      <span class="contents-name">YTN</span>
+                      <span class="text-gray-400 text-[.625rem] md:text-xs lg:text-sm">뉴스가 있는 저녁</span>
+                      <span class="text-gray-500 text-[.625rem] md:text-xs lg:text-sm">9%</span>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative md:w-[14.0625rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/LIVE/JTBC2_lg.png" alt="재벌집 막내아들 5화" />
+                <figcaption class="flex flex-col">
+                  <div class="contents-name inline-flex items-start -mt-2">
+                    <span class="contents-rank">4</span>
+                    <div class="flex flex-col mt-[2%]">
+                      <span class="contents-name">JTBC2</span>
+                      <span class="text-gray-400 text-[.625rem] md:text-xs lg:text-sm">재벌집 막내아들 5화</span>
+                      <span class="text-gray-500 text-[.625rem] md:text-xs lg:text-sm">6.2%</span>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative md:w-[14.0625rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/LIVE/YonhapNewsTV_lg.png" alt="뉴스프라임" />
+                <figcaption class="flex flex-col">
+                  <div class="contents-name inline-flex items-start -mt-2">
+                    <span class="contents-rank">5</span>
+                    <div class="flex flex-col mt-[2%]">
+                      <span class="contents-name">연합뉴스 TV</span>
+                      <span class="text-gray-400 text-[.625rem] md:text-xs lg:text-sm">뉴스프라임</span>
+                      <span class="text-gray-500 text-[.625rem] md:text-xs lg:text-sm">4.6%</span>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] relative md:w-[14.0625rem] lg:w-[21.5625rem]">
+                <img src="../assets/poster/LIVE/Toonibus_lg.png" alt="명탐정 코난 6기 6화" />
+                <figcaption class="flex flex-col">
+                  <div class="contents-name inline-flex items-start -mt-2">
+                    <span class="contents-rank">6</span>
+                    <div class="flex flex-col mt-[2%]">
+                      <span class="contents-name">Toonibus</span>
+                      <span class="text-gray-400 text-[.625rem] md:text-xs lg:text-sm">명탐정 코난 6기 6화</span>
+                      <span class="text-gray-500 text-[.625rem] md:text-xs lg:text-sm">2.9%</span>
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 오직 타잉에만 있어요 -->
+    <div class="flex flex-col flex-nowrap gap-3 pl-5 my-5">
+      <h2 class="text-lg md:text-xl lg:text-2xl">오직 타잉에만 있어요</h2>
+      <div class="grid grid-cols-[repeat(8,_1fr)] overflow-hidden gap-4">
+        <ul class="contents">
+          <li>
+            <a href="#">
+              <figure class="main-card w-[8.6875rem] md:w-[10.5rem] lg:w-[17.625rem]">
+                <img src="../assets/poster/only/전체관람가_lg.png" alt="전체관람가: 숏버스터" />
+                <figcaption class="sr-only">전체관람가: 숏버스터</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[8.6875rem] md:w-[10.5rem] lg:w-[17.625rem]">
+                <img src="../assets/poster/only/러브캐처 인 발리_lg.png" alt="러비캐처 인 발리" />
+                <figcaption class="sr-only">러비캐처 인 발리</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[8.6875rem] md:w-[10.5rem] lg:w-[17.625rem]">
+                <img src="../assets/poster/only/환승연애2_lg.png" alt="환승연애2" />
+                <figcaption class="sr-only">환승연애2</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[8.6875rem] md:w-[10.5rem] lg:w-[17.625rem]">
+                <img src="../assets/poster/only/몸값_lg.png" alt="몸값" />
+                <figcaption class="sr-only">몸값</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[8.6875rem] md:w-[10.5rem] lg:w-[17.625rem]">
+                <img src="../assets/poster/only/술꾼도시여자들_lg.png" alt="술꾼도시여자들" />
+                <figcaption class="sr-only">술꾼도시여자들</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[8.6875rem] md:w-[10.5rem] lg:w-[17.625rem]">
+                <img src="../assets/poster/only/괴이_lg.png" alt="괴이" />
+                <figcaption class="sr-only">괴이</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[8.6875rem] md:w-[10.5rem] lg:w-[17.625rem]">
+                <img src="../assets/poster/only/푸드 크로니클_lg.png" alt="푸드 크로니클" />
+                <figcaption class="sr-only">푸드 크로니클</figcaption>
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 이벤트 -->
+    <div class="flex flex-col flex-nowrap gap-3 pl-5 my-5">
+      <h2 class="text-lg md:text-xl lg:text-2xl">이벤트</h2>
+      <div class="grid grid-cols-[repeat(8,_1fr)] overflow-hidden gap-4">
+        <ul class="contents">
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] md:w-[13.375rem] lg:w-[21.625rem]">
+                <img src="../assets/poster/events/sinbi_apart_lg.png" alt="극장판 신비아파트 예매권 증정 이벤트" />
+                <figcaption class="sr-only">극장판 신비아파트 예매권 증정 이벤트</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] md:w-[13.375rem] lg:w-[21.625rem]">
+                <img src="../assets/poster/events/chaebol_son_lg.png" alt="재벌집 막내아들 시청하고 1일 재벌 체험하기" />
+                <figcaption class="sr-only">재벌집 막내아들 시청하고 1일 재벌 체험하기</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] md:w-[13.375rem] lg:w-[21.625rem]">
+                <img src="../assets/poster/events/transfer_relationship_lg.png" alt="환승연애2의 진한 여운을 잇는 과몰입 도파민 충전 이벤트" />
+                <figcaption class="sr-only">환승연애2의 진한 여운을 잇는 과몰입 도파민 충전 이벤트</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] md:w-[13.375rem] lg:w-[21.625rem]">
+                <img src="../assets/poster/events/shurup_lg.png" alt="슈룹 시청하고 공식 우산 굿즈 받기" />
+                <figcaption class="sr-only">슈룹 시청하고 공식 우산 굿즈 받기</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] md:w-[13.375rem] lg:w-[21.625rem]">
+                <img src="../assets/poster/events/desert_maker_lg.png" alt="디저트 메이커를 찾습니다!" />
+                <figcaption class="sr-only">디저트 메이커를 찾습니다!</figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <figure class="main-card w-[9.0625rem] md:w-[13.375rem] lg:w-[21.625rem]">
+                <img src="../assets/poster/events/let_me_in_lg.png" alt="소설 원작 렛미인 감상하고 원작 도서 세트 받기" />
+                <figcaption class="sr-only">소설 원작 렛미인 감상하고 원작 도서 세트 받기</figcaption>
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="./main_card_components.html">fldzm</a>
+  </body>
+</html>
