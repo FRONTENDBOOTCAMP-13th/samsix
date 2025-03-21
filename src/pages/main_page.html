@@ -205,78 +205,51 @@
     <main class="flex flex-col gap-3 md:gap-5 lg:gap-12">
       <!-- 배너 스와이퍼 컴포넌트 -->
       <section>
-        <div class="overflow-hidden relative">
-          <div class="slides w-full">
-            <div class="slide">
-              <img class="w-full" src="../assets/banner/banner_img_lg.webp" alt="재벌집 막내아들" />
+        <div class="relative w-full overflow-hidden">
+          <!-- 슬라이드 배너 이미지 -->
+          <div class="slides">
+            <div class="min-w-full relative slide">
+              <img class="w-full" src="../assets/banner/Black_Salt_Dragon.webp" alt="그놈은 흑염룡 배너" />
+              <img id="myIMG" class="img-title" src="../assets/title/Black_Salt_Dragon.webp" alt="그놈은 흑염룡" />
+              <p class="absolute bottom-[15%] left-[5%] text-2xl text-black">새로 온 본부장에게서 최악의 첫사랑, ‘흑염룡’의 기운이 느껴진다?</p>
             </div>
-            <div class="slide">
-              <img class="w-full" src="../assets/banner/banner_img_lg.webp" alt="재벌집 막내아들" />
+            <div class="min-w-full relative slide">
+              <img class="w-full" src="../assets/banner/Couple_Palace2.webp" alt="커플 팰리스2 배너" />
+              <img id="myIMG" class="img-title" src="../assets/title/Couple_Palace2.webp" alt="그놈은 흑염룡" />
+              <p class="absolute bottom-[15%] left-[5%] text-2xl text-black">
+                극사실적 매칭 시스템을 통해 평생을 함께하고 싶은 동반자를 찾는다! <br />
+                '완벽한 결혼'을 위한 대규모 커플 매칭 서바이벌!
+              </p>
             </div>
-            <div class="slide">
-              <img class="w-full" src="../assets/banner/banner_img_lg.webp" alt="재벌집 막내아들" />
+            <div class="min-w-full relative slide">
+              <img class="w-full" src="../assets/banner/divorce_insurance.webp" alt="이혼보험 직급 쟁탈전 배너" />
+              <img id="myIMG" class="img-title" src="../assets/title/divorce_insurance.webp" alt="그놈은 흑염룡" />
+              <p class="absolute bottom-[15%] left-[5%] text-2xl">
+                드라마 홍보를 위한 긴급 예능 전담 부서로 전격 발령! <br />
+                '이혼보험' 출연진들의 고강도 홍보 업무를 건 양보 없는 직급쟁탈전이 시작된다!
+              </p>
             </div>
-            <div class="slide">
-              <img class="w-full" src="../assets/banner/banner_img_lg.webp" alt="재벌집 막내아들" />
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-2 absolute left-[5%] bottom-[10%]">
-            <p class="text-sm font-semibold md:text-base lg:text-xl">인생 2회차를 사는 판타지 드라마</p>
-
-            <div class="flex h-3 gap-[.1875rem] items-center">
-              <!-- 동적으로 SVG가 변경되는 버튼 -->
-              <button id="pauseButton" class="pause-button cursor-pointer w-3 h-3 fill-white mr-3">
-                <!-- 초기에 재생 아이콘을 표시 -->
-                <svg width="12" height="12" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="2" y="1" width="5" height="16" fill="white" />
-                  <rect x="11" y="1" width="5" height="16" fill="white" />
-                </svg>
-              </button>
-              <!-- 하단 인디케이터 -->
-              <div class="flex gap-1.5">
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-              </div>
+            <div class="min-w-full relative slide">
+              <img class="w-full" src="../assets/banner/Harry_Potter.webp" alt="해리 포터와 마법사의 돌 배너" />
+              <img id="myIMG" class="img-title" src="../assets/title/Harry_Potter.webp" alt="그놈은 흑염룡" />
+              <p class="absolute bottom-[15%] left-[5%] text-2xl">마법, 우정, 그리고 용기! 해리 포터가 당신을 마법 학교로 초대합니다!</p>
             </div>
           </div>
 
+          <!-- 이전, 이후 슬라이드 선택 버튼 -->
+          <button type="button" class="prev">&#10094;</button>
+          <button type="button" class="next">&#10095;</button>
+
+          <div></div>
           <!-- 자세히보기 버튼 -->
-          <a href="#" class="absolute right-[5%] bottom-[10%] px-8 h-10 inline-flex justify-center items-center text-xs border border-[#a6a6a6] rounded-md text-white"> 자세히보기 </a>
-
-          <!-- 배너 이미지를 넘기는 기능의 방향 버튼 -->
-          <div class="flex w-full justify-between absolute top-[calc(50%_-_1.5rem)]">
-            <button type="button">
-              <svg width="48" height="48" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_152_6070)">
-                  <g opacity="0.7">
-                    <path d="M8.826 3.34766L5.17383 6.99983" stroke="#898989" stroke-width="0.7" stroke-linecap="square" />
-                    <path d="M5.17383 7L8.826 10.6522" stroke="#898989" stroke-width="0.7" stroke-linecap="square" />
-                  </g>
-                </g>
-                <defs>
-                  <clipPath id="clip0_152_6070">
-                    <rect width="14" height="14" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-            <button type="button">
-              <svg width="48" height="48" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_152_6069)">
-                  <path d="M5.17383 3.34766L8.826 6.99983" stroke="#898989" stroke-width="0.7" stroke-linecap="square" />
-                  <path d="M8.826 7L5.17383 10.6522" stroke="#898989" stroke-width="0.7" stroke-linecap="square" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_152_6069">
-                    <rect width="14" height="14" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
+          <a href="#" class="absolute right-[5%] bottom-[5%] px-8 h-10 inline-flex justify-center items-center text-xs bg-white rounded-md text-black"> 자세히보기 </a>
+        </div>
+        <div class="indicator-container">
+          <button class="control-btn">⏸</button>
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
         </div>
       </section>
 
