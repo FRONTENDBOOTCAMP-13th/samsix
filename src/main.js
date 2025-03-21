@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // DOM 선택 부분
   const closeDialogButtons = document.querySelectorAll('.close-dialog'); // 여러 개의 close-dialog 버튼 선택
-  const dialog = document.querySelector('.panel-dialog');
+  const dialog = document.querySelector('.main-dialog');
 
   if (dialog) {
     const closeDialog = () => dialog.close();
@@ -169,3 +169,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+// search-bar 컴포넌트에서 placeholder 변경
+function updatePlaceholder() {
+  const input = document.getElementById('taingSearch');
+  if (window.innerWidth < 768) {
+    // Tailwind 기준 sm (md 미만)
+    input.placeholder = '검색';
+  } else {
+    input.placeholder = 'TV프로그램, 영화 제목 및 출연진으로 검색해보세요';
+  }
+}
+
+window.onload = function () {
+  // 현재 날짜와 시간 가져오기
+  let now = new Date();
+  let formattedTime = now.toLocaleString(); // 사용자의 로컬 시간 형식으로 변환
+
+  // HTML 요소에 삽입
+  document.getElementById('time-display').textContent = formattedTime;
+};
+
+window.addEventListener('resize', updatePlaceholder);
+window.addEventListener('DOMContentLoaded', updatePlaceholder);
+
+// DOM 선택 부분
+const showDialogButton = document.querySelector('.show-dialog');
+const closeDialogButton = document.querySelector('.close-dialog');
+const panelDialog = document.querySelector('.panel-dialog');
+// 함수 구현 부분
+const openDialog = () => panelDialog.showModal();
+const closeDialog = () => panelDialog.close();
+// 이벤트 바인딩 부분
+showDialogButton.addEventListener('click', openDialog);
+closeDialogButton.addEventListener('click', closeDialog);
+

@@ -13,28 +13,6 @@
     />
     <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
     <script type="module" src="/src/main.js"></script>
-    <style>
-      /* 검색창 X 버튼 제거 */
-      input[type='search']::-webkit-search-cancel-button {
-        display: none;
-      }
-    </style>
-    <script>
-      // 뷰포트에 따라 place-holder 다른게 나타나도록
-      // style로 입히면 검색바가 두개 존재하기 때문
-      function updatePlaceholder() {
-        const input = document.getElementById('taingSearch');
-        if (window.innerWidth < 768) {
-          // Tailwind 기준 sm (md 미만)
-          input.placeholder = '검색';
-        } else {
-          input.placeholder = 'TV프로그램, 영화 제목 및 출연진으로 검색해보세요';
-        }
-      }
-
-      window.addEventListener('resize', updatePlaceholder);
-      window.addEventListener('DOMContentLoaded', updatePlaceholder);
-    </script>
   </head>
   <body class="bg-black text-white">
     <h1>searchbar 컴포넌트</h1>
@@ -44,9 +22,9 @@
         type="search"
         id="taingSearch"
         placeholder="검색"
-        class="flex py-3 lg:py-4 pr-[1.375rem] md:pr-[1.75rem] lg:pr-[3.125rem] placeholder:text-base placeholder:md:text-[1.333rem] placeholder:lg:text-[2rem] text-base md:text-[1.333rem] lg:text-[2rem] w-[15.25rem] md:w-[32.625rem] lg:w-[76.875rem] focus:outline-none appearance-none"
+        class="flex py-3 lg:py-4 pr-[1.375rem] md:pr-[1.75rem] lg:pr-[3.125rem] placeholder:text-base placeholder:md:text-[1.333rem] placeholder:lg:text-[2rem] text-base md:text-[1.333rem] lg:text-[2rem] w-[15.25rem] md:w-[32.625rem] lg:w-[62.5rem] focus:outline-none appearance-none"
       />
-      <button class="absolute right-0 bottom-0 py-3 lg:py-4">
+      <button class="absolute right-0 bottom-0 py-3 lg:py-4" aria-label="검색버튼-누르세요">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="22"
