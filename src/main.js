@@ -191,6 +191,34 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('뷰포트 너비:', viewportWidth, '이미지 너비 설정:', newWidth);
   }
 
+  const modal = document.getElementById('searchModal');
+  const toggleBtn = document.getElementById('modalToggleBtn');
+  const openBtn = document.getElementById('openModalBtn');
+  const closeBtn = document.getElementById('closeModalBtn');
+
+  toggleBtn.addEventListener('click', () => {
+    if (!modal.open) {
+      modal.showModal();
+      searchIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    } else {
+      modal.close();
+      searchIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+  });
+
+  // 모달 바깥 클릭하면 닫기
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.close();
+    }
+  });
+
+  // DOM 선택 부분
+  const closeDialogButtons = document.querySelectorAll('.close-dialog'); // 여러 개의 close-dialog 버튼 선택
+  const dialog = document.querySelector('.main-dialog');
+
   // 모든 이미지에 대해 원본 크기 저장 및 크기 설정
   titleImages.forEach((img) => {
     // 이미지가 이미 로드되었는지 확인
@@ -210,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', function () {
     titleImages.forEach((img) => adjustImageSize(img));
   });
+
 
   // 다이얼로그 관련 코드
   const closeDialogButtons = document.querySelectorAll('.close-dialog');
@@ -297,3 +326,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 창 크기 변경 시 플레이스홀더 업데이트
 window.addEventListener('resize', updatePlaceholder);
+window.addEventListener('DOMContentLoaded', updatePlaceholder);
+
+// DOM 선택 부분
+const showDialogButton = document.querySelector('.show-dialog');
+const closeDialogButton = document.querySelector('.close-dialog');
+const panelDialog = document.querySelector('.panel-dialog');
+// 함수 구현 부분
+const openDialog = () => panelDialog.showModal();
+const closeDialog = () => panelDialog.close();
+// 이벤트 바인딩 부분
+showDialogButton.addEventListener('click', openDialog);
+closeDialogButton.addEventListener('click', closeDialog);
+
