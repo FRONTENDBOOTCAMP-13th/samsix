@@ -1,4 +1,4 @@
-import './style.css';
+import '../style.css';
 
 // toggle_password.js
 window.togglePasswordVisibility = function (button) {
