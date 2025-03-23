@@ -181,13 +181,25 @@ function initSearchModal() {
     }
   });
 
+  // X(닫기) 버튼 클릭 시
+  closeBtn.addEventListener('click', () => {
+    closeModal();
+  });
+
   // 모달 바깥 영역 클릭 시 닫기
   modal.addEventListener('click', (event) => {
     if (event.target === modal) {
-      modal.classList.add('hidden');
-      updateButtonVisibility(false);
+      closeModal();
     }
   });
+
+  // ✅ 모달 닫는 공통 로직 함수
+  function closeModal() {
+    modal.classList.add('hidden');
+    updateButtonVisibility(false);
+    nav.classList.remove('bg-brand-dark-bg-1');
+    nav.classList.add('bg-black');
+  }
 }
 
 // 버튼 전환 함수

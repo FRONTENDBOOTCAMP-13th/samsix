@@ -12,7 +12,7 @@
   <body class="bg-black text-white">
     <!-- 헤더 내비게이션 바 -->
     <header class="sticky top-0 z-50 w-full">
-      <nav class="flex justify-between text-gray-200 p-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.8125rem] bg-black" id="navigation">
+      <nav class="flex justify-between text-gray-200 px-5 py-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.8125rem] bg-black" id="navigation">
         <ul class="flex md:gap-7 lg:gap-[3.25rem] items-center md:text-xs lg:text-xl">
           <!-- 로고 -->
           <li>
@@ -106,7 +106,7 @@
           </li>
         </ul>
 
-        <ul class="flex md:gap-7 lg:gap-10 items-center">
+        <ul class="flex gap-3 md:gap-7 lg:gap-10 items-center">
           <!-- 검색 모달 버튼 -->
           <li>
             <button id="modalToggleBtn" class="cursor-pointer inline-flex align-middle" type="button">
@@ -196,11 +196,11 @@
 
     <!-- 검색: 모달창 -->
     <div id="searchModal" class="fixed inset-0 z-50 mx-auto text-white overflow-hidden hidden">
-      <div class="flex flex-col items-center bg-brand-dark-bg-1 mt-[3rem] md:mt-[3.5625rem] md:mb-[3.25rem] lg:mt-[6.25rem] lg:mb-20 py-5 md:pt-7 md:pb-[3.25rem] lg:pt-[3.25rem] lg:pb-[4.375rem]">
+      <div class="flex flex-col items-center bg-brand-dark-bg-1 mt-[3rem] md:mt-[3.5625rem] lg:mt-[6.25rem] pt-5 pb-12 md:pt-7 md:pb-[3.25rem] lg:pt-[3.25rem] lg:pb-[4.375rem]">
         <!-- 검색창 -->
         <div class="relative w-fit mx-auto border-b-2">
           <!-- 검색창 -->
-          <input type="search" id="taingSearch" placeholder="검색" class="flex py-3 lg:py-4 pr-[1.5625rem] md:pr-[2rem] lg:pr-[3.375rem] placeholder:text-base placeholder:md:text-[1.333rem] placeholder:lg:text-[2rem] text-base md:text-[1.333rem] lg:text-[2rem] w-[15.25rem] md:w-[32.625rem] lg:w-[62.5rem] focus:outline-none appearance-none" />
+          <input type="search" id="taingSearch" placeholder="검색" class="flex py-3 lg:py-4 pr-[1.5625rem] md:pr-[2rem] lg:pr-[3.375rem] placeholder:text-gray-600 placeholder:text-base placeholder:md:text-[1.333rem] placeholder:lg:text-[2rem] text-base md:text-[1.333rem] lg:text-[2rem] w-[18.75rem] md:w-[41.875rem] lg:w-[57.5rem] focus:outline-none appearance-none" />
           <!-- 돋보기버튼 -->
           <button class="absolute right-0 bottom-0 py-3 lg:py-4" aria-label="검색버튼(돋보기)-누르세요">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none" class="w-[1.375rem] md:w-7 md:h-[1.875rem] lg:w-[3.125rem] lg:h-[3.25rem] cursor-pointer">
@@ -223,13 +223,13 @@
           <div class="hidden w-fit md:block justify-center items-center md:pr-[2.1875rem] lg:pr-[3.75rem]">
             <div>
               <h2 class="text-gray-200 font-semibold lg:text-2xl">최근 검색어</h2>
-              <p class="w-[14.125rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] text-[.7502rem] lg:text-[1.25rem] text-gray-300">검색 내역이 없습니다.</p>
+              <p class="w-[18.75rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] text-[.7502rem] lg:text-[1.25rem] text-gray-300">검색 내역이 없습니다.</p>
             </div>
           </div>
           <div class="flex flex-col w-fit md:block justify-center items-center md:pl-[2.1875rem] lg:pl-[3.75rem]">
             <div>
               <h2 class="text-gray-200 font-semibold lg:text-2xl">실시간 인기 검색어</h2>
-              <ul class="text-red grid grid-rows-10 w-[14.125rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] text-[.7502rem] lg:text-[1.25rem] text-gray-300">
+              <ul class="text-red grid grid-rows-10 w-[18.75rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] text-[.7502rem] lg:text-[1.25rem] text-gray-300">
                 <li>
                   <a href="/"><span>1</span>재벌집 막내아들</a>
                 </li>
@@ -266,10 +266,11 @@
           </div>
         </div>
       </div>
+      <div class="h-[100vh] bottom-0 left-0 w-full bg-black/50 pointer-events-none"></div>
     </div>
 
     <!-- 모달 창 -->
-    <!-- <div>
+    <div>
       <dialog class="main-dialog mx-auto my-auto bg-transparent" aria-label="이벤트 알림 모달">
         <picture>
           <source srcset="../assets/modal/modal_sm.webp" media="(max-width: 768px)" />
@@ -282,7 +283,7 @@
           <button type="button" class="close-dialog">닫기</button>
         </div>
       </dialog>
-    </div> -->
+    </div>
 
     <main class="flex flex-col gap-3 md:gap-5 lg:gap-12">
       <!-- 배너 스와이퍼 컴포넌트 -->
