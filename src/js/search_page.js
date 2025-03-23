@@ -1,30 +1,5 @@
 import '../style.css';
 
-// 검색모달창 열고 닫기
-const modal = document.getElementById('searchModal');
-const toggleBtn = document.getElementById('modalToggleBtn');
-const openBtn = document.getElementById('openModalBtn');
-const closeBtn = document.getElementById('closeModalBtn');
-
-toggleBtn.addEventListener('click', () => {
-  if (!modal.open) {
-    modal.showModal();
-    searchIcon.classList.add('hidden');
-    closeIcon.classList.remove('hidden');
-  } else {
-    modal.close();
-    searchIcon.classList.remove('hidden');
-    closeIcon.classList.add('hidden');
-  }
-});
-
-// 모달 바깥 클릭하면 닫기
-modal.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    modal.close();
-  }
-});
-
 // search-bar 컴포넌트에서 placeholder 변경
 function updatePlaceholder() {
   const input = document.getElementById('taingSearch');
