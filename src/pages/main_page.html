@@ -134,8 +134,7 @@
             </button>
           </li>
           <!-- 타잉 아이콘 -->
-          <!-- 타잉 아이콘 -->
-          <li class="relative hover:scale-[110%]">
+          <li class="relative">
             <button class="cursor-pointer inline-flex align-middle" type="button" popovertarget="empty-popover">
               <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-6 md:h-6 lg:w-10 lg:h-10">
                 <g clip-path="url(#clip0_3307_6815)">
@@ -174,7 +173,7 @@
               </svg>
             </button>
             <div popover id="empty-popover" class="hidden"></div>
-            <div class="pop-menu md:text-sm lg:text-base md:w-[12.5rem] lg:w-[15rem]">
+            <div class="pop-menu md:text-sm lg:text-base md:w-[12.5rem] lg:w-[15rem] animate-fadeIn">
               <div class="flex gap-3 p-4 lg:p-6">
                 <img src="../assets/profile/profile_2_sm.png" alt="나의 프로필 사진" />
                 <div class="flex flex-col gap-0.5">
@@ -200,7 +199,7 @@
     <div id="searchModal" class="fixed inset-0 z-30 mx-auto text-white overflow-hidden hidden" role="dialog" aria-modal="true" aria-labelledby="search-title">
       <div class="flex flex-col items-center bg-brand-dark-bg-1 mt-[3rem] md:mt-[3.5625rem] lg:mt-[6.25rem] pt-5 pb-12 md:pt-7 md:pb-[3.25rem] lg:pt-9 lg:pb-[4.375rem]">
         <!-- 검색창 -->
-        <div class="relative w-fit mx-auto border-b-2">
+        <div class="relative w-fit mx-auto border-b-2 animate-fadeIn">
           <!-- 검색창 -->
           <input type="search" id="taingSearch" placeholder="검색" class="flex py-3 lg:py-3.5 pr-[1.5625rem] md:pr-[2rem] lg:pr-[3.375rem] placeholder:text-gray-600 placeholder:text-base placeholder:md:text-[1.333rem] placeholder:lg:text-[1.75rem] text-base md:text-[1.333rem] lg:text-[2rem] w-[18.75rem] md:w-[41.875rem] lg:w-[57.5rem] focus:outline-none appearance-none" />
           <!-- 돋보기버튼 -->
@@ -221,7 +220,7 @@
           </button>
         </div>
         <!-- 인기검색어 -->
-        <div class="grid md:grid-cols-2 w-fit md:divide-x md:divide-gray-800 mx-auto mt-10 md:mt-12 lg:mt-[3.25rem]">
+        <div class="grid md:grid-cols-2 w-fit md:divide-x md:divide-gray-800 mx-auto mt-10 md:mt-12 lg:mt-[3.25rem] animate-fadeIn">
           <div class="hidden w-fit md:block justify-center items-center md:pr-[2.1875rem] lg:pr-[3.75rem]">
             <div>
               <h2 class="text-gray-200 font-semibold lg:text-2xl">최근 검색어</h2>
