@@ -110,6 +110,10 @@
   .main-dialog::backdrop {
     background: rgba(0, 0, 0, 75%);
   }
+
+  .panel-dialog::backdrop {
+    background: rgba(0, 0, 0, 75%);
+  }
 }
 
 .hover-float {
