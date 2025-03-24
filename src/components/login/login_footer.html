@@ -3,51 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Find Password</title>
+    <title>Login Footer</title>
     <link rel="icon" href="/vite.svg" />
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" />
     <link rel="stylesheet" href="/font/pretendardvariable.css" />
     <script type="module" src="/src/js/login_page.js"></script>
   </head>
   <body class="min-h-screen min-w-[22.5rem] flex flex-col bg-black-origin">
-    <!-- 헤더 (로고) -->
-    <header class="pt-5 md:pt-8 lg:pt-10 px-5 md:px-8 lg:px-10" role="banner">
-      <a href="/src/pages/main_page.html">
-        <img src="/src/assets/login/taing_logo.svg" alt="TAING 메인 이동" class="h-6 md:h-8 lg:h-10" />
-      </a>
-    </header>
-
-    <!-- 메인 콘텐츠 -->
-    <main class="w-full flex flex-col items-center px-5 md:px-8 lg:px-10 mt-12 md:mt-16 lg:mt-20 animate-fadeIn" role="main">
-      <section class="w-full md:max-w-3xl" role="region" aria-labelledby="password-recovery-title">
-        <!-- 타이틀 -->
-        <h1 class="text-center text-heading-x-l md:text-heading-x-x-l lg:text-heading-x-x-x-l font-bold mb-6 md:mb-8 lg:mb-10 text-white">비밀번호 찾기</h1>
-
-        <!-- 항목 & 설명 -->
-        <div class="leading-7 pb-3" role="contentinfo" aria-label="비밀번호 찾기 안내">
-          <h2 class="font-semibold text-white-origin">아이디로 찾기</h2>
-          <p class="text-gray-400">아이디 확인 후 <strong>등록된 이메일 주소</strong>로 비밀번호 재설정을 위한 인증 메일이 발송됩니다.</p>
-          <p class="text-gray-400">이메일을 확인하여 <strong>12시간 이내에 비밀번호 재설정</strong>을 완료해주세요.</p>
-        </div>
-
-        <!-- 아이디 입력 & 버튼 -->
-        <form role="form" aria-labelledby="id-recovery-method">
-          <fieldset>
-            <!-- 아이디 입력 -->
-            <label class="sr-only" for="input_id">아이디</label>
-            <input type="text" id="input_id" pattern="[a-zA-Z][a-zA-Z0-9]{5,11}" name="input_id" required placeholder="아이디" aria-required="true" aria-errormessage="error_id" class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded text-white py-3.5 px-4 text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" />
-            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 block peer-placeholder-shown:hidden peer-valid:hidden" id="error_id" aria-live="polite">
-              <span>아이디를 입력하세요.</span>
-            </p>
-
-            <!-- 확인 버튼 -->
-            <button type="submit" class="w-full bg-brand-red-1 peer-valid:hover:bg-brand-red-2 text-white transition-colors duration-200 rounded py-3.5 font-bold mt-6 mb-12 text-label-large peer-invalid:bg-gray-700 peer-invalid:text-gray-400">확인</button>
-            <span id="button-description" class="sr-only">아이디 입력 후 활성화됩니다.</span>
-          </fieldset>
-        </form>
-      </section>
-    </main>
-
     <!-- 푸터 섹션 -->
     <footer class="w-full p-5 md:px-8 lg:px-10 border-t-gray-800 border-2 border-l-0 border-r-0 border-b-0">
       <!-- 유틸리티 링크 -->
