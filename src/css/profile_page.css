@@ -14,3 +14,14 @@ body:has(#edit-toggle:checked) .profile-edit {
     transform: translateY(-0.625rem);
   }
 }
+
+/* outline은 기본적으로 보이지 않게 설정 */
+.button:focus {
+  outline: none;
+}
+
+/* Tab 키로 탐색 시에만 outline 보이게 */
+.button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
