@@ -155,45 +155,35 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', updatePlaceholder);
 });
 
-// 검색 모달 초기화
 function initSearchModal() {
   const modal = document.getElementById('searchModal');
-  const toggleBtn = document.getElementById('modalToggleBtn');
   const openBtn = document.getElementById('openModalBtn');
   const closeBtn = document.getElementById('closeModalBtn');
   const nav = document.getElementById('navigation');
 
-  if (!modal || !toggleBtn || !openBtn || !closeBtn || !nav) return;
+  if (!modal || !openBtn || !closeBtn || !nav) return;
 
-  // 토글
-  toggleBtn.addEventListener('click', () => {
-    const isHidden = modal.classList.contains('hidden');
-    modal.classList.toggle('hidden', !isHidden);
-    updateButtonVisibility(isHidden);
-
-    // ✅ 배경색 변경 처리
-    if (isHidden) {
-      nav.classList.add('bg-brand-dark-bg-1'); // 원하는 색상
-      nav.classList.remove('bg-black'); // 기존 배경 제거
-    } else {
-      nav.classList.remove('bg-brand-dark-bg-1');
-      nav.classList.add('bg-black');
-    }
+  // 검색창 열기 버튼
+  openBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    updateButtonVisibility(true);
+    nav.classList.add('bg-brand-dark-bg-1');
+    nav.classList.remove('bg-black');
   });
 
-  // X(닫기) 버튼 클릭 시
-  closeBtn.addEventListener('click', () => {
+  // 검색창 닫기 버튼
+  closeBtn.addEventListener('click', (event) => {
+    event.stopPropagation(); // 혹시라도 이벤트 버블링 방지
     closeModal();
   });
 
-  // 모달 바깥 영역 클릭 시 닫기
+  // 모달 바깥 클릭 시 닫기
   modal.addEventListener('click', (event) => {
     if (event.target === modal) {
       closeModal();
     }
   });
 
-  // ✅ 모달 닫는 공통 로직 함수
   function closeModal() {
     modal.classList.add('hidden');
     updateButtonVisibility(false);
