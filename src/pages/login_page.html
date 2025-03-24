@@ -9,45 +9,43 @@
     <link rel="stylesheet" href="/font/pretendardvariable.css" />
     <script type="module" src="/src/js/login_page.js"></script>
   </head>
-  <body class="min-h-screen min-w-[22.5rem] flex flex-col bg-black-origin">
+  <body class="base-body">
     <!-- 헤더 (로고) -->
-    <header class="pt-5 md:pt-8 lg:pt-10 px-5 md:px-8 lg:px-10" role="banner">
+    <header class="site-header" role="banner">
       <a href="/src/pages/main_page.html">
-        <img src="/src/assets/login/taing_logo.svg" alt="TAING 메인 페이지로 이동" class="h-6 md:h-8 lg:h-10" />
+        <img src="/src/assets/login/taing_logo.svg" alt="TAING 메인 이동" class="h-6 md:h-8 lg:h-10" />
       </a>
     </header>
 
-    <!-- 메인 콘텐츠 -->
-    <main class="w-full flex flex-col items-center px-5 md:px-8 lg:px-10 mt-12 md:mt-16 lg:mt-20 animate-fadeIn" role="main">
-      <section class="w-full md:max-w-3xl" aria-labelledby="login-title">
-        <!-- 타이틀 -->
-        <h1 id="login-title" class="text-center text-heading-x-l md:text-heading-x-x-l lg:text-heading-x-x-x-l font-bold mb-8 md:mb-10 lg:mb-12 text-white">TAING 로그인</h1>
+    <main class="page-container animate-fadeIn" role="main">
+      <section class="content-section" aria-labelledby="login-title">
+        <h1 id="login-title" class="page-title">TAING 로그인</h1>
 
         <form action="/src/pages/main_page.html" method="GET" class="group" role="form" aria-label="로그인 양식">
           <!-- 아이디 입력 -->
-          <fieldset class="mb-4">
+          <fieldset class="input-container">
             <label class="sr-only" for="input_id">아이디</label>
-            <input type="text" id="input_id" pattern="[a-zA-Z][a-zA-Z0-9]{5,11}" name="input_id" required placeholder="아이디" aria-errormessage="error_id" class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded py-3.5 px-4 pr-10 text-white text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" />
-            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 block peer-placeholder-shown:hidden peer-valid:hidden" id="error_id" aria-live="polite">
+            <input type="text" id="input_id" pattern="[a-zA-Z][a-zA-Z0-9]{5,11}" name="input_id" required placeholder="아이디" aria-errormessage="error_id" class="input-field peer" />
+            <p class="error-message peer-placeholder-shown:hidden peer-valid:hidden" id="error_id" aria-live="polite">
               <span>아이디는 영문 또는 영문, 숫자 조합 6~12자리 입니다.</span>
             </p>
           </fieldset>
 
           <!-- 비밀번호 입력 -->
-          <fieldset class="relative mb-4">
+          <fieldset class="input-container">
             <label class="sr-only" for="input_pw">비밀번호</label>
-            <input class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded py-3.5 px-4 pr-10 text-white text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" type="password" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,15}" id="input_pw" name="input_pw" required aria-required="true" placeholder="비밀번호" aria-errormessage="error_pw" />
-            <button type="button" id="togglePassword" class="absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300" aria-label="비밀번호 보기" onclick="togglePasswordVisibility(this)">
+            <input class="password-field peer" type="password" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,15}" id="input_pw" name="input_pw" required aria-required="true" placeholder="비밀번호" aria-errormessage="error_pw" />
+            <button type="button" id="togglePassword" class="password-toggle" aria-label="비밀번호 보기" onclick="togglePasswordVisibility(this)">
               <img src="/src/assets/login/unvisible_pwicon.svg" alt="" class="size-5 toggle-icon" />
             </button>
-            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 block peer-placeholder-shown:hidden peer-valid:hidden" id="error_pw" aria-live="polite">
+            <p class="error-message peer-placeholder-shown:hidden peer-valid:hidden" id="error_pw" aria-live="polite">
               <span>비밀번호는 영문 소문자, 숫자, 특수문자 포함 최소 8~15자리 입니다.</span>
             </p>
           </fieldset>
 
           <!-- 자동 로그인 -->
-          <fieldset class="flex items-center mb-6">
-            <label for="checkbox_autologin" class="flex items-center cursor-pointer text-white bg-transparent hover:text-gray-200 transition-colors duration-300">
+          <fieldset class="checkbox-container">
+            <label for="checkbox_autologin" class="checkbox-label">
               <input type="checkbox" id="checkbox_autologin" class="sr-only peer focus:outline-none" />
               <span class="inline-block size-5 rounded-full border-2 border-gray-700 mr-2 flex-shrink-0 relative bg-gray-600 peer-checked:bg-brand-red-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white peer-focus-visible:outline-offset-2">
                 <img src="/src/assets/login/check.svg" alt="select_autologin" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -57,41 +55,41 @@
           </fieldset>
 
           <!-- 로그인 버튼 -->
-          <button type="submit" class="w-full bg-gray-700 text-gray-400 rounded py-3.5 font-bold my-6 text-label-large group-valid:bg-brand-red-1 group-valid:text-white-origin group-valid:hover:bg-brand-red-2 transition-colors duration-200">로그인하기</button>
+          <button type="submit" class="disabled-button group-valid:bg-brand-red-1 group-valid:text-white-origin group-valid:hover:bg-brand-red-2">로그인하기</button>
           <span id="button-description" class="sr-only">아이디, 비밀번호 입력 후 활성화됩니다.</span>
 
           <!-- 아이디/비밀번호 찾기 -->
-          <nav class="flex justify-center items-center mb-4 text-paragraph-medium" role="navigation" aria-label="계정 복구 옵션">
-            <a href="/src/pages/findid_page.html" class="text-gray-400 hover:text-gray-200 transition-colors duration-300"> 아이디 찾기 </a>
+          <nav class="account-recovery" role="navigation" aria-label="계정 복구 옵션">
+            <a href="/src/pages/findid_page.html" class="recovery-link">아이디 찾기</a>
             <span class="mx-2 text-gray-500" aria-hidden="true">|</span>
-            <a href="/src/pages/findpw_page.html" class="text-gray-400 hover:text-gray-200 transition-colors duration-300"> 비밀번호 찾기 </a>
+            <a href="/src/pages/findpw_page.html" class="recovery-link">비밀번호 찾기</a>
           </nav>
 
           <!-- 회원가입 섹션 -->
-          <aside class="flex justify-center items-center text-paragraph-medium mb-12" role="complementary">
+          <aside class="signup-prompt" role="complementary">
             <span class="text-gray-500">아직 계정이 없으신가요?</span>
-            <a href="/src/pages/register_page.html" class="ml-2 text-gray-400 hover:text-gray-200 transition-colors duration-300"> 회원가입하기 </a>
+            <a href="/src/pages/register_page.html" class="signup-link">회원가입하기</a>
           </aside>
         </form>
       </section>
     </main>
 
     <!-- 푸터 섹션 -->
-    <footer class="w-full p-5 md:px-8 lg:px-10 border-t-gray-800 border-2 border-l-0 border-r-0 border-b-0">
+    <footer class="site-footer">
       <!-- 유틸리티 링크 -->
       <nav class="text-left">
-        <ul class="flex max-md:flex-col gap-x-3 gap-y-2 mb-4 text-paragraph-small text-gray-500">
-          <li><a href="#" class="hover:text-gray-300">고객센터</a></li>
-          <li><a href="#" class="hover:text-gray-300">이용약관</a></li>
-          <li><a href="#" class="hover:text-gray-300">개인정보처리방침</a></li>
-          <li><a href="#" class="hover:text-gray-300">청소년 보호정책</a></li>
-          <li><a href="#" class="hover:text-gray-300">법적고지</a></li>
-          <li><a href="#" class="hover:text-gray-300">이벤트</a></li>
-          <li><a href="#" class="hover:text-gray-300">인재채용</a></li>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link">고객센터</a></li>
+          <li><a href="#" class="footer-link">이용약관</a></li>
+          <li><a href="#" class="footer-link">개인정보처리방침</a></li>
+          <li><a href="#" class="footer-link">청소년 보호정책</a></li>
+          <li><a href="#" class="footer-link">법적고지</a></li>
+          <li><a href="#" class="footer-link">이벤트</a></li>
+          <li><a href="#" class="footer-link">인재채용</a></li>
         </ul>
 
         <!-- 태블릿, 데스크탑에만 표시되는 추가 정보 -->
-        <address class="hidden md:block text-label-small text-gray-600 mb-4 leading-relaxed not-italic">
+        <address class="company-info">
           <p>대표이사 : YANG JIEUL | 사업자등록번호 : 188-88-01893 | 통신판매신고번호 : 2020-서울마포-3641호</p>
           <p>사업장 : 서울특별시 마포구 상암산로 34, DMC디지털큐브 15층(상암동) | 호스팅사업자 : 씨제이올리브네트웍스(주)</p>
           <p>고객센터 (평일 09시~17시/점심시간 13시~14시) | 대표메일 : taing@cj.net | 전화번호(ARS) : 1670-1525 (평일/주말 상담 운영)</p>
@@ -99,31 +97,31 @@
         </address>
 
         <!-- 소셜 미디어 링크 -->
-        <ul class="flex gap-4 mb-4">
+        <ul class="social-links">
           <li>
-            <a href="/" aria-label="유튜브" class="text-gray-600 hover:text-gray-400">
+            <a href="/" aria-label="유튜브" class="social-link">
               <img src="/src/assets/login/youtube.svg" alt="" class="size-5" />
             </a>
           </li>
           <li>
-            <a href="/" aria-label="인스타그램" class="text-gray-600 hover:text-gray-400">
+            <a href="/" aria-label="인스타그램" class="social-link">
               <img src="/src/assets/login/instagram.svg" alt="" class="size-5" />
             </a>
           </li>
           <li>
-            <a href="/" aria-label="트위터" class="text-gray-600 hover:text-gray-400">
+            <a href="/" aria-label="트위터" class="social-link">
               <img src="/src/assets/login/twitter.svg" alt="" class="size-5" />
             </a>
           </li>
           <li>
-            <a href="/" aria-label="페이스북" class="text-gray-600 hover:text-gray-400">
+            <a href="/" aria-label="페이스북" class="social-link">
               <img src="/src/assets/login/facebook.svg" alt="" class="size-5" />
             </a>
           </li>
         </ul>
 
         <!-- 저작권 정보 -->
-        <small class="text-paragraph-small text-gray-600 block">© TAING Corp. ALL RIGHTS RESERVED.</small>
+        <small class="copyright">© TAING Corp. ALL RIGHTS RESERVED.</small>
       </nav>
     </footer>
   </body>
