@@ -2,6 +2,21 @@ import '../style.css';
 
 // 문서의 모든 요소가 다 로드가 됐을 시, 실행
 document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.fade-in-section');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible'); // 보이면 클래스 추가
+        }
+      });
+    },
+    { threshold: 0.2 }
+  ); // 20% 보이면 작동
+
+  sections.forEach((section) => observer.observe(section));
+
   // 슬라이더 관련 코드
   const slides = document.querySelectorAll('.slide');
   const indicators = document.querySelectorAll('.indicator');
