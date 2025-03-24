@@ -18,10 +18,20 @@ function updatePlaceholder() {
   window.addEventListener('DOMContentLoaded', updatePlaceholder);
 }
 
-// 현재 시간 표시
-let now = new Date();
-let formattedTime = now.toLocaleString();
-const timeDisplay = document.getElementById('time-display');
-if (timeDisplay) {
-  timeDisplay.textContent = formattedTime;
-}
+// 현재 시간 표시 (초 제외 + '기준' 추가)
+document.addEventListener('DOMContentLoaded', () => {
+  const timeDisplay = document.getElementById('time-display');
+
+  if (timeDisplay) {
+    const now = new Date();
+
+    const formattedDate = now.toLocaleDateString(); // 예: 2025. 3. 24.
+    const formattedTime = now.toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true, // 12시간제 → 오전/오후 포함
+    });
+
+    timeDisplay.textContent = `${formattedDate} ${formattedTime} 기준`;
+  }
+});
