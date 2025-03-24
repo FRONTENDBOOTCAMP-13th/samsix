@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Login Page</title>
+    <title>Register Page</title>
     <link rel="icon" href="/vite.svg" />
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" />
     <link rel="stylesheet" href="/font/pretendardvariable.css" />
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/login_page.js"></script>
   </head>
   <body class="min-h-screen min-w-[22.5rem] flex flex-col bg-black-origin">
     <!-- 헤더 (로고) -->
@@ -38,14 +38,8 @@
           <fieldset class="relative mb-4">
             <label class="sr-only" for="input_pw">비밀번호</label>
             <input class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded py-3.5 px-4 pr-10 text-white text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" type="password" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,15}" id="input_pw" name="input_pw" required aria-required="true" placeholder="비밀번호" aria-errormessage="error_pw" />
-            <button
-              type="button"
-              id="togglePassword"
-              class="absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300"
-              aria-label="비밀번호 보기"
-              onclick=" this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; const img = this.querySelector('img'); if (this.previousElementSibling.type === 'text') { img.src = '/src/assets/login/visible_pwicon.svg'; this.setAttribute('aria-label', '비밀번호 숨기기'); } else { img.src = '/src/assets/login/unvisible_pwicon.svg'; this.setAttribute('aria-label', '비밀번호 보기'); } "
-            >
-              <img src="/src/assets/login/unvisible_pwicon.svg" alt="" class="size-5" />
+            <button type="button" id="togglePassword" class="absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300" aria-label="비밀번호 보기" onclick="togglePasswordVisibility(this)">
+              <img src="/src/assets/login/unvisible_pwicon.svg" alt="" class="size-5 toggle-icon" />
             </button>
             <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 block peer-placeholder-shown:hidden peer-valid:hidden" id="error_pw" aria-live="polite">
               <span>비밀번호는 영문 소문자, 숫자, 특수문자 포함 최소 8~15자리까지 입력 가능합니다.</span>
@@ -57,14 +51,8 @@
             <label class="sr-only" for="input_pw_confirm">비밀번호 확인</label>
             <input class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded py-3.5 px-4 pr-10 text-white text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" type="password" id="input_pw_confirm" name="input_pw_confirm" required aria-required="true" placeholder="비밀번호 확인" aria-errormessage="error_pw_confirm" />
             <!-- 같은 블록에 동일한 이름이 있으면 충돌하기 때문에 -> scope 변경(중괄호로 새 블록 스코프 생성) -->
-            <button
-              type="button"
-              id="togglePasswordConfirm"
-              class="absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300"
-              aria-label="비밀번호 확인 보기"
-              onclick="this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; { const img = this.querySelector('img'); if (this.previousElementSibling.type === 'text') { img.src = '/src/assets/login/visible_pwicon.svg'; this.setAttribute('aria-label', '비밀번호 숨기기');} else { img.src = '/src/assets/login/unvisible_pwicon.svg'; this.setAttribute('aria-label', '비밀번호 보기'); } }"
-            >
-              <img src="/src/assets/login/unvisible_pwicon.svg" alt="" class="size-5" />
+            <button type="button" id="togglePasswordConfirm" class="absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300" aria-label="비밀번호 확인 보기" onclick="togglePasswordVisibility(this)">
+              <img src="/src/assets/login/unvisible_pwicon.svg" alt="" class="size-5 toggle-icon" />
             </button>
             <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 hidden" id="error_pw_confirm" aria-live="polite">
               <span>비밀번호가 일치하지 않습니다.</span>

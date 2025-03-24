@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+
+/* 검색바: 검색창 X 버튼 제거 */
+#taingSearch::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* 인기검색어 li 스타일 */
+.text-red {
+  a {
+    &:hover {
+      color: var(--color-gray-200, #c4c4c4);
+    }
+  }
+  span {
+    color: #ff153c;
+    display: inline-block;
+    width: 1.25rem;
+    @media (min-width: 768px) {
+      width: 2.1875rem;
+    }
+  }
+}
+
+/* hover: svg가 white로 채워지도록 */
+.hover-white {
+  &:hover {
+    path {
+      fill: white;
+    }
+  }
+}
+
+/* hover: svg의 stroke가 white로 채워지도록 */
+.hover-stroke-white {
+  &:hover {
+    path {
+      stroke: white;
+    }
+  }
+}
+
+.scroll-lock {
+  overflow: hidden;
+  padding-right: 0.5rem; /* 스크롤바 너비만큼 여백 추가 */
+}

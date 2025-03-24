@@ -7,17 +7,17 @@
     <title>메인 페이지</title>
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" crossorigin="anonymous" />
     <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/main_page.js"></script>
   </head>
   <body class="bg-black text-white">
     <!-- 헤더 내비게이션 바 -->
     <header class="sticky top-0 z-50 w-full">
-      <nav class="flex justify-between text-white p-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.25rem] bg-black">
+      <nav class="flex justify-between text-gray-200 px-6 py-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.8125rem] bg-black" id="navigation">
         <ul class="flex md:gap-7 lg:gap-[3.25rem] items-center md:text-xs lg:text-xl">
           <!-- 로고 -->
           <li>
             <a href="#">
-              <svg width="46" height="15" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[4.8125rem] md:h-6 lg:w-[8.25rem] lg:h-[2.625rem]">
+              <svg width="53" height="22" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[4.8125rem] md:h-6 lg:w-[8rem] lg:h-[2.375rem]">
                 <g clip-path="url(#clip0_3307_6764)">
                   <mask id="mask0_3307_6764" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="4" width="132" height="34">
                     <path d="M0 4.87793H131.511V37.1249H0V4.87793Z" fill="white" />
@@ -46,7 +46,7 @@
           </li>
 
           <!-- 실시간 -->
-          <li class="hidden md:block">
+          <li class="hidden md:block hover:text-white hover-stroke-white">
             <a href="#" class="flex items-center">
               <svg width="20" height="20" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block mr-1 lg:mr-2.5 lg:w-[2.125rem] lg:h-[2.125rem]">
                 <path d="M11.0003 23.3676H6.5166V16.1426H7.63859V22.3943H11.0018L11.0003 23.3676Z" fill="#C4C4C4" stroke="#C4C4C4" stroke-width="0.2" stroke-linejoin="round" />
@@ -68,17 +68,17 @@
           </li>
 
           <!-- TV프로그램 -->
-          <li class="hidden md:block">
+          <li class="hidden md:block hover:text-white">
             <a href="#">TV프로그램</a>
           </li>
 
           <!-- 영화 -->
-          <li class="hidden md:block">
+          <li class="hidden md:block hover:text-white">
             <a href="#">영화</a>
           </li>
 
           <!-- Paramount+ -->
-          <li class="hidden md:block">
+          <li class="hidden md:block hover-white">
             <a href="#">
               <svg width="84" height="25" viewBox="0 0 112 34" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:w-[7rem] lg:h-[2.125rem]">
                 <g clip-path="url(#clip0_3307_6801)">
@@ -106,11 +106,12 @@
           </li>
         </ul>
 
-        <ul class="flex md:gap-7 lg:gap-10 items-center">
-          <!-- 검색(돋보기) -->
+        <ul class="flex gap-3 md:gap-7 lg:gap-10 items-center">
+          <!-- 검색 모달 버튼 -->
           <li>
-            <a href="./search_page.html">
-              <svg width="18" height="18" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-6 md:h-6 lg:w-10 lg:h-10">
+            <button id="modalToggleBtn" class="cursor-pointer inline-flex align-middle" type="button">
+              <!-- 검색버튼(돋보기) -->
+              <svg id="openModalBtn" width="22" height="22" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-6 md:h-6 lg:w-10 lg:h-10 hover-stroke-white">
                 <g clip-path="url(#clip0_3307_6807)">
                   <g opacity="0.997">
                     <path d="M26.6973 27.9629L33.573 34.9486" stroke="#C4C4C4" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" />
@@ -123,12 +124,19 @@
                   </clipPath>
                 </defs>
               </svg>
-            </a>
+              <!-- 닫기버튼(X) -->
+              <svg id="closeModalBtn" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" class="md:w-7 md:h-7 lg:w-[3.125rem] lg:h-[3.125rem] hover-white hidden">
+                <path
+                  d="M15.0105 15.7879L10.9994 11.7767L6.98825 15.7879C6.93759 15.8396 6.87699 15.8803 6.81019 15.9082C6.7434 15.936 6.67175 15.9504 6.59938 15.9501C6.49039 15.9503 6.38389 15.9182 6.29323 15.8577C6.20256 15.7972 6.13186 15.7113 6.0902 15.6106C6.04854 15.5099 6.03762 15.3984 6.05905 15.2916C6.08048 15.1847 6.13324 15.087 6.21051 15.0101L10.2216 10.999L6.21051 6.98786C6.11032 6.88413 6.05484 6.74535 6.05609 6.60114C6.05735 6.45694 6.11525 6.31855 6.21723 6.21657C6.3192 6.1146 6.45705 6.05669 6.60126 6.05544C6.74547 6.05419 6.88451 6.10994 6.98825 6.21013L10.9994 10.2213L15.0105 6.21013C15.1142 6.10994 15.2533 6.05419 15.3975 6.05544C15.5417 6.05669 15.6796 6.1146 15.7815 6.21657C15.8835 6.31855 15.9414 6.45694 15.9427 6.60114C15.9439 6.74535 15.8884 6.88413 15.7882 6.98786L11.7771 10.999L15.7882 15.0101C15.8408 15.0609 15.8827 15.1213 15.9115 15.1884C15.9403 15.2556 15.9555 15.3281 15.9561 15.4011C15.9567 15.4742 15.9429 15.5462 15.9153 15.6138C15.8876 15.6814 15.8466 15.7427 15.795 15.7943C15.7433 15.8459 15.6821 15.887 15.6145 15.9146C15.5469 15.9423 15.4743 15.9561 15.4013 15.9554C15.3282 15.9548 15.2562 15.9402 15.1891 15.9114C15.122 15.8826 15.0612 15.8404 15.0105 15.7879Z"
+                  fill="#C4C4C4"
+                />
+              </svg>
+            </button>
           </li>
           <!-- 타잉 아이콘 -->
-          <li class="relative">
+          <li class="relative hover:scale-[110%]">
             <button class="cursor-pointer inline-flex align-middle" type="button" popovertarget="empty-popover">
-              <svg width="18" height="18" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-6 md:h-6 lg:w-10 lg:h-10">
+              <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-6 md:h-6 lg:w-10 lg:h-10">
                 <g clip-path="url(#clip0_3307_6815)">
                   <path d="M37.4194 0H2.58065C1.15539 0 0 1.15539 0 2.58065V37.4194C0 38.8446 1.15539 40 2.58065 40H37.4194C38.8446 40 40 38.8446 40 37.4194V2.58065C40 1.15539 38.8446 0 37.4194 0Z" fill="none" />
                   <path
@@ -186,6 +194,81 @@
       </nav>
     </header>
 
+    <!-- 검색: 모달창 -->
+    <div id="searchModal" class="fixed inset-0 z-30 mx-auto text-white overflow-hidden hidden">
+      <div class="flex flex-col items-center bg-brand-dark-bg-1 mt-[3rem] md:mt-[3.5625rem] lg:mt-[6.25rem] pt-5 pb-12 md:pt-7 md:pb-[3.25rem] lg:pt-9 lg:pb-[4.375rem]">
+        <!-- 검색창 -->
+        <div class="relative w-fit mx-auto border-b-2">
+          <!-- 검색창 -->
+          <input type="search" id="taingSearch" placeholder="검색" class="flex py-3 lg:py-3.5 pr-[1.5625rem] md:pr-[2rem] lg:pr-[3.375rem] placeholder:text-gray-600 placeholder:text-base placeholder:md:text-[1.333rem] placeholder:lg:text-[1.75rem] text-base md:text-[1.333rem] lg:text-[2rem] w-[18.75rem] md:w-[41.875rem] lg:w-[57.5rem] focus:outline-none appearance-none" />
+          <!-- 돋보기버튼 -->
+          <button class="absolute right-0 bottom-0 py-3 lg:py-4 hover:scale-[110%]" aria-label="검색버튼(돋보기)-누르세요">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none" class="w-[1.375rem] md:w-7 md:h-[1.875rem] lg:w-[3.125rem] lg:h-[3.25rem] cursor-pointer">
+              <g clip-path="url(#clip0_3311_2014)">
+                <g opacity="0.997">
+                  <path d="M14.6836 15.8796L18.4652 19.7217" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" />
+                  <path d="M10.2141 17.1964C13.7941 17.1964 16.6962 14.2942 16.6962 10.7143C16.6962 7.13427 13.7941 4.23212 10.2141 4.23212C6.63409 4.23212 3.73193 7.13427 3.73193 10.7143C3.73193 14.2942 6.63409 17.1964 10.2141 17.1964Z" stroke="white" stroke-width="1.5" />
+                </g>
+              </g>
+              <defs>
+                <clipPath id="clip0_3311_2014">
+                  <rect width="22" height="22" fill="white" transform="translate(0 0.5)" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+        </div>
+        <!-- 인기검색어 -->
+        <div class="grid md:grid-cols-2 w-fit md:divide-x md:divide-gray-800 mx-auto mt-10 md:mt-12 lg:mt-[3.25rem]">
+          <div class="hidden w-fit md:block justify-center items-center md:pr-[2.1875rem] lg:pr-[3.75rem]">
+            <div>
+              <h2 class="text-gray-200 font-semibold lg:text-2xl">최근 검색어</h2>
+              <p class="w-[18.75rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] text-[.7502rem] lg:text-[1.25rem] text-gray-300">검색 내역이 없습니다.</p>
+            </div>
+          </div>
+          <div class="flex flex-col w-fit md:block justify-center items-center md:pl-[2.1875rem] lg:pl-[3.75rem]">
+            <div>
+              <h2 class="text-gray-200 font-semibold lg:text-2xl">실시간 인기 검색어</h2>
+              <ul class="text-red grid grid-rows-10 w-[18.75rem] lg:w-[25rem] mt-5 gap-y-[.5625rem] lg:gap-y-[.625rem] text-[.7502rem] lg:text-[1.125rem] text-gray-300">
+                <li>
+                  <a href="/"><span>1</span>재벌집 막내아들</a>
+                </li>
+                <li>
+                  <a href="/"><span>2</span>미스터트롯2: 새로운 전설의 시작</a>
+                </li>
+                <li>
+                  <a href="/"><span>3</span>유 퀴즈 온 더 블럭</a>
+                </li>
+                <li>
+                  <a href="/"><span>4</span>대행사</a>
+                </li>
+                <li>
+                  <a href="/"><span>5</span>SHOW ME THE MONEY 11</a>
+                </li>
+                <li>
+                  <a href="/"><span>6</span>미씽: 그들이 있었다2</a>
+                </li>
+                <li>
+                  <a href="/"><span>7</span>술꾼도시여자들2</a>
+                </li>
+                <li>
+                  <a href="/"><span>8</span>캐나다 체크인</a>
+                </li>
+                <li>
+                  <a href="/"><span>9</span>미씽: 그들이 있었다 - 그들을 다만나다</a>
+                </li>
+                <li>
+                  <a href="/"><span>10</span>술꾼도시여자들</a>
+                </li>
+              </ul>
+              <p class="mt-4 text-[.7502rem] lg:text-[1.125rem] text-gray-500" id="time-display"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="h-[100vh] bottom-0 left-0 w-full bg-black/50 pointer-events-none"></div>
+    </div>
+
     <!-- 모달 창 -->
     <div>
       <dialog class="main-dialog mx-auto my-auto bg-transparent" aria-label="이벤트 알림 모달">
@@ -205,78 +288,61 @@
     <main class="flex flex-col gap-3 md:gap-5 lg:gap-12">
       <!-- 배너 스와이퍼 컴포넌트 -->
       <section>
-        <div class="overflow-hidden relative">
-          <div class="slides w-full">
-            <div class="slide">
-              <img class="w-full" src="../assets/banner/banner_img_lg.webp" alt="재벌집 막내아들" />
-            </div>
-            <div class="slide">
-              <img class="w-full" src="../assets/banner/banner_img_lg.webp" alt="재벌집 막내아들" />
-            </div>
-            <div class="slide">
-              <img class="w-full" src="../assets/banner/banner_img_lg.webp" alt="재벌집 막내아들" />
-            </div>
-            <div class="slide">
-              <img class="w-full" src="../assets/banner/banner_img_lg.webp" alt="재벌집 막내아들" />
-            </div>
-          </div>
+        <div class="relative w-full overflow-hidden">
+          <!-- 슬라이드 배너 이미지 -->
+          <ul class="slides">
+            <li class="min-w-full relative slide">
+              <img class="w-full" src="../assets/banner/Black_Salt_Dragon.webp" alt="그놈은 흑염룡 배너" />
+              <svg class="h-auto w-10 md:w-16 absolute bottom-32 md:bottom-56 lg:bottom-80 left-[5%]" viewBox="0 0 62 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M34.191 4.471v7.038c0 2.833-1.506 4.488-4.188 4.488-2.683 0-4.14-1.658-4.14-4.488V4.471c0-2.814 1.474-4.471 4.14-4.471 2.666 0 4.188 1.657 4.188 4.471zm-2.798-.462c0-.977-.53-1.606-1.342-1.606-.813 0-1.391.63-1.391 1.606v7.982c0 .977.562 1.606 1.375 1.606.812 0 1.358-.63 1.358-1.606V4.01zM41.891 4.587V.167h2.618v15.65H41.79L38.958 6.36h-.148l.1 3.562v5.895h-2.634V.167h3.032l2.519 8.429h.167l-.1-4.009h-.003zM53.22 13.45v2.367h-6.424V.167h2.766V13.45h3.658zM57.557 4.67L58.765.168l3.048-.016-3.61 10.832v4.837h-2.75v-4.902L51.878.148l3.132.016 1.224 4.503.562 2.136h.215l.546-2.136v.004z"
+                  fill="#fff"
+                ></path>
+                <path d="M15.014.167l-3.34 10.382c-.1.308-.556.238-.556-.087V.167H.871v4.67h4.95v10.98h9.73L20.84.167h-5.827z" fill="#FF153C"></path>
+              </svg>
+              <img class="img-title" src="../assets/title/Black_Salt_Dragon.webp" alt="그놈은 흑염룡" />
+              <p class="p-info text-black">새로 온 본부장에게서 최악의 첫사랑, ‘흑염룡’의 기운이 느껴진다?</p>
+            </li>
+            <li class="min-w-full relative slide">
+              <img class="w-full" src="../assets/banner/Couple_Palace2.webp" alt="커플 팰리스2 배너" />
+              <img class="img-title" src="../assets/title/Couple_Palace2.webp" alt="그놈은 흑염룡" />
+              <p class="p-info text-black">'완벽한 결혼'을 위한 대규모 커플 매칭 서바이벌!</p>
+            </li>
+            <li class="min-w-full relative slide">
+              <img class="w-full" src="../assets/banner/divorce_insurance.webp" alt="이혼보험 직급 쟁탈전 배너" />
+              <svg class="h-auto w-10 md:w-16 absolute bottom-32 md:bottom-56 lg:bottom-80 left-[5%]" viewBox="0 0 62 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M34.191 4.471v7.038c0 2.833-1.506 4.488-4.188 4.488-2.683 0-4.14-1.658-4.14-4.488V4.471c0-2.814 1.474-4.471 4.14-4.471 2.666 0 4.188 1.657 4.188 4.471zm-2.798-.462c0-.977-.53-1.606-1.342-1.606-.813 0-1.391.63-1.391 1.606v7.982c0 .977.562 1.606 1.375 1.606.812 0 1.358-.63 1.358-1.606V4.01zM41.891 4.587V.167h2.618v15.65H41.79L38.958 6.36h-.148l.1 3.562v5.895h-2.634V.167h3.032l2.519 8.429h.167l-.1-4.009h-.003zM53.22 13.45v2.367h-6.424V.167h2.766V13.45h3.658zM57.557 4.67L58.765.168l3.048-.016-3.61 10.832v4.837h-2.75v-4.902L51.878.148l3.132.016 1.224 4.503.562 2.136h.215l.546-2.136v.004z"
+                  fill="#fff"
+                ></path>
+                <path d="M15.014.167l-3.34 10.382c-.1.308-.556.238-.556-.087V.167H.871v4.67h4.95v10.98h9.73L20.84.167h-5.827z" fill="#FF153C"></path>
+              </svg>
+              <img class="img-title" src="../assets/title/divorce_insurance.webp" alt="그놈은 흑염룡" />
+              <p class="p-info translate-y-8">
+                드라마 홍보를 위한 긴급 예능 전담 부서로 전격 발령! <br />
+                '이혼보험' 출연진들의 고강도 홍보 업무를 건 양보 없는 직급쟁탈전이 시작된다!
+              </p>
+            </li>
+            <li class="min-w-full relative slide">
+              <img class="w-full" src="../assets/banner/Harry_Potter.webp" alt="해리 포터와 마법사의 돌 배너" />
+              <img class="img-title" src="../assets/title/Harry_Potter.webp" alt="그놈은 흑염룡" />
+              <p class="p-info">마법, 우정, 그리고 용기! 해리 포터가 당신을 마법 학교로 초대합니다!</p>
+            </li>
+          </ul>
 
-          <div class="flex flex-col gap-2 absolute left-[5%] bottom-[10%]">
-            <p class="text-sm font-semibold md:text-base lg:text-xl">인생 2회차를 사는 판타지 드라마</p>
-
-            <div class="flex h-3 gap-[.1875rem] items-center">
-              <!-- 동적으로 SVG가 변경되는 버튼 -->
-              <button id="pauseButton" class="pause-button cursor-pointer w-3 h-3 fill-white mr-3">
-                <!-- 초기에 재생 아이콘을 표시 -->
-                <svg width="12" height="12" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="2" y="1" width="5" height="16" fill="white" />
-                  <rect x="11" y="1" width="5" height="16" fill="white" />
-                </svg>
-              </button>
-              <!-- 하단 인디케이터 -->
-              <div class="flex gap-1.5">
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-              </div>
-            </div>
-          </div>
+          <!-- 이전, 이후 슬라이드 선택 버튼 -->
+          <button type="button" class="prev">&#10094;</button>
+          <button type="button" class="next">&#10095;</button>
 
           <!-- 자세히보기 버튼 -->
-          <a href="#" class="absolute right-[5%] bottom-[10%] px-8 h-10 inline-flex justify-center items-center text-xs border border-[#a6a6a6] rounded-md text-white"> 자세히보기 </a>
-
-          <!-- 배너 이미지를 넘기는 기능의 방향 버튼 -->
-          <div class="flex w-full justify-between absolute top-[calc(50%_-_1.5rem)]">
-            <button type="button">
-              <svg width="48" height="48" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_152_6070)">
-                  <g opacity="0.7">
-                    <path d="M8.826 3.34766L5.17383 6.99983" stroke="#898989" stroke-width="0.7" stroke-linecap="square" />
-                    <path d="M5.17383 7L8.826 10.6522" stroke="#898989" stroke-width="0.7" stroke-linecap="square" />
-                  </g>
-                </g>
-                <defs>
-                  <clipPath id="clip0_152_6070">
-                    <rect width="14" height="14" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-            <button type="button">
-              <svg width="48" height="48" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_152_6069)">
-                  <path d="M5.17383 3.34766L8.826 6.99983" stroke="#898989" stroke-width="0.7" stroke-linecap="square" />
-                  <path d="M8.826 7L5.17383 10.6522" stroke="#898989" stroke-width="0.7" stroke-linecap="square" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_152_6069">
-                    <rect width="14" height="14" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-          </div>
+          <a href="#" class="absolute right-[5%] bottom-[5%] px-8 h-10 inline-flex justify-center items-center text-xs bg-white rounded-md text-black"> 자세히보기 </a>
+        </div>
+        <div class="indicator-container">
+          <button class="control-btn">⏸</button>
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
         </div>
       </section>
 
@@ -520,7 +586,7 @@
                       <source srcset="../assets/poster/popular_programs/chaebol_son_md.webp 224w" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/popular_programs/chaebol_son_lg.webp" loading="lazy" alt="재벌집 막내아들" />
                     </picture>
-                    <figcaption class="flex items-baseline -mt-[15%]">
+                    <figcaption class="flex overflow-visible items-baseline -mt-[15%]">
                       <span class="contents-rank">1</span>
                       <div class="truncate contents-name">재벌집 막내아들</div>
                       <div class="new-sign" aria-label="new"></div>

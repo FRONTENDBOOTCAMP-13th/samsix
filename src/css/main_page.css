@@ -1,0 +1,113 @@
+@import 'tailwindcss';
+@plugin "tailwind-scrollbar-hide";
+
+@layer components {
+  /* 메인 페이지 */
+  .card-flex {
+    @apply flex flex-col flex-nowrap gap-3 pl-5;
+    h2 {
+      @apply text-lg md:text-xl lg:text-2xl;
+    }
+  }
+
+  .pop-menu {
+    margin-top: 0.125rem;
+    display: none;
+    position: absolute;
+    width: 150px;
+    right: 0;
+    top: 100%;
+    background: #131313;
+    border: 1px solid #565656;
+    color: #ffffff;
+    font-size: x-small;
+    color: #cccccc;
+
+    img {
+      width: 25%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  [popover]:popover-open + .pop-menu {
+    display: block;
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  .prev {
+    left: 10px;
+  }
+  .next {
+    right: 10px;
+  }
+
+  .img-title {
+    @apply h-auto absolute bottom-10 md:bottom-24 lg:bottom-32 left-[5%];
+  }
+
+  .p-info {
+    @apply absolute md:bottom-12 lg:bottom-16 left-[5%] hidden md:block md:text-lg lg:text-2xl;
+  }
+
+  .indicator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .indicator {
+    width: 10px;
+    height: 10px;
+    background: gray;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .active {
+    background: white;
+  }
+  .control-btn {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .main-card {
+    /*  w-[5.75rem] md:w-[8.125rem] lg:w-[15rem] */
+    @apply flex flex-col flex-nowrap gap-2 overflow-hidden;
+
+    .contents-name {
+      @apply text-gray-300 text-xs md:text-sm lg:text-base;
+    }
+    .contents-description {
+      @apply text-gray-300 text-[.625rem] md:text-xs lg:text-sm;
+    }
+    .Quick-VOD {
+      @apply bg-[#C73E4E] w-[fit-content] m-1.5 h-[fit-content] flex text-center items-center px-2 py-1 rounded-sm text-[10px] md:text-xs lg:text-sm absolute;
+    }
+    .contents-rank {
+      @apply text-white font-sans font-medium text-3xl md:text-5xl lg:text-7xl italic mr-[10%];
+    }
+    .new-sign {
+      @apply bg-[#E93945] flex-shrink-0 size-1 md:size-[.3125rem] lg:size-1.5 -translate-y-1.5 md:-translate-y-2 lg:-translate-y-2.5 rounded-[50%];
+    }
+  }
+
+  .main-dialog::backdrop {
+    background: rgba(0, 0, 0, 75%);
+  }
+}
