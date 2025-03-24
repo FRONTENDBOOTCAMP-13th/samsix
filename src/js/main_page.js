@@ -238,6 +238,9 @@ function updateButtonVisibility(isOpen) {
   closeBtn.classList.toggle('hidden', !isOpen);
 }
 
+// 페이지 로드 시 한 번 실행
+document.addEventListener('DOMContentLoaded', updatePlaceholder);
+
 // search-bar 컴포넌트에서 placeholder 변경
 function updatePlaceholder() {
   const input = document.getElementById('taingSearch');
@@ -254,13 +257,19 @@ function updatePlaceholder() {
 // 창 크기 변경 시 플레이스홀더 업데이트
 window.addEventListener('resize', updatePlaceholder);
 
-// 페이지 로드 시 한 번 실행
-document.addEventListener('DOMContentLoaded', updatePlaceholder);
+document.addEventListener('DOMContentLoaded', () => {
+  const timeDisplay = document.getElementById('time-display');
 
-// 현재 시간 표시
-let now = new Date();
-let formattedTime = now.toLocaleString();
-const timeDisplay = document.getElementById('time-display');
-if (timeDisplay) {
-  timeDisplay.textContent = formattedTime;
-}
+  if (timeDisplay) {
+    const now = new Date();
+
+    const formattedDate = now.toLocaleDateString(); // 예: 2025. 3. 24.
+    const formattedTime = now.toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true, // 12시간제 → 오전/오후 포함
+    });
+
+    timeDisplay.textContent = `${formattedDate} ${formattedTime} 기준`;
+  }
+});
