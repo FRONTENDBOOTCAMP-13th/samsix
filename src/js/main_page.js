@@ -147,3 +147,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  initSearchModal();
+  updatePlaceholder();
+  updateTimeDisplay();
+  window.addEventListener('resize', updatePlaceholder);
+});
+
+function initSearchModal() {
+  const modal = document.getElementById('searchModal');
+  const openBtn = document.getElementById('openModalBtn');
+  const closeBtn = document.getElementById('closeModalBtn');
+  const nav = document.getElementById('navigation');
+
+  if (!modal || !openBtn || !closeBtn || !nav) return;
+
+  // 검색창 열기 버튼
+  openBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    updateButtonVisibility(true);
+    nav.classList.add('bg-brand-dark-bg-1');
+    nav.classList.remove('bg-black');
+  });
+
+  // 검색창 닫기 버튼
+  closeBtn.addEventListener('click', (event) => {
+    event.stopPropagation(); // 혹시라도 이벤트 버블링 방지
+    closeModal();
+  });
+
+  // 모달 바깥 클릭 시 닫기
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    updateButtonVisibility(false);
+    nav.classList.remove('bg-brand-dark-bg-1');
+    nav.classList.add('bg-black');
+  }
+}
+
+// 버튼 전환 함수
+function updateButtonVisibility(isOpen) {
+  const openBtn = document.getElementById('openModalBtn');
+  const closeBtn = document.getElementById('closeModalBtn');
+  openBtn.classList.toggle('hidden', isOpen);
+  closeBtn.classList.toggle('hidden', !isOpen);
+}
+
+// search-bar 컴포넌트에서 placeholder 변경
+function updatePlaceholder() {
+  const input = document.getElementById('taingSearch');
+  if (!input) return; // input 요소가 없으면 실행 안 함
+
+  if (window.innerWidth < 768) {
+    // Tailwind 기준 sm (md 미만)
+    input.placeholder = '검색';
+  } else {
+    input.placeholder = 'TV프로그램, 영화 제목 및 출연진으로 검색해보세요';
+  }
+}
+
+// 창 크기 변경 시 플레이스홀더 업데이트
+window.addEventListener('resize', updatePlaceholder);
+
+// 페이지 로드 시 한 번 실행
+document.addEventListener('DOMContentLoaded', updatePlaceholder);
+
+// 현재 시간 표시
+let now = new Date();
+let formattedTime = now.toLocaleString();
+const timeDisplay = document.getElementById('time-display');
+if (timeDisplay) {
+  timeDisplay.textContent = formattedTime;
+}
