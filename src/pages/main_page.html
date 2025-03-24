@@ -12,10 +12,10 @@
   <body class="bg-black text-white">
     <!-- 헤더 내비게이션 바 -->
     <header class="sticky top-0 z-50 w-full">
-      <nav class="flex justify-between text-gray-200 px-6 py-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.8125rem] bg-black" id="navigation">
+      <nav class="flex justify-between text-gray-200 px-6 py-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.8125rem] bg-black" id="navigation" role="navigation" aria-label="주요 메뉴">
         <ul class="flex md:gap-7 lg:gap-[3.25rem] items-center md:text-xs lg:text-xl">
           <!-- 로고 -->
-          <li>
+          <li aria-label="로고: 홈페이지 이동">
             <a href="./main_page.html">
               <svg width="53" height="22" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[4.8125rem] md:h-6 lg:w-[8rem] lg:h-[2.375rem]">
                 <g clip-path="url(#clip0_3307_6764)">
@@ -78,7 +78,7 @@
           </li>
 
           <!-- Paramount+ -->
-          <li class="hidden md:block hover-white">
+          <li class="hidden md:block hover-white" aria-label="Paramount+ - 페이지 이동">
             <a href="#">
               <svg width="84" height="25" viewBox="0 0 112 34" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:w-[7rem] lg:h-[2.125rem]">
                 <g clip-path="url(#clip0_3307_6801)">
@@ -109,7 +109,7 @@
         <ul class="flex gap-3 md:gap-7 lg:gap-10 items-center">
           <!-- 검색 모달 버튼 -->
           <li>
-            <button id="modalToggleBtn" class="cursor-pointer inline-flex align-middle" type="button">
+            <button id="modalToggleBtn" class="cursor-pointer inline-flex align-middle" type="button" aria-label="검색창 열기/닫기">
               <!-- 검색버튼(돋보기) -->
               <svg id="openModalBtn" width="22" height="22" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-6 md:h-6 lg:w-10 lg:h-10 hover-stroke-white">
                 <g clip-path="url(#clip0_3307_6807)">
@@ -196,7 +196,8 @@
     </header>
 
     <!-- 검색: 모달창 -->
-    <div id="searchModal" class="fixed inset-0 z-30 mx-auto text-white overflow-hidden hidden">
+    <h2 id="search-title" class="sr-only">검색창</h2>
+    <div id="searchModal" class="fixed inset-0 z-30 mx-auto text-white overflow-hidden hidden" role="dialog" aria-modal="true" aria-labelledby="search-title">
       <div class="flex flex-col items-center bg-brand-dark-bg-1 mt-[3rem] md:mt-[3.5625rem] lg:mt-[6.25rem] pt-5 pb-12 md:pt-7 md:pb-[3.25rem] lg:pt-9 lg:pb-[4.375rem]">
         <!-- 검색창 -->
         <div class="relative w-fit mx-auto border-b-2">
@@ -358,7 +359,7 @@
           <h2>타잉에서 꼭 봐야하는 콘텐츠</h2>
           <div class="grid grid-cols-[repeat(8,_5.75rem)] md:grid-cols-[repeat(8,_8.125rem)] lg:grid-cols-[repeat(8,_15rem)] overflow-x-auto scrollbar-hide gap-4">
             <ul class="contents">
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
