@@ -68,10 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
       controlBtn.addEventListener('click', () => {
         if (isPlaying) {
           clearInterval(autoSlide);
-          controlBtn.textContent = '▶';
+          controlBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"> <polygon points="5,3 19,12 5,21" /> </svg>';
         } else {
           autoSlide = setInterval(nextSlide, 3000);
-          controlBtn.textContent = '⏸';
+          controlBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>';
         }
         isPlaying = !isPlaying;
       });
@@ -146,6 +146,15 @@ document.addEventListener('DOMContentLoaded', () => {
       button.addEventListener('click', closeMainDialog);
     });
   }
+});
+
+const profileBtn = document.getElementById('profile-link-btn');
+
+profileBtn.addEventListener('click', function () {
+  window.location.href = '../pages/profile_page.html';
+});
+profileBtn.addEventListener('touchstart', function () {
+  window.location.href = '../pages/profile_page.html';
 });
 
 document.addEventListener('DOMContentLoaded', () => {

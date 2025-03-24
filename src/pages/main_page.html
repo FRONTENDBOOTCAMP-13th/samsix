@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>메인 페이지</title>
+    <title>TAING</title>
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" crossorigin="anonymous" />
     <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
     <script type="module" src="/src/js/main_page.js"></script>
@@ -16,7 +16,7 @@
         <ul class="flex md:gap-7 lg:gap-[3.25rem] items-center md:text-xs lg:text-xl">
           <!-- 로고 -->
           <li aria-label="로고: 홈페이지 이동">
-            <a href="#">
+            <a href="./main_page.html">
               <svg width="53" height="22" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[4.8125rem] md:h-6 lg:w-[8rem] lg:h-[2.375rem]">
                 <g clip-path="url(#clip0_3307_6764)">
                   <mask id="mask0_3307_6764" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="4" width="132" height="34">
@@ -134,6 +134,7 @@
             </button>
           </li>
           <!-- 타잉 아이콘 -->
+          <!-- 타잉 아이콘 -->
           <li class="relative hover:scale-[110%]">
             <button class="cursor-pointer inline-flex align-middle" type="button" popovertarget="empty-popover">
               <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-6 md:h-6 lg:w-10 lg:h-10">
@@ -178,7 +179,7 @@
                 <img src="../assets/profile/profile_2_sm.png" alt="나의 프로필 사진" />
                 <div class="flex flex-col gap-0.5">
                   <span class="text-white">범쌤</span>
-                  <a href="./profile_page.html">프로필 전환하기</a>
+                  <button type="button" id="profile-link-btn" class="cursor-pointer">프로필 전환하기</button>
                 </div>
               </div>
               <hr class="bg-[#363636]" />
@@ -339,7 +340,12 @@
           <a href="#" class="absolute right-[5%] bottom-[5%] px-8 h-10 inline-flex justify-center items-center text-xs bg-white rounded-md text-black"> 자세히보기 </a>
         </div>
         <div class="indicator-container">
-          <button class="control-btn">⏸</button>
+          <button class="control-btn mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="8" y1="4" x2="8" y2="20" />
+              <line x1="16" y1="4" x2="16" y2="20" />
+            </svg>
+          </button>
           <span class="indicator active"></span>
           <span class="indicator"></span>
           <span class="indicator"></span>

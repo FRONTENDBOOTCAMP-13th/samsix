@@ -9,59 +9,59 @@
     <link rel="stylesheet" href="/font/pretendardvariable.css" />
     <script type="module" src="/src/js/login_page.js"></script>
   </head>
-  <body class="min-h-screen min-w-[22.5rem] flex flex-col bg-black-origin">
-    <main class="w-full flex flex-col items-center px-5 md:px-8 lg:px-10 mt-12 md:mt-16 lg:mt-20 animate-fadeIn" role="main">
-      <section class="w-full md:max-w-3xl" role="region" aria-labelledby="signup-title">
+  <body class="base-body">
+    <main class="page-container animate-fadeIn" role="main">
+      <section class="content-section" role="region" aria-labelledby="signup-title">
         <form class="group/btn" role="form" aria-labelledby="signup-title">
           <!-- 아이디 입력 -->
-          <fieldset class="mb-4">
+          <fieldset class="input-container">
             <label class="sr-only" for="input_id">아이디</label>
-            <input type="text" pattern="[a-zA-Z][a-zA-Z0-9]{5,11}" id="input_id" name="input_id" required aria-required="true" placeholder="아이디" aria-errormessage="error_id" class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded text-white py-3.5 px-4 text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" />
-            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 block peer-placeholder-shown:hidden peer-valid:hidden" id="error_id" aria-live="polite">
+            <input type="text" pattern="[a-zA-Z][a-zA-Z0-9]{5,11}" id="input_id" name="input_id" required aria-required="true" placeholder="아이디" aria-errormessage="error_id" class="input-field peer" />
+            <p class="error-message peer-placeholder-shown:hidden peer-valid:hidden" id="error_id" aria-live="polite">
               <span>아이디는 영문 또는 영문, 숫자 조합 6~12자리까지 입력 가능합니다.</span>
             </p>
           </fieldset>
 
           <!-- 비밀번호 입력 -->
-          <fieldset class="relative mb-4">
+          <fieldset class="input-container">
             <label class="sr-only" for="input_pw">비밀번호</label>
-            <input class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded py-3.5 px-4 pr-10 text-white text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" type="password" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,15}" id="input_pw" name="input_pw" required aria-required="true" placeholder="비밀번호" aria-errormessage="error_pw" />
-            <button type="button" id="togglePassword" class="absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300" aria-label="비밀번호 보기" onclick="togglePasswordVisibility(this)">
+            <input class="password-field peer" type="password" pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,15}" id="input_pw" name="input_pw" required aria-required="true" placeholder="비밀번호" aria-errormessage="error_pw" />
+            <button type="button" id="togglePassword" class="password-toggle" aria-label="비밀번호 보기" onclick="togglePasswordVisibility(this)">
               <img src="/src/assets/login/unvisible_pwicon.svg" alt="" class="size-5 toggle-icon" />
             </button>
-            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 block peer-placeholder-shown:hidden peer-valid:hidden" id="error_pw" aria-live="polite">
+            <p class="error-message peer-placeholder-shown:hidden peer-valid:hidden" id="error_pw" aria-live="polite">
               <span>비밀번호는 영문 소문자, 숫자, 특수문자 포함 최소 8~15자리까지 입력 가능합니다.</span>
             </p>
           </fieldset>
 
           <!-- 비밀번호 확인 -->
-          <fieldset class="relative mb-4">
+          <fieldset class="input-container">
             <label class="sr-only" for="input_pw_confirm">비밀번호 확인</label>
-            <input class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded py-3.5 px-4 pr-10 text-white text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" type="password" id="input_pw_confirm" name="input_pw_confirm" required aria-required="true" placeholder="비밀번호 확인" aria-errormessage="error_pw_confirm" />
-            <button type="button" id="togglePasswordConfirm" class="absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300" aria-label="비밀번호 확인 보기" onclick="togglePasswordVisibility(this)">
+            <input class="password-field peer" type="password" id="input_pw_confirm" name="input_pw_confirm" required aria-required="true" placeholder="비밀번호 확인" aria-errormessage="error_pw_confirm" />
+            <button type="button" id="togglePasswordConfirm" class="password-toggle" aria-label="비밀번호 확인 보기" onclick="togglePasswordVisibility(this)">
               <img src="/src/assets/login/unvisible_pwicon.svg" alt="" class="size-5 toggle-icon" />
             </button>
-            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 hidden" id="error_pw_confirm" aria-live="polite">
+            <p class="error-message hidden" id="error_pw_confirm" aria-live="polite">
               <span>비밀번호가 일치하지 않습니다.</span>
             </p>
           </fieldset>
 
           <!-- 이메일 입력 -->
-          <fieldset>
+          <fieldset class="input-container">
             <label class="sr-only" for="input_email">이메일</label>
-            <input type="email" id="input_email" name="input_email" required aria-required="true" placeholder="이메일" aria-errormessage="error_email" class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded text-white py-3.5 px-4 text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" />
-            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 block peer-placeholder-shown:hidden peer-valid:hidden" id="error_email" aria-live="polite">
+            <input type="email" id="input_email" name="input_email" required aria-required="true" placeholder="이메일" aria-errormessage="error_email" class="input-field peer" />
+            <p class="error-message peer-placeholder-shown:hidden peer-valid:hidden" id="error_email" aria-live="polite">
               <span>이메일 주소를 입력하세요.</span>
             </p>
           </fieldset>
 
           <!-- 체크박스 그룹 -->
-          <ul>
+          <ul class="checkbox-list">
             <!-- 체크박스 - 전체 동의 -->
-            <li class="flex items-center mt-6 mb-3">
-              <label for="checkbox_all" class="flex items-center cursor-pointer text-gray-500 font-bold bg-transparent">
+            <li class="checkbox-item-all">
+              <label for="checkbox_all" class="checkbox-label-all">
                 <input type="checkbox" id="checkbox_all" class="sr-only peer main-checkbox" onchange="toggleAllCheckboxes()" aria-controls="checkbox_1 checkbox_2 checkbox_3 checkbox_4 checkbox_5 checkbox_6 checkbox_7 checkbox_8" />
-                <span class="inline-block size-5 rounded-full border-gray-700 mr-2 flex-shrink-0 relative bg-gray-600 peer-checked:bg-brand-red-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white peer-focus-visible:outline-offset-2">
+                <span class="checkbox-mark-all peer-checked:bg-brand-red-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white peer-focus-visible:outline-offset-2">
                   <svg width="15" height="15" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <path d="M2 5L4 7L8 3" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
@@ -70,11 +70,11 @@
               </label>
             </li>
 
-            <!-- 하위 체크박스 -->
-            <li class="flex items-center group">
-              <label for="checkbox_1" class="flex items-center cursor-pointer text-gray-500 bg-transparent">
+            <!-- 체크박스 1 -->
+            <li class="checkbox-item group">
+              <label for="checkbox_1" class="checkbox-label">
                 <input type="checkbox" id="checkbox_1" required aria-required="true" class="peer sr-only sub-checkbox focus-visible:outline-none" onchange="updateAllCheckbox()" />
-                <span class="inline-block size-5 flex-shrink-0 relative mr-2 peer-focus-visible:outline-2 peer-focus-visible:outline-white-origin peer-focus-visible:outline-offset-2 rounded-sm">
+                <span class="checkbox-mark peer-focus-visible:outline-2 peer-focus-visible:outline-white-origin peer-focus-visible:outline-offset-2">
                   <svg width="20" height="20" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                     <path d="M2 5L4 7L8 3" stroke="gray" class="group-[&:has(input:checked)]:stroke-brand-red-2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
@@ -84,9 +84,9 @@
             </li>
           </ul>
 
-          <!-- 확인 버튼 -->
-          <button type="submit" class="w-full bg-gray-700 text-gray-400 rounded py-3.5 font-bold mt-6 mb-12 text-label-large group-valid/btn:bg-brand-red-1 group-valid/btn:text-white-origin group-valid/btn:hover:bg-brand-red-2 transition-colors duration-200">내용</button>
-          <span id="button-description" class="sr-only">아이디, 비밀번호, 비밀번호 확인, 이메일 입력 후 활성화됩니다.</span>
+          <!-- 버튼 -->
+          <button type="submit" class="disabled-button group-valid/btn:bg-brand-red-1 group-valid/btn:text-white-origin group-valid/btn:hover:bg-brand-red-2 mb-12">버튼 이름</button>
+          <span id="button-description" class="sr-only">활성화 조건</span>
         </form>
       </section>
     </main>
