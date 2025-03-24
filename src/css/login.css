@@ -14,3 +14,198 @@
 .animate-fadeIn {
   animation: fadeIn 0.6s ease-out;
 }
+
+@layer components {
+  /* 전역 스타일 */
+  .base-body {
+    @apply min-h-screen min-w-[22.5rem] flex flex-col bg-black-origin;
+  }
+
+  /* 헤더 스타일 */
+  .site-header {
+    @apply pt-5 md:pt-8 lg:pt-10 px-5 md:px-8 lg:px-10;
+  }
+
+  /* 푸터 */
+  .site-footer {
+    @apply w-full p-5 md:px-8 lg:px-10 border-t-gray-800 border-2 border-l-0 border-r-0 border-b-0;
+  }
+
+  /* 푸터 링크 목록 */
+  .footer-links {
+    @apply flex max-md:flex-col gap-x-3 gap-y-2 mb-4 text-paragraph-small text-gray-500;
+  }
+
+  .footer-link {
+    @apply hover:text-gray-300;
+  }
+
+  /* 회사 정보 */
+  .company-info {
+    @apply hidden md:block text-label-small text-gray-600 mb-4 leading-relaxed not-italic;
+  }
+
+  /* 소셜 미디어 링크 */
+  .social-links {
+    @apply flex gap-4 mb-4;
+  }
+
+  .social-link {
+    @apply text-gray-600 hover:text-gray-400;
+  }
+
+  /* 저작권 정보 */
+  .copyright {
+    @apply text-paragraph-small text-gray-600 block;
+  }
+
+  /* 페이지 레이아웃 공통 요소 */
+  .page-container {
+    @apply w-full flex flex-col items-center px-5 md:px-8 lg:px-10 mt-12 md:mt-16 lg:mt-20;
+  }
+
+  .content-section {
+    @apply w-full md:max-w-3xl;
+  }
+
+  /* 페이지 제목 (모든 페이지) */
+  .page-title {
+    @apply text-center text-heading-x-l md:text-heading-x-x-l lg:text-heading-x-x-x-l font-bold mb-8 md:mb-10 lg:mb-12 text-white;
+  }
+
+  /* 섹션 헤더 (아이디/비밀번호 찾기 페이지) */
+  .section-header {
+    @apply leading-7 pb-3;
+  }
+
+  .section-title {
+    @apply font-semibold text-white-origin;
+  }
+
+  .section-description {
+    @apply text-gray-400;
+  }
+
+  /* 입력 필드 (모든 페이지) */
+  .input-field {
+    @apply w-full bg-brand-dark-bg-2 border border-gray-700 rounded text-white py-3.5 px-4 text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500;
+  }
+
+  /* 비밀번호 입력 필드 (로그인, 회원가입 페이지) */
+  .password-field {
+    @apply w-full bg-brand-dark-bg-2 border border-gray-700 rounded py-3.5 px-4 pr-10 text-white text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500;
+  }
+
+  /* 비밀번호 토글 버튼 (로그인, 회원가입 페이지) */
+  .password-toggle {
+    @apply absolute right-5 top-7 -translate-y-1/2 text-gray-400 hover:text-gray-300;
+  }
+
+  /* 입력 필드 컨테이너 (모든 페이지) */
+  .input-container {
+    @apply mb-4 relative;
+  }
+
+  /* 에러 메시지 (모든 페이지) */
+  .error-message {
+    @apply text-brand-red-2 text-paragraph-medium font-semibold mt-1 block;
+  }
+
+  /* 버튼 (모든 페이지) */
+  .disabled-button {
+    @apply w-full bg-gray-700 text-gray-400 transition-colors duration-200 rounded py-3.5 font-bold my-6 text-label-large;
+  }
+
+  .white-button {
+    @apply w-full bg-white-origin hover:bg-gray-200 text-black-origin transition-colors duration-200 rounded py-3.5 font-bold text-label-large inline-block text-center;
+  }
+
+  /* 구분선 (아이디 찾기 페이지) */
+  .divider {
+    @apply flex items-center my-6 h-24;
+  }
+
+  .divider-line {
+    @apply flex-grow h-px bg-gray-700;
+  }
+
+  .divider-text {
+    @apply px-4 text-gray-500 text-sm;
+  }
+
+  /* 계정 복구 링크 섹션 (로그인 페이지) */
+  .account-recovery {
+    @apply flex justify-center items-center mb-4 text-paragraph-medium;
+  }
+
+  .recovery-link {
+    @apply text-gray-400 hover:text-gray-200 transition-colors duration-300;
+  }
+
+  /* 회원가입 섹션 (로그인 페이지) */
+  .signup-prompt {
+    @apply flex justify-center items-center text-paragraph-medium mb-12;
+  }
+
+  .signup-link {
+    @apply ml-2 text-gray-400 hover:text-gray-200 transition-colors duration-300;
+  }
+
+  /* 체크박스 컨테이너 (로그인, 회원가입 페이지) */
+  .checkbox-container {
+    @apply flex items-center;
+  }
+
+  .checkbox-label {
+    @apply flex items-center cursor-pointer text-white bg-transparent hover:text-gray-200 transition-colors duration-300;
+  }
+
+  /* 회원가입 페이지 특화 요소 */
+  .signup-title-container {
+    @apply text-center mb-6;
+  }
+
+  .signup-subtitle {
+    @apply text-center text-label-small md:text-label-medium lg:text-label-large text-gray-400 font-semibold;
+  }
+
+  /* 체크박스 리스트 (회원가입 페이지) */
+  .checkbox-list {
+    @apply mt-6;
+  }
+
+  /* 체크박스 항목 - 일반 */
+  .checkbox-item {
+    @apply flex items-center;
+  }
+
+  /* 체크박스 항목 - 전체 동의 */
+  .checkbox-item-all {
+    @apply flex items-center mt-6 mb-3;
+  }
+
+  /* 체크박스 하위 항목 */
+  .checkbox-subitem {
+    @apply pl-7 flex items-center;
+  }
+
+  /* 체크박스 레이블 - 전체 동의 */
+  .checkbox-label-all {
+    @apply flex items-center cursor-pointer text-gray-500 font-bold bg-transparent;
+  }
+
+  /* 체크박스 레이블 - 일반 */
+  .checkbox-label {
+    @apply flex items-center cursor-pointer text-gray-500 bg-transparent;
+  }
+
+  /* 체크박스 마크 - 전체 동의 */
+  .checkbox-mark-all {
+    @apply inline-block size-5 rounded-full border-gray-700 mr-2 flex-shrink-0 relative bg-gray-600;
+  }
+
+  /* 체크박스 마크 - 일반 */
+  .checkbox-mark {
+    @apply inline-block size-5 flex-shrink-0 relative mr-2 rounded-sm;
+  }
+}
