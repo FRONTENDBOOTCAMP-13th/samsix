@@ -146,6 +146,20 @@ document.addEventListener('DOMContentLoaded', () => {
       button.addEventListener('click', closeMainDialog);
     });
   }
+
+  const upDialogButton = document.querySelector('.up-dialog');
+  const downDialogButton = document.querySelector('.down-dialog');
+  const panelDialog = document.querySelector('.panel-dialog');
+
+  if (upDialogButton && downDialogButton && panelDialog) {
+    const openDialog = () => panelDialog.showModal();
+    const closeDialog = () => panelDialog.close();
+
+    upDialogButton.addEventListener('click', openDialog);
+    downDialogButton.addEventListener('click', closeDialog);
+  } else {
+    console.error('모달 관련 요소를 찾을 수 없습니다.');
+  }
 });
 
 const profileBtn = document.getElementById('profile-link-btn');
