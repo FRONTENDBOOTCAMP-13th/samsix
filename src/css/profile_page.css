@@ -7,3 +7,36 @@ body:has(#edit-toggle:checked) .profile-lock {
 body:has(#edit-toggle:checked) .profile-edit {
   display: flex;
 }
+
+.hover-float {
+  transition: transform 150ms ease-out;
+  &:hover {
+    transform: translateY(-0.625rem);
+  }
+}
+
+/* outline은 기본적으로 보이지 않게 설정 */
+.button:focus {
+  outline: none;
+}
+
+/* Tab 키로 탐색 시에만 outline 보이게 */
+.button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* fade-in 효과 적용 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}

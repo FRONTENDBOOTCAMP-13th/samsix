@@ -4,30 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Find Password</title>
-    <link rel="icon" href="/vite.svg" />
+    <link rel="icon" href="/taing.svg" />
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" />
     <link rel="stylesheet" href="/font/pretendardvariable.css" />
     <script type="module" src="/src/js/login_page.js"></script>
   </head>
-  <body class="min-h-screen min-w-[22.5rem] flex flex-col bg-black-origin">
+  <body class="base-body">
     <!-- 헤더 (로고) -->
-    <header class="pt-5 md:pt-8 lg:pt-10 px-5 md:px-8 lg:px-10" role="banner">
-      <a href="/src/pages/main_page.html">
-        <img src="/src/assets/login/taing_logo.svg" alt="TAING 메인 이동" class="h-6 md:h-8 lg:h-10" />
-      </a>
+    <header class="sticky top-0 z-50 w-full">
+      <nav class="flex justify-between text-gray-200 px-6 py-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.8125rem] bg-black" id="navigation">
+        <ul class="flex md:gap-7 lg:gap-[3.25rem] items-center md:text-xs lg:text-xl">
+          <!-- 로고 -->
+          <li>
+            <a href="../pages/main_page.html" aria-label="로고: 홈페이지 이동">
+              <svg width="53" height="22" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[4.8125rem] md:h-6 lg:w-[8rem] lg:h-[2.375rem]" alt="TAING 메인 이동">
+                <g clip-path="url(#clip0_3307_6764)">
+                  <mask id="mask0_3307_6764" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="4" width="132" height="34">
+                    <path d="M0 4.87793H131.511V37.1249H0V4.87793Z" fill="white" />
+                  </mask>
+                  <g mask="url(#mask0_3307_6764)">
+                    <path
+                      d="M86.165 23.0513L92.5699 35.9768H102.522V5.6543H92.9944V18.2768C92.9948 18.4676 92.9306 18.6529 92.8122 18.8025C92.6938 18.9521 92.5282 19.0573 92.3424 19.1007C92.1567 19.1442 91.9616 19.1235 91.7891 19.042C91.6166 18.9605 91.4768 18.8229 91.3925 18.6518L84.9544 5.6543H75.002V35.9753H84.5585V23.4248C84.5584 23.2341 84.6229 23.0491 84.7414 22.8997C84.8599 22.7503 85.0255 22.6455 85.2112 22.6022C85.3969 22.5589 85.5918 22.5797 85.7641 22.6613C85.9365 22.7428 86.0762 22.8803 86.1604 23.0513"
+                      fill="white"
+                    />
+                    <path d="M60.2627 5.6543H70.7132V35.9753H60.2627V5.6543Z" fill="white" />
+                    <path
+                      d="M105.61 17.9455V23.5345C105.61 28.9705 107.661 32.9005 111.703 35.2135C118.153 38.905 127.441 36.6265 131.512 33.616V19.5055H122.074V28.3795L121.894 28.45C121.145 28.7408 120.339 28.8601 119.538 28.7991C118.736 28.7381 117.958 28.4984 117.261 28.0975C116.605 27.5682 116.092 26.8827 115.77 26.1039C115.447 25.325 115.326 24.4776 115.416 23.6395V17.386C115.322 16.5738 115.526 15.7551 115.99 15.0822C116.455 14.4093 117.148 13.9279 117.94 13.7275C118.803 13.5198 119.712 13.6474 120.484 14.0842C121.255 14.5211 121.833 15.2348 122.098 16.081L131.241 11.1775C130.077 9.15463 128.374 7.49461 126.322 6.38231C124.27 5.27 121.949 4.74907 119.619 4.87751C119.002 4.87751 118.402 4.90751 117.831 4.95851C114.741 5.14317 111.792 6.31639 109.419 8.30501C108.134 9.54748 107.13 11.0507 106.474 12.7136C105.819 14.3764 105.527 16.1604 105.618 17.9455"
+                      fill="white"
+                    />
+                    <path d="M25.9305 5.6543H0V14.5313H7.8V35.9813H18.1155V14.5313H25.923L25.9305 5.6543Z" fill="white" />
+                    <path d="M37.8992 36.3208L44.4332 16.0183C44.4939 15.8255 44.6217 15.6609 44.7935 15.5543C44.9652 15.4477 45.1695 15.4063 45.3692 15.4375C45.5689 15.4688 45.7507 15.5706 45.8817 15.7245C46.0128 15.8784 46.0842 16.0742 46.0832 16.2763L46.0832 36.3223L55.9922 36.3223L55.9922 5.99977L37.2557 5.99976L27.0002 36.3208L37.8992 36.3208Z" fill="white" />
+                  </g>
+                </g>
+                <defs>
+                  <clipPath id="clip0_3307_6764">
+                    <rect width="132" height="42" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- 메인 콘텐츠 -->
-    <main class="w-full flex flex-col items-center px-5 md:px-8 lg:px-10 mt-12 md:mt-16 lg:mt-20 animate-fadeIn" role="main">
-      <section class="w-full md:max-w-3xl" role="region" aria-labelledby="password-recovery-title">
+    <main class="page-container animate-fadeIn" role="main">
+      <section class="content-section" role="region" aria-labelledby="password-recovery-title">
         <!-- 타이틀 -->
-        <h1 class="text-center text-heading-x-l md:text-heading-x-x-l lg:text-heading-x-x-x-l font-bold mb-6 md:mb-8 lg:mb-10 text-white">비밀번호 찾기</h1>
+        <h1 class="page-title mb-6 md:mb-8 lg:mb-10" id="password-recovery-title">비밀번호 찾기</h1>
 
         <!-- 항목 & 설명 -->
-        <div class="leading-7 pb-3" role="contentinfo" aria-label="비밀번호 찾기 안내">
-          <h2 class="font-semibold text-white-origin">아이디로 찾기</h2>
-          <p class="text-gray-400">아이디 확인 후 <strong>등록된 이메일 주소</strong>로 비밀번호 재설정을 위한 인증 메일이 발송됩니다.</p>
-          <p class="text-gray-400">이메일을 확인하여 <strong>12시간 이내에 비밀번호 재설정</strong>을 완료해주세요.</p>
+        <div class="section-header" role="contentinfo" aria-label="비밀번호 찾기 안내">
+          <h2 class="section-title">아이디로 찾기</h2>
+          <p class="section-description">아이디 확인 후 <strong>등록된 이메일 주소</strong>로 비밀번호 재설정을 위한 인증 메일이 발송됩니다.</p>
+          <p class="section-description">이메일을 확인하여 <strong>12시간 이내에 비밀번호 재설정</strong>을 완료해주세요.</p>
         </div>
 
         <!-- 아이디 입력 & 버튼 -->
@@ -35,13 +65,13 @@
           <fieldset>
             <!-- 아이디 입력 -->
             <label class="sr-only" for="input_id">아이디</label>
-            <input type="text" id="input_id" pattern="[a-zA-Z][a-zA-Z0-9]{5,11}" name="input_id" required placeholder="아이디" aria-required="true" aria-errormessage="error_id" class="peer w-full bg-brand-dark-bg-2 border border-gray-700 rounded text-white py-3.5 px-4 text-label-medium focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-300 hover:border-gray-500" />
-            <p class="text-brand-red-2 text-paragraph-medium font-semibold mt-1 block peer-placeholder-shown:hidden peer-valid:hidden" id="error_id" aria-live="polite">
+            <input type="text" id="input_id" pattern="[a-zA-Z][a-zA-Z0-9]{5,11}" name="input_id" required placeholder="아이디" aria-required="true" aria-errormessage="error_id" class="input-field peer" />
+            <p class="error-message peer-placeholder-shown:hidden peer-valid:hidden" id="error_id" aria-live="polite">
               <span>아이디를 입력하세요.</span>
             </p>
 
             <!-- 확인 버튼 -->
-            <button type="submit" class="w-full bg-brand-red-1 peer-valid:hover:bg-brand-red-2 text-white transition-colors duration-200 rounded py-3.5 font-bold mt-6 mb-12 text-label-large peer-invalid:bg-gray-700 peer-invalid:text-gray-400">확인</button>
+            <button type="submit" class="disabled-button bg-brand-red-1 peer-valid:hover:bg-brand-red-2 text-white peer-invalid:bg-gray-700 peer-invalid:text-gray-400 mb-12">확인</button>
             <span id="button-description" class="sr-only">아이디 입력 후 활성화됩니다.</span>
           </fieldset>
         </form>
@@ -49,21 +79,21 @@
     </main>
 
     <!-- 푸터 섹션 -->
-    <footer class="w-full p-5 md:px-8 lg:px-10 border-t-gray-800 border-2 border-l-0 border-r-0 border-b-0">
+    <footer class="site-footer">
       <!-- 유틸리티 링크 -->
       <nav class="text-left">
-        <ul class="flex max-md:flex-col gap-x-3 gap-y-2 mb-4 text-paragraph-small text-gray-500">
-          <li><a href="#" class="hover:text-gray-300">고객센터</a></li>
-          <li><a href="#" class="hover:text-gray-300">이용약관</a></li>
-          <li><a href="#" class="hover:text-gray-300">개인정보처리방침</a></li>
-          <li><a href="#" class="hover:text-gray-300">청소년 보호정책</a></li>
-          <li><a href="#" class="hover:text-gray-300">법적고지</a></li>
-          <li><a href="#" class="hover:text-gray-300">이벤트</a></li>
-          <li><a href="#" class="hover:text-gray-300">인재채용</a></li>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-link">고객센터</a></li>
+          <li><a href="#" class="footer-link">이용약관</a></li>
+          <li><a href="#" class="footer-link">개인정보처리방침</a></li>
+          <li><a href="#" class="footer-link">청소년 보호정책</a></li>
+          <li><a href="#" class="footer-link">법적고지</a></li>
+          <li><a href="#" class="footer-link">이벤트</a></li>
+          <li><a href="#" class="footer-link">인재채용</a></li>
         </ul>
 
         <!-- 태블릿, 데스크탑에만 표시되는 추가 정보 -->
-        <address class="hidden md:block text-label-small text-gray-600 mb-4 leading-relaxed not-italic">
+        <address class="company-info">
           <p>대표이사 : YANG JIEUL | 사업자등록번호 : 188-88-01893 | 통신판매신고번호 : 2020-서울마포-3641호</p>
           <p>사업장 : 서울특별시 마포구 상암산로 34, DMC디지털큐브 15층(상암동) | 호스팅사업자 : 씨제이올리브네트웍스(주)</p>
           <p>고객센터 (평일 09시~17시/점심시간 13시~14시) | 대표메일 : taing@cj.net | 전화번호(ARS) : 1670-1525 (평일/주말 상담 운영)</p>
@@ -71,31 +101,31 @@
         </address>
 
         <!-- 소셜 미디어 링크 -->
-        <ul class="flex gap-4 mb-4">
+        <ul class="social-links">
           <li>
-            <a href="/" aria-label="유튜브" class="text-gray-600 hover:text-gray-400">
+            <a href="/" aria-label="유튜브" class="social-link">
               <img src="/src/assets/login/youtube.svg" alt="" class="size-5" />
             </a>
           </li>
           <li>
-            <a href="/" aria-label="인스타그램" class="text-gray-600 hover:text-gray-400">
+            <a href="/" aria-label="인스타그램" class="social-link">
               <img src="/src/assets/login/instagram.svg" alt="" class="size-5" />
             </a>
           </li>
           <li>
-            <a href="/" aria-label="트위터" class="text-gray-600 hover:text-gray-400">
+            <a href="/" aria-label="트위터" class="social-link">
               <img src="/src/assets/login/twitter.svg" alt="" class="size-5" />
             </a>
           </li>
           <li>
-            <a href="/" aria-label="페이스북" class="text-gray-600 hover:text-gray-400">
+            <a href="/" aria-label="페이스북" class="social-link">
               <img src="/src/assets/login/facebook.svg" alt="" class="size-5" />
             </a>
           </li>
         </ul>
 
         <!-- 저작권 정보 -->
-        <small class="text-paragraph-small text-gray-600 block">© TAING Corp. ALL RIGHTS RESERVED.</small>
+        <small class="copyright">© TAING Corp. ALL RIGHTS RESERVED.</small>
       </nav>
     </footer>
   </body>

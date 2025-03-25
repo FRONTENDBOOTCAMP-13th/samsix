@@ -4,95 +4,100 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Profile Page</title>
-    <link rel="icon" href="/vite.svg" />
+    <link rel="icon" href="/taing.svg" />
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" crossorigin="anonymous" />
     <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/profile_page.js"></script>
   </head>
   <body class="bg-black text-white">
     <!-- Header(logo) -->
-    <div class="flex items-center bg-black h-[2.375rem] md:h-[3.5rem] lg:h-[6.25rem] pr-4 pl-4 md:pr-[2.5rem] md:pl-[2.5rem] lg:pr-[4.375rem] lg:pl-[4.375rem]">
-      <a class="w-[2.875rem] md:w-[4.8125rem] lg:w-[8.25rem]" href="/">
-        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="46" height="16" viewBox="0 0 46 16" fill="none">
-          <g clip-path="url(#clip0_3311_1360)">
-            <mask id="mask0_3311_1360" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="2" width="46" height="12">
-              <path d="M0 2.24219H45.8296V13.759H0V2.24219Z" fill="white" />
-            </mask>
-            <g mask="url(#mask0_3311_1360)">
-              <path
-                d="M30.0271 8.73287L32.2591 13.3491H35.7274V2.51965H32.4071V7.02769C32.4072 7.09583 32.3848 7.16201 32.3436 7.21545C32.3023 7.26888 32.2446 7.30642 32.1799 7.32196C32.1151 7.33749 32.0471 7.33009 31.987 7.30098C31.9269 7.27186 31.8782 7.22274 31.8488 7.16162L29.6053 2.51965H26.137V13.3486H29.4673V8.86626C29.4672 8.79816 29.4897 8.73207 29.531 8.67872C29.5723 8.62538 29.63 8.58793 29.6947 8.57247C29.7594 8.55701 29.8274 8.56444 29.8874 8.59357C29.9475 8.62269 29.9962 8.67179 30.0255 8.73287"
-                fill="white"
-              />
-              <path d="M21.0005 2.51965H24.6423V13.3486H21.0005V2.51965Z" fill="white" />
-              <path
-                d="M36.8036 6.90932V8.90539C36.8036 10.8468 37.5182 12.2504 38.9269 13.0765C41.1747 14.3949 44.4114 13.5811 45.8301 12.5059V7.46646H42.5411V10.6357L42.4783 10.6609C42.2171 10.7648 41.9365 10.8074 41.6571 10.7856C41.3777 10.7638 41.1065 10.6782 40.8636 10.535C40.635 10.346 40.4563 10.1012 40.344 9.82302C40.2317 9.54484 40.1893 9.24222 40.2207 8.94289V6.7095C40.1879 6.41943 40.2591 6.12705 40.4209 5.88671C40.5827 5.64637 40.8242 5.47444 41.1004 5.40289C41.4009 5.32873 41.7177 5.37426 41.9867 5.5303C42.2557 5.68633 42.4568 5.94122 42.5494 6.24343L45.7355 4.49218C45.3297 3.76972 44.7363 3.17686 44.0212 2.7796C43.3061 2.38235 42.4975 2.19631 41.6854 2.24218C41.4705 2.24218 41.2614 2.25289 41.0623 2.2711C39.9854 2.33706 38.9576 2.75606 38.1308 3.46628C37.683 3.91003 37.3331 4.44689 37.1046 5.04077C36.8762 5.63465 36.7744 6.27178 36.8062 6.90932"
-                fill="white"
-              />
-              <path d="M9.03639 2.51965H0V5.69001H2.71818V13.3507H6.31298V5.69001H9.03377L9.03639 2.51965Z" fill="white" />
-              <path d="M13.2073 13.4718L15.4843 6.22086C15.5055 6.15201 15.55 6.09322 15.6099 6.05516C15.6697 6.0171 15.7409 6.00231 15.8105 6.01346C15.8801 6.02461 15.9435 6.06097 15.9891 6.11593C16.0348 6.1709 16.0597 6.24082 16.0593 6.313L16.0593 13.4723L19.5125 13.4723L19.5125 2.64283L12.9831 2.64283L9.40918 13.4718L13.2073 13.4718Z" fill="white" />
-            </g>
-          </g>
-          <defs>
-            <clipPath id="clip0_3311_1360">
-              <rect width="46" height="15" fill="white" transform="translate(0 0.5)" />
-            </clipPath>
-          </defs>
-        </svg>
-      </a>
-    </div>
+    <header class="sticky top-0 z-50 w-full">
+      <nav class="flex justify-between text-gray-200 px-6 py-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.8125rem] bg-black" id="navigation">
+        <ul class="flex md:gap-7 lg:gap-[3.25rem] items-center md:text-xs lg:text-xl">
+          <!-- 로고 -->
+          <li>
+            <a href="../pages/main_page.html">
+              <svg width="53" height="22" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[4.8125rem] md:h-6 lg:w-[8rem] lg:h-[2.375rem]">
+                <g clip-path="url(#clip0_3307_6764)">
+                  <mask id="mask0_3307_6764" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="4" width="132" height="34">
+                    <path d="M0 4.87793H131.511V37.1249H0V4.87793Z" fill="white" />
+                  </mask>
+                  <g mask="url(#mask0_3307_6764)">
+                    <path
+                      d="M86.165 23.0513L92.5699 35.9768H102.522V5.6543H92.9944V18.2768C92.9948 18.4676 92.9306 18.6529 92.8122 18.8025C92.6938 18.9521 92.5282 19.0573 92.3424 19.1007C92.1567 19.1442 91.9616 19.1235 91.7891 19.042C91.6166 18.9605 91.4768 18.8229 91.3925 18.6518L84.9544 5.6543H75.002V35.9753H84.5585V23.4248C84.5584 23.2341 84.6229 23.0491 84.7414 22.8997C84.8599 22.7503 85.0255 22.6455 85.2112 22.6022C85.3969 22.5589 85.5918 22.5797 85.7641 22.6613C85.9365 22.7428 86.0762 22.8803 86.1604 23.0513"
+                      fill="white"
+                    />
+                    <path d="M60.2627 5.6543H70.7132V35.9753H60.2627V5.6543Z" fill="white" />
+                    <path
+                      d="M105.61 17.9455V23.5345C105.61 28.9705 107.661 32.9005 111.703 35.2135C118.153 38.905 127.441 36.6265 131.512 33.616V19.5055H122.074V28.3795L121.894 28.45C121.145 28.7408 120.339 28.8601 119.538 28.7991C118.736 28.7381 117.958 28.4984 117.261 28.0975C116.605 27.5682 116.092 26.8827 115.77 26.1039C115.447 25.325 115.326 24.4776 115.416 23.6395V17.386C115.322 16.5738 115.526 15.7551 115.99 15.0822C116.455 14.4093 117.148 13.9279 117.94 13.7275C118.803 13.5198 119.712 13.6474 120.484 14.0842C121.255 14.5211 121.833 15.2348 122.098 16.081L131.241 11.1775C130.077 9.15463 128.374 7.49461 126.322 6.38231C124.27 5.27 121.949 4.74907 119.619 4.87751C119.002 4.87751 118.402 4.90751 117.831 4.95851C114.741 5.14317 111.792 6.31639 109.419 8.30501C108.134 9.54748 107.13 11.0507 106.474 12.7136C105.819 14.3764 105.527 16.1604 105.618 17.9455"
+                      fill="white"
+                    />
+                    <path d="M25.9305 5.6543H0V14.5313H7.8V35.9813H18.1155V14.5313H25.923L25.9305 5.6543Z" fill="white" />
+                    <path d="M37.8992 36.3208L44.4332 16.0183C44.4939 15.8255 44.6217 15.6609 44.7935 15.5543C44.9652 15.4477 45.1695 15.4063 45.3692 15.4375C45.5689 15.4688 45.7507 15.5706 45.8817 15.7245C46.0128 15.8784 46.0842 16.0742 46.0832 16.2763L46.0832 36.3223L55.9922 36.3223L55.9922 5.99977L37.2557 5.99976L27.0002 36.3208L37.8992 36.3208Z" fill="white" />
+                  </g>
+                </g>
+                <defs>
+                  <clipPath id="clip0_3307_6764">
+                    <rect width="132" height="42" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <!-- content -->
-    <div class="content-wrapper mt-11 md:mt-[4.625rem] lg:mt-[5rem] lg:mb-[8.125rem]">
+    <div class="content-wrapper mt-11 md:mt-[4.625rem] lg:mt-[5rem] lg:mb-[8.125rem] animate-fadeIn">
       <!-- 타이틀 -->
       <div class="">
         <div class="flex flex-col items-center">
-          <h2 class="pt-7 md:pt-0 text-heading-x-l md:text-heading-x-x-l lg:text-heading-x-x-x-l font-bold">프로필 선택</h2>
-          <h3 class="pt-4 md:pt-2 lg:pt-4 text-[.7502rem] md:text-[1rem] lg:text-[1.7769rem] font-semibold">시청자 프로필을 선택해주세요.</h3>
+          <h2 id="title-main" class="pt-7 md:pt-0 text-heading-x-l md:text-heading-x-x-l lg:text-heading-x-x-x-l font-bold">프로필 선택</h2>
+          <h3 id="title-sub" class="pt-4 md:pt-2 lg:pt-4 text-[.7502rem] md:text-[1rem] lg:text-[1.7769rem] font-semibold">시청자 프로필을 선택해주세요.</h3>
         </div>
       </div>
       <!-- 프로필 그리드 -->
       <div class="flex justify-center items-center">
         <ul class="grid grid-cols-2 md:grid-cols-4 w-fit mx-8 my-8 md:mt-7 md:mb-11 lg:mt-11 lg:mb-[3.125rem] gap-6 md:gap-8 lg:gap-[3.25rem] text-[.7502rem] lg:text-[1.7769rem] text-gray-300">
           <!-- 프로필카드 1 -->
-          <li class="relative w-fit">
+          <li tabindex="0" class="button relative w-fit hover-float">
             <!-- 라디오버튼(숨김) -->
             <input type="radio" id="profile1" name="profile" class="peer hidden" />
             <!-- 프로필이미지 -->
             <figure class="flex flex-col overflow-hidden">
               <img
                 class="w-[7.125rem] md:w-[8.25rem] lg:w-[12.5rem] rounded-[.375rem]"
-                srcset="../assets/profile/profile_1_sm.png 480w, ../assets/profile/profile_1_md.png 768w, ../assets/profile/profile_1_lg.jpg 1024w"
+                srcset="../assets/profile/profile_1_sm.png 480w, ../assets/profile/profile_1_md.png 768w"
                 sizes="(max-width: 767px) 100vw,
-                     (max-width: 1023px) 8.25rem,
-                     14.625rem"
-                src="../assets/profile/profile_1_sm.png"
+                     (max-width: 1023px) 8.25rem"
+                src="../assets/profile/profile_1_lg.jpg"
                 alt="캐릭터이미지-소녀"
               />
             </figure>
             <!-- 잠금아이콘 -->
-            <label for="profile1" class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none">
+            <label for="profile1" class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] rounded-b-sm transition-opacity cursor-pointer border-0 peer-checked:opacity-0 peer-checked:pointer-events-none">
               <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_lock.svg" alt="프로필 잠금 아이콘" />
             </label>
             <!-- 연필아이콘 -->
             <label for="edit-profile1" class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer">
-              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집" />
+              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집 버튼 - 편집할 프로필 선택" />
             </label>
             <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
           </li>
           <!-- 프로필카드 2 -->
-          <li class="relative w-fit">
+          <li tabindex="0" class="button relative w-fit hover-float">
             <!-- 라디오버튼(숨김) -->
             <input type="radio" id="profile2" name="profile" class="peer hidden" />
             <!-- 프로필이미지 -->
             <figure class="flex flex-col overflow-hidden">
               <img
                 class="w-[7.125rem] md:w-[8.25rem] lg:w-[12.5rem] rounded-[.375rem]"
-                srcset="../assets/profile/profile_2_sm.png 480w, ../assets/profile/profile_2_md.png 768w, ../assets/profile/profile_2_lg.png 1024w"
+                srcset="../assets/profile/profile_2_sm.png 480w, ../assets/profile/profile_2_md.png 768w"
                 sizes="(max-width: 767px) 100vw,
-                     (max-width: 1023px) 8.25rem,
-                     14.625rem"
-                src="../assets/profile/profile_2_sm.png"
-                alt="캐릭터이미지-소녀"
+                     (max-width: 1023px) 8.25rem"
+                src="../assets/profile/profile_2_lg.png"
+                alt="캐릭터이미지-곰인형"
               />
             </figure>
             <!-- 잠금아이콘 -->
@@ -101,24 +106,23 @@
             </label>
             <!-- 연필아이콘 -->
             <label for="edit-profile2" class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer">
-              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집" />
+              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집 버튼 - 편집할 프로필 선택" />
             </label>
             <figcaption class="text-center mt-[.75rem]">범쌤</figcaption>
           </li>
           <!-- 프로필카드 3 -->
-          <li class="relative w-fit">
+          <li tabindex="0" class="button relative w-fit hover-float">
             <!-- 라디오버튼(숨김) -->
             <input type="radio" id="profile3" name="profile" class="peer hidden" />
             <!-- 프로필이미지 -->
             <figure class="flex flex-col overflow-hidden">
               <img
                 class="w-[7.125rem] md:w-[8.25rem] lg:w-[12.5rem] rounded-[.375rem]"
-                srcset="../assets/profile/profile_3_sm.png 480w, ../assets/profile/profile_3_md.png 768w, ../assets/profile/profile_3_lg.png 1024w"
+                srcset="../assets/profile/profile_3_sm.png 480w, ../assets/profile/profile_3_md.png 768w"
                 sizes="(max-width: 767px) 100vw,
-                     (max-width: 1023px) 8.25rem,
-                     14.625rem"
-                src="../assets/profile/profile_1_sm.png"
-                alt="캐릭터이미지-소녀"
+                     (max-width: 1023px) 8.25rem"
+                src="../assets/profile/profile_1_lg.png"
+                alt="캐릭터이미지-소년"
               />
             </figure>
             <!-- 잠금아이콘 -->
@@ -127,24 +131,23 @@
             </label>
             <!-- 연필아이콘 -->
             <label for="edit-profile3" class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer">
-              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집" />
+              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집 버튼 - 편집할 프로필 선택" />
             </label>
             <figcaption class="text-center mt-[.75rem]">야무</figcaption>
           </li>
           <!-- 프로필카드 4 -->
-          <li class="relative w-fit">
+          <li tabindex="0" class="button relative w-fit hover-float">
             <!-- 라디오버튼(숨김) -->
             <input type="radio" id="profile4" name="profile" class="peer hidden" checked />
             <!-- 프로필이미지 -->
             <figure class="flex flex-col overflow-hidden">
               <img
                 class="w-[7.125rem] md:w-[8.25rem] lg:w-[12.5rem] rounded-[.375rem]"
-                srcset="../assets/profile/profile_4_sm.png 480w, ../assets/profile/profile_4_md.png 768w, ../assets/profile/profile_4_lg.png 1024w"
+                srcset="../assets/profile/profile_4_sm.png 480w, ../assets/profile/profile_4_md.png 768w"
                 sizes="(max-width: 767px) 100vw,
-                     (max-width: 1023px) 8.25rem,
-                     14.625rem"
-                src="../assets/profile/profile_4_sm.png"
-                alt="캐릭터이미지-소녀"
+                     (max-width: 1023px) 8.25rem"
+                src="../assets/profile/profile_4_lg.png"
+                alt="캐릭터이미지-티빙기본로고캐릭터"
               />
             </figure>
             <!-- 잠금아이콘 -->
@@ -153,20 +156,21 @@
             </label>
             <!-- 연필아이콘 -->
             <label for="edit-profile4" class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer">
-              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집" />
+              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집 버튼 - 편집할 프로필 선택" />
             </label>
             <figcaption class="text-center mt-[.75rem]">이듬</figcaption>
           </li>
         </ul>
       </div>
+
       <!-- 프로필 편집(button) -->
-      <div class="mt-[2rem] flex justify-center text-center">
+      <div class="mt-[2rem] mx-auto flex justify-center text-center w-fit">
         <!-- 숨겨진 체크박스 -->
         <input type="checkbox" id="edit-toggle" class="peer hidden" />
         <!-- 프로필 편집 버튼 -->
-        <label for="edit-toggle" class="cursor-pointer block peer-checked:hidden text-[.7502rem] lg:text-[1.7769rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] md:w-[9.75rem] lg:w-[17rem] text-gray-300 border-gray-6oo bg-transparent"> 프로필 편집 </label>
+        <label tabindex="0" id="edit-label" for="edit-toggle" class="button cursor-pointer block peer-checked:hidden font-semibold text-[.7502rem] lg:text-[1.7769rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] md:w-[9.75rem] lg:w-[17rem] text-gray-300 bg-transparent hover:text-gray-100"> 프로필 편집 </label>
         <!-- 완료 버튼 (체크되었을 때 보임) -->
-        <label for="edit-toggle" class="cursor-pointer hidden peer-checked:block text-[.7502rem] lg:text-[1.7769rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] md:w-[9.75rem] lg:w-[17rem] bg-gray-100 text-black border-gray-6oo"> 완료 </label>
+        <label tabindex="0" id="done-label" for="edit-toggle" class="button cursor-pointer hidden peer-checked:block font-semibold text-[.7502rem] lg:text-[1.7769rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] md:w-[9.75rem] lg:w-[17rem] bg-gray-100 text-black hover:bg-white"> 완료 </label>
       </div>
     </div>
 

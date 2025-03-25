@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/taing.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>메인 페이지</title>
+    <title>TAING</title>
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" crossorigin="anonymous" />
     <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
     <script type="module" src="/src/js/main_page.js"></script>
@@ -12,11 +12,11 @@
   <body class="bg-black text-white">
     <!-- 헤더 내비게이션 바 -->
     <header class="sticky top-0 z-50 w-full">
-      <nav class="flex justify-between text-gray-200 px-6 py-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.8125rem] bg-black" id="navigation">
+      <nav class="flex justify-between text-gray-200 px-6 py-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.8125rem] bg-black" id="navigation" role="navigation" aria-label="주요 메뉴">
         <ul class="flex md:gap-7 lg:gap-[3.25rem] items-center md:text-xs lg:text-xl">
           <!-- 로고 -->
-          <li>
-            <a href="#">
+          <li aria-label="로고: 홈페이지 이동">
+            <a href="./main_page.html">
               <svg width="53" height="22" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[4.8125rem] md:h-6 lg:w-[8rem] lg:h-[2.375rem]">
                 <g clip-path="url(#clip0_3307_6764)">
                   <mask id="mask0_3307_6764" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="4" width="132" height="34">
@@ -78,7 +78,7 @@
           </li>
 
           <!-- Paramount+ -->
-          <li class="hidden md:block hover-white">
+          <li class="hidden md:block hover-white" aria-label="Paramount+ - 페이지 이동">
             <a href="#">
               <svg width="84" height="25" viewBox="0 0 112 34" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:w-[7rem] lg:h-[2.125rem]">
                 <g clip-path="url(#clip0_3307_6801)">
@@ -109,7 +109,7 @@
         <ul class="flex gap-3 md:gap-7 lg:gap-10 items-center">
           <!-- 검색 모달 버튼 -->
           <li>
-            <button id="modalToggleBtn" class="cursor-pointer inline-flex align-middle" type="button">
+            <button id="modalToggleBtn" class="cursor-pointer inline-flex align-middle" type="button" aria-label="검색창 열기/닫기">
               <!-- 검색버튼(돋보기) -->
               <svg id="openModalBtn" width="22" height="22" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-6 md:h-6 lg:w-10 lg:h-10 hover-stroke-white">
                 <g clip-path="url(#clip0_3307_6807)">
@@ -134,8 +134,8 @@
             </button>
           </li>
           <!-- 타잉 아이콘 -->
-          <li class="relative hover:scale-[110%]">
-            <button class="cursor-pointer inline-flex align-middle" type="button" popovertarget="empty-popover">
+          <li class="relative">
+            <button class="cursor-pointer inline-flex align-middle" type="button" popovertarget="empty-popover" aria-label="상세메뉴 - 프로필전환/MY/고객센터/로그아웃">
               <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-6 md:h-6 lg:w-10 lg:h-10">
                 <g clip-path="url(#clip0_3307_6815)">
                   <path d="M37.4194 0H2.58065C1.15539 0 0 1.15539 0 2.58065V37.4194C0 38.8446 1.15539 40 2.58065 40H37.4194C38.8446 40 40 38.8446 40 37.4194V2.58065C40 1.15539 38.8446 0 37.4194 0Z" fill="none" />
@@ -173,32 +173,49 @@
               </svg>
             </button>
             <div popover id="empty-popover" class="hidden"></div>
-            <div class="pop-menu md:text-sm lg:text-base md:w-[12.5rem] lg:w-[15rem]">
+            <div class="pop-menu md:text-sm lg:text-base md:w-[12.5rem] lg:w-[15rem] animate-fadeIn">
               <div class="flex gap-3 p-4 lg:p-6">
-                <img src="../assets/profile/profile_2_sm.png" alt="나의 프로필 사진" />
+                <img src="../assets/profile/profile_4_sm.png" alt="나의 프로필 사진" />
                 <div class="flex flex-col gap-0.5">
-                  <span class="text-white">범쌤</span>
-                  <a href="./profile_page.html">프로필 전환하기</a>
+                  <span class="text-white">이듬</span>
+                  <button type="button" id="profile-link-btn" class="cursor-pointer hover:text-white">프로필 전환하기</button>
                 </div>
               </div>
               <hr class="bg-[#363636]" />
 
-              <ul class="flex flex-col gap-4 p-4 lg:p-6">
-                <li><a class="block w-full" href="#">MY</a></li>
-                <li><a class="block w-full" href="#">고객센터</a></li>
-                <li><a class="block w-full" href="#">로그아웃</a></li>
+              <ul class="flex flex-col py-4 lg:py-6">
+                <li class="hover:bg-brand-dark-bg-2 px-4 py-2"><a class="block w-full hover:text-white" href="#">MY</a></li>
+                <li class="hover:bg-brand-dark-bg-2 px-4 py-2"><a class="block w-full hover:text-white" href="#">고객센터</a></li>
+                <li class="hover:bg-brand-dark-bg-2 px-4 py-2"><button type="button" class="up-dialog block w-full text-left hover:text-white cursor-pointer">로그아웃</button></li>
               </ul>
             </div>
+            <!-- Logout Modal -->
+            <dialog class="panel-dialog rounded-sm shadow-2xl opacity-0 open:opacity-100 transition-opacity duration-400 p-0 border-none min-w-2xs w-1/4 bg-gray-700 fixed inset-0 m-auto animate-fadeIn" aria-labelledby="logout-confirmation">
+              <!-- contents의 여백 & 텍스트 정렬 -->
+              <div class="p-3 text-center">
+                <!-- 제목 -->
+                <p class="text-white-origin my-6 text-label-large" id="logout-confirmation">로그아웃 하시겠습니까?</p>
+
+                <!-- 버튼 그룹 -->
+                <div class="flex justify-center items-center mb-2 font-semibold">
+                  <a href="/src/pages/landing_page.html" class="text-gray-300 hover:bg-brand-red-2 hover:text-white-origin px-5 py-2 rounded-sm text-label-medium">확인</a>
+                  <!-- 구분선 -->
+                  <div class="h-4 border-r border-gray-500 mx-5"></div>
+                  <button type="button" class="down-dialog text-gray-300 hover:bg-gray-600 hover:text-white-origin px-5 py-2 rounded-sm text-label-medium">취소</button>
+                </div>
+              </div>
+            </dialog>
           </li>
         </ul>
       </nav>
     </header>
 
     <!-- 검색: 모달창 -->
-    <div id="searchModal" class="fixed inset-0 z-30 mx-auto text-white overflow-hidden hidden">
+    <h2 id="search-title" class="sr-only">검색창</h2>
+    <div id="searchModal" class="fixed inset-0 z-30 mx-auto text-white overflow-hidden hidden" role="dialog" aria-modal="true" aria-labelledby="search-title">
       <div class="flex flex-col items-center bg-brand-dark-bg-1 mt-[3rem] md:mt-[3.5625rem] lg:mt-[6.25rem] pt-5 pb-12 md:pt-7 md:pb-[3.25rem] lg:pt-9 lg:pb-[4.375rem]">
         <!-- 검색창 -->
-        <div class="relative w-fit mx-auto border-b-2">
+        <div class="relative w-fit mx-auto border-b-2 animate-fadeIn">
           <!-- 검색창 -->
           <input type="search" id="taingSearch" placeholder="검색" class="flex py-3 lg:py-3.5 pr-[1.5625rem] md:pr-[2rem] lg:pr-[3.375rem] placeholder:text-gray-600 placeholder:text-base placeholder:md:text-[1.333rem] placeholder:lg:text-[1.75rem] text-base md:text-[1.333rem] lg:text-[2rem] w-[18.75rem] md:w-[41.875rem] lg:w-[57.5rem] focus:outline-none appearance-none" />
           <!-- 돋보기버튼 -->
@@ -219,7 +236,7 @@
           </button>
         </div>
         <!-- 인기검색어 -->
-        <div class="grid md:grid-cols-2 w-fit md:divide-x md:divide-gray-800 mx-auto mt-10 md:mt-12 lg:mt-[3.25rem]">
+        <div class="grid md:grid-cols-2 w-fit md:divide-x md:divide-gray-800 mx-auto mt-10 md:mt-12 lg:mt-[3.25rem] animate-fadeIn">
           <div class="hidden w-fit md:block justify-center items-center md:pr-[2.1875rem] lg:pr-[3.75rem]">
             <div>
               <h2 class="text-gray-200 font-semibold lg:text-2xl">최근 검색어</h2>
@@ -278,9 +295,9 @@
           <img src="../assets/modal/modal_lg.webp" alt="기대해! 재미 가득 라인업, 최애 콘텐츠 뽑고 커피 받기" />
         </picture>
         <div class="flex justify-between text-sm md:text-base lg:text-lg px-6 md:px-10 lg:px-30 py-3 text-white">
-          <button type="button" class="close-dialog">오늘 하루 보지 않기</button>
+          <button type="button" class="close-dialog cursor-pointer hover:bg-gray-200/20 px-3 rounded-sm">오늘 하루 보지 않기</button>
           <span aria-hidden="true">|</span>
-          <button type="button" class="close-dialog">닫기</button>
+          <button type="button" class="close-dialog cursor-pointer hover:bg-gray-200/20 px-3 rounded-sm">닫기</button>
         </div>
       </dialog>
     </div>
@@ -331,14 +348,19 @@
           </ul>
 
           <!-- 이전, 이후 슬라이드 선택 버튼 -->
-          <button type="button" class="prev">&#10094;</button>
-          <button type="button" class="next">&#10095;</button>
+          <div class="min-w-fit h-full px-5 trans-gradient-r absolute top-0 left-0 flex items-center justify-center"><button type="button" class="prev text-2xl md:text-4xl lg:text-6xl text-gray-100 hover:text-white">&#10094;</button></div>
+          <div class="min-w-fit h-full px-5 trans-gradient-l absolute top-0 right-0 flex items-center justify-center"><button type="button" class="next text-2xl md:text-4xl lg:text-6xl text-gray-100 hover:text-white">&#10095;</button></div>
 
           <!-- 자세히보기 버튼 -->
-          <a href="#" class="absolute right-[5%] bottom-[5%] px-8 h-10 inline-flex justify-center items-center text-xs bg-white rounded-md text-black"> 자세히보기 </a>
+          <a href="#" id="hover-clicked" class="absolute right-[5%] bottom-[5%] px-8 h-10 inline-flex justify-center items-center font-semibold text-xs border-2 border-white bg-0 rounded-md text-white shadow-lg transition-shadow"> 자세히보기 </a>
         </div>
         <div class="indicator-container">
-          <button class="control-btn">⏸</button>
+          <button class="control-btn mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="8" y1="4" x2="8" y2="20" />
+              <line x1="16" y1="4" x2="16" y2="20" />
+            </svg>
+          </button>
           <span class="indicator active"></span>
           <span class="indicator"></span>
           <span class="indicator"></span>
@@ -350,9 +372,9 @@
       <section>
         <div class="card-flex">
           <h2>타잉에서 꼭 봐야하는 콘텐츠</h2>
-          <div class="grid grid-cols-[repeat(8,_5.75rem)] md:grid-cols-[repeat(8,_8.125rem)] lg:grid-cols-[repeat(8,_15rem)] overflow-x-auto scrollbar-hide gap-4">
+          <div class="grid grid-cols-[repeat(8,_5.75rem)] md:grid-cols-[repeat(8,_8.125rem)] lg:grid-cols-[repeat(8,_15rem)] overflow-y-visible overflow-x-auto scrollbar-hide gap-4 pt-2.5">
             <ul class="contents">
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -364,7 +386,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -376,7 +398,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -388,7 +410,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -400,7 +422,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -412,7 +434,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -424,7 +446,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -436,7 +458,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -457,9 +479,9 @@
       <section>
         <div class="card-flex">
           <h2>Quick VOD</h2>
-          <div class="grid grid-cols-[repeat(6,_9.0625rem)] md:grid-cols-[repeat(6,_14rem)] lg:grid-cols-[repeat(6,_21.5625rem)] overflow-x-auto scrollbar-hide gap-4">
+          <div class="grid grid-cols-[repeat(6,_9.0625rem)] md:grid-cols-[repeat(6,_14rem)] lg:grid-cols-[repeat(6,_21.5625rem)] overflow-x-auto scrollbar-hide gap-4 pt-2.5">
             <ul class="contents">
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card relative">
                     <picture>
@@ -477,7 +499,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card relative">
                     <picture>
@@ -495,7 +517,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card relative">
                     <picture>
@@ -513,7 +535,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card relative">
                     <picture>
@@ -531,7 +553,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card relative">
                     <picture>
@@ -549,7 +571,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card relative">
                     <picture>
@@ -576,9 +598,9 @@
       <section>
         <div class="card-flex">
           <h2>실시간 인기 프로그램</h2>
-          <div class="grid grid-cols-[repeat(8,_5.75rem)] md:grid-cols-[repeat(8,_8.125rem)] lg:grid-cols-[repeat(8,_15rem)] overflow-x-auto scrollbar-hide gap-4">
+          <div class="grid grid-cols-[repeat(8,_5.75rem)] md:grid-cols-[repeat(8,_8.125rem)] lg:grid-cols-[repeat(8,_15rem)] overflow-x-auto scrollbar-hide gap-4 pt-2.5">
             <ul class="contents">
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -594,7 +616,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -610,7 +632,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -626,7 +648,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -642,7 +664,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -658,7 +680,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -674,7 +696,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -690,7 +712,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -715,9 +737,9 @@
       <section>
         <div class="card-flex">
           <h2>인기 LIVE 채널</h2>
-          <div class="grid grid-cols-[repeat(6,_9.0625rem)] md:grid-cols-[repeat(6,_14.0625rem)] lg:grid-cols-[repeat(6,_21.5625rem)] overflow-x-auto scrollbar-hide gap-4">
+          <div class="grid grid-cols-[repeat(6,_9.0625rem)] md:grid-cols-[repeat(6,_14.0625rem)] lg:grid-cols-[repeat(6,_21.5625rem)] overflow-x-auto scrollbar-hide gap-4 pt-2.5">
             <ul class="contents">
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -738,7 +760,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -759,7 +781,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -780,7 +802,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -801,7 +823,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -822,7 +844,7 @@
                   </figure>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <figure class="main-card">
                     <picture>
@@ -852,9 +874,9 @@
       <section>
         <div class="card-flex">
           <h2>오직 타잉에만 있어요</h2>
-          <div class="grid grid-cols-[repeat(7,_8.6875rem)] md:grid-cols-[repeat(7,_10.5rem)] lg:grid-cols-[repeat(7,_17.625rem)] overflow-x-auto scrollbar-hide gap-4">
+          <div class="grid grid-cols-[repeat(7,_8.6875rem)] md:grid-cols-[repeat(7,_10.5rem)] lg:grid-cols-[repeat(7,_17.625rem)] overflow-x-auto scrollbar-hide gap-4 pt-2.5">
             <ul class="contents">
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/only/Universal_sm.webp 145w" media="(max-width: 768px)" />
@@ -863,7 +885,7 @@
                   </picture>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/only/love_catcher_sm.webp 145w" media="(max-width: 768px)" />
@@ -872,7 +894,7 @@
                   </picture>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/only/transfer_love_sm.webp 145w" media="(max-width: 768px)" />
@@ -881,7 +903,7 @@
                   </picture>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/only/ransom_sm.webp 145w" media="(max-width: 768px)" />
@@ -890,7 +912,7 @@
                   </picture>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/only/drunk_urban_women_sm.webp 145w" media="(max-width: 768px)" />
@@ -899,7 +921,7 @@
                   </picture>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/only/strange_sm.webp 145w" media="(max-width: 768px)" />
@@ -908,7 +930,7 @@
                   </picture>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/only/food_chronicle_sm.webp 145w" media="(max-width: 768px)" />
@@ -939,9 +961,9 @@
       <section>
         <div class="card-flex">
           <h2>이벤트</h2>
-          <div class="grid grid-cols-[repeat(6,_9.0625rem)] md:grid-cols-[repeat(6,_13.375rem)] lg:grid-cols-[repeat(6,_21.625rem)] overflow-x-auto scrollbar-hide gap-4">
+          <div class="grid grid-cols-[repeat(6,_9.0625rem)] md:grid-cols-[repeat(6,_13.375rem)] lg:grid-cols-[repeat(6,_21.625rem)] overflow-x-auto scrollbar-hide gap-4 pt-2.5">
             <ul class="contents">
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/events/sinbi_apart_sm.webp 145w" media="(max-width: 768px)" />
@@ -950,7 +972,7 @@
                   </picture>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/events/chaebol_son_sm.webp 145w" media="(max-width: 768px)" />
@@ -959,7 +981,7 @@
                   </picture>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/events/transfer_relationship_sm.webp 145w" media="(max-width: 768px)" />
@@ -968,7 +990,7 @@
                   </picture>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/events/shurup_sm.webp 145w" media="(max-width: 768px)" />
@@ -977,7 +999,7 @@
                   </picture>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/events/desert_maker_sm.webp 145w" media="(max-width: 768px)" />
@@ -986,7 +1008,7 @@
                   </picture>
                 </a>
               </li>
-              <li>
+              <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
                     <source srcset="../assets/poster/events/let_me_in_sm.webp 145w" media="(max-width: 768px)" />

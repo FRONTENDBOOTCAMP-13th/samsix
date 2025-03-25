@@ -2,6 +2,21 @@ import '../style.css';
 
 // 문서의 모든 요소가 다 로드가 됐을 시, 실행
 document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.fade-in-section');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible'); // 보이면 클래스 추가
+        }
+      });
+    },
+    { threshold: 0.2 }
+  ); // 20% 보이면 작동
+
+  sections.forEach((section) => observer.observe(section));
+
   // 슬라이더 관련 코드
   const slides = document.querySelectorAll('.slide');
   const indicators = document.querySelectorAll('.indicator');
@@ -68,10 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
       controlBtn.addEventListener('click', () => {
         if (isPlaying) {
           clearInterval(autoSlide);
-          controlBtn.textContent = '▶';
+          controlBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"> <polygon points="5,3 19,12 5,21" /> </svg>';
         } else {
           autoSlide = setInterval(nextSlide, 3000);
-          controlBtn.textContent = '⏸';
+          controlBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>';
         }
         isPlaying = !isPlaying;
       });
@@ -146,6 +161,29 @@ document.addEventListener('DOMContentLoaded', () => {
       button.addEventListener('click', closeMainDialog);
     });
   }
+
+  const upDialogButton = document.querySelector('.up-dialog');
+  const downDialogButton = document.querySelector('.down-dialog');
+  const panelDialog = document.querySelector('.panel-dialog');
+
+  if (upDialogButton && downDialogButton && panelDialog) {
+    const openDialog = () => panelDialog.showModal();
+    const closeDialog = () => panelDialog.close();
+
+    upDialogButton.addEventListener('click', openDialog);
+    downDialogButton.addEventListener('click', closeDialog);
+  } else {
+    console.error('모달 관련 요소를 찾을 수 없습니다.');
+  }
+});
+
+const profileBtn = document.getElementById('profile-link-btn');
+
+profileBtn.addEventListener('click', function () {
+  window.location.href = '../pages/profile_page.html';
+});
+profileBtn.addEventListener('touchstart', function () {
+  window.location.href = '../pages/profile_page.html';
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -200,6 +238,9 @@ function updateButtonVisibility(isOpen) {
   closeBtn.classList.toggle('hidden', !isOpen);
 }
 
+// 페이지 로드 시 한 번 실행
+document.addEventListener('DOMContentLoaded', updatePlaceholder);
+
 // search-bar 컴포넌트에서 placeholder 변경
 function updatePlaceholder() {
   const input = document.getElementById('taingSearch');
@@ -216,13 +257,19 @@ function updatePlaceholder() {
 // 창 크기 변경 시 플레이스홀더 업데이트
 window.addEventListener('resize', updatePlaceholder);
 
-// 페이지 로드 시 한 번 실행
-document.addEventListener('DOMContentLoaded', updatePlaceholder);
+document.addEventListener('DOMContentLoaded', () => {
+  const timeDisplay = document.getElementById('time-display');
 
-// 현재 시간 표시
-let now = new Date();
-let formattedTime = now.toLocaleString();
-const timeDisplay = document.getElementById('time-display');
-if (timeDisplay) {
-  timeDisplay.textContent = formattedTime;
-}
+  if (timeDisplay) {
+    const now = new Date();
+
+    const formattedDate = now.toLocaleDateString(); // 예: 2025. 3. 24.
+    const formattedTime = now.toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true, // 12시간제 → 오전/오후 포함
+    });
+
+    timeDisplay.textContent = `${formattedDate} ${formattedTime} 기준`;
+  }
+});
