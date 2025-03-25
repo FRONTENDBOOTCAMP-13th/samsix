@@ -107,15 +107,15 @@
     .contents-description {
       @apply text-gray-300 text-[.625rem] md:text-xs lg:text-sm;
     }
-    .Quick-VOD {
-      @apply bg-[#C73E4E] w-[fit-content] m-1.5 h-[fit-content] flex text-center items-center px-2 py-1 rounded-sm text-[10px] md:text-xs lg:text-sm absolute;
-    }
     .contents-rank {
       @apply text-white font-sans font-medium text-3xl md:text-5xl lg:text-7xl italic mr-[10%];
     }
     .new-sign {
       @apply bg-[#E93945] flex-shrink-0 size-1 md:size-[.3125rem] lg:size-1.5 -translate-y-1.5 md:-translate-y-2 lg:-translate-y-2.5 rounded-[50%];
     }
+  }
+  .Quick-VOD {
+    @apply bg-[#C73E4E] w-[fit-content] m-1.5 h-[fit-content] flex text-center items-center px-2 py-1 rounded-sm text-[10px] md:text-xs lg:text-sm absolute top-0 left-0;
   }
 
   .main-dialog::backdrop {
