@@ -2,6 +2,13 @@ import '../style.css';
 
 // 문서의 모든 요소가 다 로드가 됐을 시, 실행
 document.addEventListener('DOMContentLoaded', () => {
+  function togglePopover() {
+    const popover = document.getElementById('empty-popover');
+    const isVisible = popover.getAttribute('aria-hidden') === 'false';
+    popover.setAttribute('aria-hidden', isVisible ? 'true' : 'false');
+    popover.classList.toggle('hidden', isVisible);
+  }
+
   const sections = document.querySelectorAll('.fade-in-section');
 
   const observer = new IntersectionObserver(
@@ -83,10 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
       controlBtn.addEventListener('click', () => {
         if (isPlaying) {
           clearInterval(autoSlide);
-          controlBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"> <polygon points="5,3 19,12 5,21" /> </svg>';
+          controlBtn.innerHTML = '<svg aria-label="재생" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"> <polygon points="5,3 19,12 5,21" /> </svg>';
         } else {
           autoSlide = setInterval(nextSlide, 3000);
-          controlBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>';
+          controlBtn.innerHTML = '<svg aria-label="일시정지" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>';
         }
         isPlaying = !isPlaying;
       });

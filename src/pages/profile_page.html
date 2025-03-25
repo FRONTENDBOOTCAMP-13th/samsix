@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Profile Page</title>
+    <title>프로필 변경</title>
     <link rel="icon" href="/taing.svg" />
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" crossorigin="anonymous" />
-    <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
+    <link rel="preload" as="style" href="/font/pretendardvariable.css" />
+    <link rel="stylesheet" href="/font/pretendardvariable.css" />
     <script type="module" src="/src/js/profile_page.js"></script>
   </head>
   <body class="bg-black text-white">
@@ -16,8 +17,8 @@
         <ul class="flex md:gap-7 lg:gap-[3.25rem] items-center md:text-xs lg:text-xl">
           <!-- 로고 -->
           <li>
-            <a href="../pages/main_page.html">
-              <svg width="53" height="22" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[4.8125rem] md:h-6 lg:w-[8rem] lg:h-[2.375rem]">
+            <a href="../pages/main_page.html" aria-label="홈으로 이동">
+              <svg width="53" height="22" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[4.8125rem] md:h-6 lg:w-[8rem] lg:h-[2.375rem]" role="img" aria-label="TAING 로고">
                 <g clip-path="url(#clip0_3307_6764)">
                   <mask id="mask0_3307_6764" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="4" width="132" height="34">
                     <path d="M0 4.87793H131.511V37.1249H0V4.87793Z" fill="white" />
@@ -49,6 +50,7 @@
     </header>
 
     <!-- content -->
+    <h1 id="search-title" class="sr-only">프로필 페이지</h1>
     <div class="content-wrapper mt-11 md:mt-[4.625rem] lg:mt-[5rem] lg:mb-[8.125rem] animate-fadeIn">
       <!-- 타이틀 -->
       <div class="">
@@ -59,108 +61,107 @@
       </div>
       <!-- 프로필 그리드 -->
       <div class="flex justify-center items-center">
-        <ul class="grid grid-cols-2 md:grid-cols-4 w-fit mx-8 my-8 md:mt-7 md:mb-11 lg:mt-11 lg:mb-[3.125rem] gap-6 md:gap-8 lg:gap-[3.25rem] text-[.7502rem] lg:text-[1.7769rem] text-gray-300">
-          <!-- 프로필카드 1 -->
-          <li tabindex="0" class="button relative w-fit hover-float">
-            <!-- 라디오버튼(숨김) -->
-            <input type="radio" id="profile1" name="profile" class="peer hidden" />
-            <!-- 프로필이미지 -->
-            <figure class="flex flex-col overflow-hidden">
-              <img
-                class="w-[7.125rem] md:w-[8.25rem] lg:w-[12.5rem] rounded-[.375rem]"
-                srcset="../assets/profile/profile_1_sm.png 480w, ../assets/profile/profile_1_md.png 768w"
-                sizes="(max-width: 767px) 100vw,
-                     (max-width: 1023px) 8.25rem"
-                src="../assets/profile/profile_1_lg.jpg"
-                alt="캐릭터이미지-소녀"
-              />
-            </figure>
-            <!-- 잠금아이콘 -->
-            <label for="profile1" class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] rounded-b-sm transition-opacity cursor-pointer border-0 peer-checked:opacity-0 peer-checked:pointer-events-none">
-              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_lock.svg" alt="프로필 잠금 아이콘" />
-            </label>
-            <!-- 연필아이콘 -->
-            <label for="edit-profile1" class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer">
-              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집 버튼 - 편집할 프로필 선택" />
-            </label>
-            <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
-          </li>
-          <!-- 프로필카드 2 -->
-          <li tabindex="0" class="button relative w-fit hover-float">
-            <!-- 라디오버튼(숨김) -->
-            <input type="radio" id="profile2" name="profile" class="peer hidden" />
-            <!-- 프로필이미지 -->
-            <figure class="flex flex-col overflow-hidden">
-              <img
-                class="w-[7.125rem] md:w-[8.25rem] lg:w-[12.5rem] rounded-[.375rem]"
-                srcset="../assets/profile/profile_2_sm.png 480w, ../assets/profile/profile_2_md.png 768w"
-                sizes="(max-width: 767px) 100vw,
-                     (max-width: 1023px) 8.25rem"
-                src="../assets/profile/profile_2_lg.png"
-                alt="캐릭터이미지-곰인형"
-              />
-            </figure>
-            <!-- 잠금아이콘 -->
-            <label for="profile2" class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none">
-              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_lock.svg" alt="프로필 잠금 아이콘" />
-            </label>
-            <!-- 연필아이콘 -->
-            <label for="edit-profile2" class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer">
-              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집 버튼 - 편집할 프로필 선택" />
-            </label>
-            <figcaption class="text-center mt-[.75rem]">범쌤</figcaption>
-          </li>
-          <!-- 프로필카드 3 -->
-          <li tabindex="0" class="button relative w-fit hover-float">
-            <!-- 라디오버튼(숨김) -->
-            <input type="radio" id="profile3" name="profile" class="peer hidden" />
-            <!-- 프로필이미지 -->
-            <figure class="flex flex-col overflow-hidden">
-              <img
-                class="w-[7.125rem] md:w-[8.25rem] lg:w-[12.5rem] rounded-[.375rem]"
-                srcset="../assets/profile/profile_3_sm.png 480w, ../assets/profile/profile_3_md.png 768w"
-                sizes="(max-width: 767px) 100vw,
-                     (max-width: 1023px) 8.25rem"
-                src="../assets/profile/profile_1_lg.png"
-                alt="캐릭터이미지-소년"
-              />
-            </figure>
-            <!-- 잠금아이콘 -->
-            <label for="profile3" class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none">
-              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_lock.svg" alt="프로필 잠금 아이콘" />
-            </label>
-            <!-- 연필아이콘 -->
-            <label for="edit-profile3" class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer">
-              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집 버튼 - 편집할 프로필 선택" />
-            </label>
-            <figcaption class="text-center mt-[.75rem]">야무</figcaption>
-          </li>
-          <!-- 프로필카드 4 -->
-          <li tabindex="0" class="button relative w-fit hover-float">
-            <!-- 라디오버튼(숨김) -->
-            <input type="radio" id="profile4" name="profile" class="peer hidden" checked />
-            <!-- 프로필이미지 -->
-            <figure class="flex flex-col overflow-hidden">
-              <img
-                class="w-[7.125rem] md:w-[8.25rem] lg:w-[12.5rem] rounded-[.375rem]"
-                srcset="../assets/profile/profile_4_sm.png 480w, ../assets/profile/profile_4_md.png 768w"
-                sizes="(max-width: 767px) 100vw,
-                     (max-width: 1023px) 8.25rem"
-                src="../assets/profile/profile_4_lg.png"
-                alt="캐릭터이미지-티빙기본로고캐릭터"
-              />
-            </figure>
-            <!-- 잠금아이콘 -->
-            <label for="profile4" class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none">
-              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_lock.svg" alt="프로필 잠금 아이콘" />
-            </label>
-            <!-- 연필아이콘 -->
-            <label for="edit-profile4" class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer">
-              <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" class="w-6" alt="편집 버튼 - 편집할 프로필 선택" />
-            </label>
-            <figcaption class="text-center mt-[.75rem]">이듬</figcaption>
-          </li>
-        </ul>
+        <fieldset>
+          <legend class="sr-only">프로필 선택</legend>
+          <ul class="grid grid-cols-2 md:grid-cols-4 w-fit mx-8 my-8 md:mt-7 md:mb-11 lg:mt-11 lg:mb-[3.125rem] gap-6 md:gap-8 lg:gap-[3.25rem] text-[.7502rem] lg:text-[1.7769rem] text-gray-300">
+            <!-- 프로필카드 1 -->
+            <li tabindex="0" class="button relative w-fit hover-float">
+              <!-- 라디오버튼(숨김) -->
+              <input type="radio" id="profile1" name="profile" class="peer hidden" />
+              <!-- 프로필이미지 -->
+              <figure class="flex flex-col overflow-hidden">
+                <img
+                  class="w-[7.125rem] md:w-[8.25rem] lg:w-[12.5rem] rounded-[.375rem]"
+                  srcset="../assets/profile/profile_1_sm.png 480w, ../assets/profile/profile_1_md.png 768w"
+                  sizes="(max-width: 767px) 100vw,
+                       (max-width: 1023px) 8.25rem"
+                  src="../assets/profile/profile_1_lg.jpg"
+                  alt="캐릭터이미지-소녀"
+                />
+                <figcaption class="text-center mt-[.75rem]">슬비님</figcaption>
+              </figure>
+              <!-- 잠금아이콘 -->
+              <label for="profile1" class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] rounded-b-sm transition-opacity cursor-pointer border-0 peer-checked:opacity-0 peer-checked:pointer-events-none">
+                <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_lock.svg" alt="프로필 잠금 - 슬비님" />
+              </label>
+              <!-- 연필아이콘 -->
+              <label class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer">
+                <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" alt="프로필 편집 - 슬비님" />
+              </label>
+            </li>
+            <!-- 프로필카드 2 -->
+            <li tabindex="0" class="button relative w-fit hover-float">
+              <!-- 라디오버튼(숨김) -->
+              <input type="radio" id="profile2" name="profile" class="peer hidden" />
+              <!-- 프로필이미지 -->
+              <figure class="flex flex-col overflow-hidden">
+                <img
+                  class="w-[7.125rem] md:w-[8.25rem] lg:w-[12.5rem] rounded-[.375rem]"
+                  srcset="../assets/profile/profile_2_sm.png 480w, ../assets/profile/profile_2_md.png 768w"
+                  sizes="(max-width: 767px) 100vw,
+                       (max-width: 1023px) 8.25rem"
+                  src="../assets/profile/profile_2_lg.png"
+                  alt="캐릭터이미지-곰인형"
+                />
+                <figcaption class="text-center mt-[.75rem]">범쌤</figcaption>
+              </figure>
+              <!-- 잠금아이콘 -->
+              <label for="profile2" class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none">
+                <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_lock.svg" alt="프로필 잠금 - 범쌤" />
+              </label>
+              <!-- 연필아이콘 -->
+              <label class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer">
+                <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" alt="프로필 편집 - 범쌤" />
+              </label>
+            </li>
+            <!-- 프로필카드 3 -->
+            <li tabindex="0" class="button relative w-fit hover-float">
+              <!-- 라디오버튼(숨김) -->
+              <input type="radio" id="profile3" name="profile" class="peer hidden" />
+              <!-- 프로필이미지 -->
+              <figure class="flex flex-col overflow-hidden">
+                <img
+                  class="w-[7.125rem] md:w-[8.25rem] lg:w-[12.5rem] rounded-[.375rem]"
+                  srcset="../assets/profile/profile_3_sm.png 480w, ../assets/profile/profile_3_md.png 768w"
+                  sizes="(max-width: 767px) 100vw,
+                       (max-width: 1023px) 8.25rem"
+                  src="../assets/profile/profile_1_lg.png"
+                  alt="캐릭터이미지-소년"
+                />
+                <figcaption class="text-center mt-[.75rem]">야무</figcaption>
+              </figure>
+              <!-- 잠금아이콘 -->
+              <label for="profile3" class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none">
+                <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_lock.svg" alt="프로필 잠금 - 야무" />
+              </label>
+              <!-- 연필아이콘 -->
+              <label class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer"> <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" alt="프로필 편집 - 야무" /> </label>
+            </li>
+            <!-- 프로필카드 4 -->
+            <li tabindex="0" class="button relative w-fit hover-float">
+              <!-- 라디오버튼(숨김) -->
+              <input type="radio" id="profile4" name="profile" class="peer hidden" checked />
+              <!-- 프로필이미지 -->
+              <figure class="flex flex-col overflow-hidden">
+                <img
+                  class="w-[7.125rem] md:w-[8.25rem] lg:w-[12.5rem] rounded-[.375rem]"
+                  srcset="../assets/profile/profile_4_sm.png 480w, ../assets/profile/profile_4_md.png 768w"
+                  sizes="(max-width: 767px) 100vw,
+                       (max-width: 1023px) 8.25rem"
+                  src="../assets/profile/profile_4_lg.png"
+                  alt="캐릭터이미지-티빙기본로고캐릭터"
+                />
+                <figcaption class="text-center mt-[.75rem]">이듬</figcaption>
+              </figure>
+              <!-- 잠금아이콘 -->
+              <label for="profile4" class="profile-lock absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm transition-opacity cursor-pointer peer-checked:opacity-0 peer-checked:pointer-events-none">
+                <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_lock.svg" alt="프로필 잠금 - 이듬" />
+              </label>
+              <!-- 연필아이콘 -->
+              <label class="profile-edit absolute inset-0 flex justify-center aspect-square items-center bg-[rgb(0,0,0,0.5)] border-0 rounded-b-sm hidden cursor-pointer"> <img class="w-[3.125rem] lg:w-[3.75rem]" src="../assets/profile/Profile_Edit.svg" alt="프로필 편집 - 이듬" /> </label>
+            </li>
+          </ul>
+        </fieldset>
       </div>
 
       <!-- 프로필 편집(button) -->
@@ -170,7 +171,7 @@
         <!-- 프로필 편집 버튼 -->
         <label tabindex="0" id="edit-label" for="edit-toggle" class="button cursor-pointer block peer-checked:hidden font-semibold text-[.7502rem] lg:text-[1.7769rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] md:w-[9.75rem] lg:w-[17rem] text-gray-300 bg-transparent hover:text-gray-100"> 프로필 편집 </label>
         <!-- 완료 버튼 (체크되었을 때 보임) -->
-        <label tabindex="0" id="done-label" for="edit-toggle" class="button cursor-pointer hidden peer-checked:block font-semibold text-[.7502rem] lg:text-[1.7769rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] md:w-[9.75rem] lg:w-[17rem] bg-gray-100 text-black hover:bg-white"> 완료 </label>
+        <button type="button" tabindex="0" id="done-label" aria-pressed="true" onclick="document.getElementById('edit-toggle').click()" class="button cursor-pointer hidden peer-checked:block font-semibold text-[.7502rem] lg:text-[1.7769rem] border-1 rounded-[4px] p-[12px] w-[8.4375rem] md:w-[9.75rem] lg:w-[17rem] bg-gray-100 text-black hover:bg-white">완료</button>
       </div>
     </div>
 

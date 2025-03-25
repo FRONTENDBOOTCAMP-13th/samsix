@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TAING</title>
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" crossorigin="anonymous" />
-    <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
+    <link rel="preload" as="style" href="/font/pretendardvariable.css" />
+    <link rel="stylesheet" href="/font/pretendardvariable.css" />
     <script type="module" src="/src/js/main_page.js"></script>
   </head>
   <body class="bg-black text-white">
@@ -58,8 +59,8 @@
       <section class="relative fade-in-section">
         <!-- 배너 이미지 -->
         <picture class="gradient-picture">
-          <source srcset="../assets/banner/landing_img_sm.webp 561w" media="(max-width: 768px)" />
-          <source srcset="../assets/banner/landing_img_md.webp 768w" media="(max-width: 1024px)" />
+          <source srcset="../assets/banner/landing_img_sm.webp 561w" sizes="(max-width: 768px) 561px" media="(max-width: 768px)" />
+          <source srcset="../assets/banner/landing_img_md.webp 768w" sizes="(max-width: 1024px) 768px" media="(max-width: 1024px)" />
           <img class="w-full h-full object-fill" src="../assets/banner/landing_img_lg.webp" alt="타잉 오리지널 콘텐츠" />
         </picture>
 
