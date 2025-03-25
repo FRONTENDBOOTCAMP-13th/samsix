@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title></title>
+    <title>Logout Modal</title>
     <link rel="icon" href="/taing.svg" />
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" />
     <link rel="stylesheet" href="/font/pretendardvariable.css" />
     <script type="module" src="/src/js/login_page.js"></script>
   </head>
   <body>
+    <h1 class="sr-only">로그아웃 모달 컴포넌트</h1>
     <!-- 해당 컴포넌트를 사용할 때는 id, class값이 겹치지 않는 지 확인 후 수정 -->
     <!-- 로그아웃 버튼 -->
     <button type="button" class="show-dialog hidden md:block">로그아웃</button>
@@ -18,7 +19,7 @@
       <!-- contents의 여백 & 텍스트 정렬 -->
       <div class="p-3 text-center">
         <!-- 제목 -->
-        <p class="text-white-origin my-6 text-label-large" id="logout-confirmation">로그아웃 하시겠습니까?</p>
+        <h2 class="text-white-origin my-6 text-label-large" id="logout-confirmation">로그아웃 하시겠습니까?</h2>
 
         <!-- 버튼 그룹 -->
         <div class="flex justify-center items-center mb-2 font-semibold">
