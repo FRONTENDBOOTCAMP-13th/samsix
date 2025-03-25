@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TAING</title>
     <link rel="preload" as="font" href="/font/woff2/PretendardVariable.woff2" crossorigin="anonymous" />
-    <link rel="stylesheet" as="style" href="/font/pretendardvariable.css" />
+    <link rel="preload" as="style" href="/font/pretendardvariable.css" />
+    <link rel="stylesheet" href="/font/pretendardvariable.css" />
     <script type="module" src="/src/js/main_page.js"></script>
   </head>
   <body class="bg-black text-white">
+    <h1 class="sr-only">TAING 메인 페이지</h1>
+
     <!-- 헤더 내비게이션 바 -->
     <header class="sticky top-0 z-50 w-full">
-      <nav class="flex justify-between text-gray-200 px-6 py-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.8125rem] bg-black" id="navigation" role="navigation" aria-label="주요 메뉴">
+      <nav class="flex justify-between text-gray-200 px-6 py-3 md:px-10 md:py-4 lg:px-[4.375rem] lg:py-[1.8125rem] bg-black" id="navigation" aria-label="주요 메뉴">
         <ul class="flex md:gap-7 lg:gap-[3.25rem] items-center md:text-xs lg:text-xl">
           <!-- 로고 -->
-          <li aria-label="로고: 홈페이지 이동">
-            <a href="./main_page.html">
+          <li>
+            <a href="./main_page.html" aria-label="홈페이지 이동">
               <svg width="53" height="22" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[4.8125rem] md:h-6 lg:w-[8rem] lg:h-[2.375rem]">
                 <g clip-path="url(#clip0_3307_6764)">
                   <mask id="mask0_3307_6764" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="4" width="132" height="34">
@@ -78,8 +81,8 @@
           </li>
 
           <!-- Paramount+ -->
-          <li class="hidden md:block hover-white" aria-label="Paramount+ - 페이지 이동">
-            <a href="#">
+          <li class="hidden md:block hover-white">
+            <a href="#" aria-label="실시간 방송으로 이동">
               <svg width="84" height="25" viewBox="0 0 112 34" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:w-[7rem] lg:h-[2.125rem]">
                 <g clip-path="url(#clip0_3307_6801)">
                   <path
@@ -378,8 +381,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/contents/treasure_hunt_sm.webp 92w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/contents/treasure_hunt_md.webp 130w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/contents/treasure_hunt_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/contents/treasure_hunt_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/contents/treasure_hunt_lg.webp" loading="lazy" alt="보물 찾기" />
                     </picture>
                     <figcaption class="truncate">보물 찾기</figcaption>
@@ -390,8 +393,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/contents/love_catcher_sm.webp 92w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/contents/love_catcher_md.webp 130w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/contents/love_catcher_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/contents/love_catcher_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/contents/love_catcher_lg.webp" loading="lazy" alt="러브캐처 인 발리" />
                     </picture>
                     <figcaption class="truncate">러브캐처 인 발리</figcaption>
@@ -402,8 +405,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/contents/drunk_urban_women_sm.webp 92w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/contents/drunk_urban_women_md.webp 130w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/contents/drunk_urban_women_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/contents/drunk_urban_women_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/contents/drunk_urban_women_lg.webp" loading="lazy" alt="술꾼도시여자들2" />
                     </picture>
                     <figcaption class="truncate">술꾼도시여자들2</figcaption>
@@ -414,8 +417,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/contents/tulsa_king_sm.webp 92w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/contents/tulsa_king_md.webp 130w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/contents/tulsa_king_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/contents/tulsa_king_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/contents/tulsa_king_lg.webp" loading="lazy" alt="털사 킹" />
                     </picture>
                     <figcaption class="truncate">털사 킹</figcaption>
@@ -426,8 +429,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/contents/nothing_to_do_sm.webp 92w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/contents/nothing_to_do_md.webp 130w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/contents/nothing_to_do_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/contents/nothing_to_do_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/contents/nothing_to_do_lg.webp" loading="lazy" alt="아무것도 하고 싶지 않아" />
                     </picture>
                     <figcaption class="truncate">아무것도 하고 싶지 않아</figcaption>
@@ -438,8 +441,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/contents/black_dog_sm.webp 92w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/contents/black_dog_md.webp 130w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/contents/black_dog_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/contents/black_dog_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/contents/black_dog_lg.webp" loading="lazy" alt="블랙독" />
                     </picture>
                     <figcaption class="truncate">블랙독</figcaption>
@@ -450,8 +453,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/contents/blues_sm.webp 92w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/contents/blues_md.webp 130w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/contents/blues_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/contents/blues_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/contents/blues_lg.webp" loading="lazy" alt="우리들의 블루스" />
                     </picture>
                     <figcaption class="truncate">우리들의 블루스</figcaption>
@@ -462,8 +465,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/contents/kilimanjaro_sm.webp 92w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/contents/kilimanjaro_md.webp 130w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/contents/kilimanjaro_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/contents/kilimanjaro_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/contents/kilimanjaro_lg.webp" loading="lazy" alt="인생에 한 번쯤, 킬리만자로" />
                     </picture>
                     <figcaption class="truncate">인생에 한 번쯤, 킬리만자로</figcaption>
@@ -483,110 +486,122 @@
             <ul class="contents">
               <li class="hover-float">
                 <a href="#">
-                  <figure class="main-card relative">
-                    <picture>
-                      <source srcset="../assets/poster/Quick_VOD/jtbc_news_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/Quick_VOD/jtbc_news_md.webp 224w" media="(max-width: 1024px)" />
-                      <img class="w-full h-auto" src="../assets/poster/Quick_VOD/jtbc_news_lg.webp" loading="lazy" alt="JTBC 뉴스룸" />
-                    </picture>
-                    <figcaption class="flex flex-col">
-                      <span class="contents-name">JTBC 뉴스룸</span>
-                      <span class="contents-description">0화</span>
-                    </figcaption>
+                  <div class="w-fit h-fit relative">
+                    <figure class="main-card">
+                      <picture>
+                        <source srcset="../assets/poster/Quick_VOD/jtbc_news_sm.webp" media="(max-width: 768px)" />
+                        <source srcset="../assets/poster/Quick_VOD/jtbc_news_md.webp" media="(max-width: 1024px)" />
+                        <img class="w-full h-auto" src="../assets/poster/Quick_VOD/jtbc_news_lg.webp" loading="lazy" alt="JTBC 뉴스룸" />
+                      </picture>
+                      <figcaption class="flex flex-col">
+                        <span class="contents-name">JTBC 뉴스룸</span>
+                        <span class="contents-description">0화</span>
+                      </figcaption>
+                    </figure>
                     <div class="Quick-VOD">
                       <span>Quick VOD</span>
                     </div>
-                  </figure>
+                  </div>
                 </a>
               </li>
               <li class="hover-float">
                 <a href="#">
-                  <figure class="main-card relative">
-                    <picture>
-                      <source srcset="../assets/poster/Quick_VOD/i_decided_to_live_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/Quick_VOD/i_decided_to_live_md.webp 224w" media="(max-width: 1024px)" />
-                      <img class="w-full h-auto" src="../assets/poster/Quick_VOD/i_decided_to_live_lg.webp" loading="lazy" alt="휴먼다큐 '나는 살기로 했다'" />
-                    </picture>
-                    <figcaption class="flex flex-col">
-                      <span class="contents-name">휴먼다큐 &lt;나는 살기로 했다&gt;</span>
-                      <span class="contents-description">10화</span>
-                    </figcaption>
+                  <div class="w-fit h-fit relative">
+                    <figure class="main-card relative">
+                      <picture>
+                        <source srcset="../assets/poster/Quick_VOD/i_decided_to_live_sm.webp" media="(max-width: 768px)" />
+                        <source srcset="../assets/poster/Quick_VOD/i_decided_to_live_md.webp" media="(max-width: 1024px)" />
+                        <img class="w-full h-auto" src="../assets/poster/Quick_VOD/i_decided_to_live_lg.webp" loading="lazy" alt="휴먼다큐 '나는 살기로 했다'" />
+                      </picture>
+                      <figcaption class="flex flex-col">
+                        <span class="contents-name">휴먼다큐 &lt;나는 살기로 했다&gt;</span>
+                        <span class="contents-description">10화</span>
+                      </figcaption>
+                    </figure>
                     <div class="Quick-VOD">
                       <span>Quick VOD</span>
                     </div>
-                  </figure>
+                  </div>
                 </a>
               </li>
               <li class="hover-float">
                 <a href="#">
-                  <figure class="main-card relative">
-                    <picture>
-                      <source srcset="../assets/poster/Quick_VOD/health_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/Quick_VOD/health_md.webp 224w" media="(max-width: 1024px)" />
-                      <img class="w-full h-auto" src="../assets/poster/Quick_VOD/health_lg.webp" loading="lazy" alt="건강면세점" />
-                    </picture>
-                    <figcaption class="flex flex-col">
-                      <span class="contents-name">건강면세점</span>
-                      <span class="contents-description">130화</span>
-                    </figcaption>
+                  <div class="w-fit h-fit relative">
+                    <figure class="main-card relative">
+                      <picture>
+                        <source srcset="../assets/poster/Quick_VOD/health_sm.webp" media="(max-width: 768px)" />
+                        <source srcset="../assets/poster/Quick_VOD/health_md.webp" media="(max-width: 1024px)" />
+                        <img class="w-full h-auto" src="../assets/poster/Quick_VOD/health_lg.webp" loading="lazy" alt="건강면세점" />
+                      </picture>
+                      <figcaption class="flex flex-col">
+                        <span class="contents-name">건강면세점</span>
+                        <span class="contents-description">130화</span>
+                      </figcaption>
+                    </figure>
                     <div class="Quick-VOD">
                       <span>Quick VOD</span>
                     </div>
-                  </figure>
+                  </div>
                 </a>
               </li>
               <li class="hover-float">
                 <a href="#">
-                  <figure class="main-card relative">
-                    <picture>
-                      <source srcset="../assets/poster/Quick_VOD/different_class_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/Quick_VOD/different_class_md.webp 224w" media="(max-width: 1024px)" />
-                      <img class="w-full h-auto" src="../assets/poster/Quick_VOD/different_class_lg.webp" loading="lazy" alt="차이나는 클라스" />
-                    </picture>
-                    <figcaption class="flex flex-col">
-                      <span class="contents-name">차이나는 클라스</span>
-                      <span class="contents-description">254화</span>
-                    </figcaption>
+                  <div class="w-fit h-fit relative">
+                    <figure class="main-card relative">
+                      <picture>
+                        <source srcset="../assets/poster/Quick_VOD/different_class_sm.webp" media="(max-width: 768px)" />
+                        <source srcset="../assets/poster/Quick_VOD/different_class_md.webp" media="(max-width: 1024px)" />
+                        <img class="w-full h-auto" src="../assets/poster/Quick_VOD/different_class_lg.webp" loading="lazy" alt="차이나는 클라스" />
+                      </picture>
+                      <figcaption class="flex flex-col">
+                        <span class="contents-name">차이나는 클라스</span>
+                        <span class="contents-description">254화</span>
+                      </figcaption>
+                    </figure>
                     <div class="Quick-VOD">
                       <span>Quick VOD</span>
                     </div>
-                  </figure>
+                  </div>
                 </a>
               </li>
               <li class="hover-float">
                 <a href="#">
-                  <figure class="main-card relative">
-                    <picture>
-                      <source srcset="../assets/poster/Quick_VOD/almaeng_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/Quick_VOD/almaeng_md.webp 224w" media="(max-width: 1024px)" />
-                      <img class="w-full h-auto" src="../assets/poster/Quick_VOD/almaeng_lg.webp" loading="lazy" alt="알맹이" />
-                    </picture>
-                    <figcaption class="flex flex-col">
-                      <span class="contents-name">알맹이</span>
-                      <span class="contents-description">208화</span>
-                    </figcaption>
+                  <div class="w-fit h-fit relative">
+                    <figure class="main-card relative">
+                      <picture>
+                        <source srcset="../assets/poster/Quick_VOD/almaeng_sm.webp" media="(max-width: 768px)" />
+                        <source srcset="../assets/poster/Quick_VOD/almaeng_md.webp" media="(max-width: 1024px)" />
+                        <img class="w-full h-auto" src="../assets/poster/Quick_VOD/almaeng_lg.webp" loading="lazy" alt="알맹이" />
+                      </picture>
+                      <figcaption class="flex flex-col">
+                        <span class="contents-name">알맹이</span>
+                        <span class="contents-description">208화</span>
+                      </figcaption>
+                    </figure>
                     <div class="Quick-VOD">
                       <span>Quick VOD</span>
                     </div>
-                  </figure>
+                  </div>
                 </a>
               </li>
               <li class="hover-float">
                 <a href="#">
-                  <figure class="main-card relative">
-                    <picture>
-                      <source srcset="../assets/poster/Quick_VOD/mom_spring_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/Quick_VOD/mom_spring_md.webp 224w" media="(max-width: 1024px)" />
-                      <img class="w-full h-auto" src="../assets/poster/Quick_VOD/mom_spring_lg.webp" loading="lazy" alt="엄마의 봄날" />
-                    </picture>
-                    <figcaption class="flex flex-col">
-                      <span class="contents-name">엄마의 봄날</span>
-                      <span class="contents-description">380화</span>
-                    </figcaption>
+                  <div class="w-fit h-fit relative">
+                    <figure class="main-card relative">
+                      <picture>
+                        <source srcset="../assets/poster/Quick_VOD/mom_spring_sm.webp" media="(max-width: 768px)" />
+                        <source srcset="../assets/poster/Quick_VOD/mom_spring_md.webp" media="(max-width: 1024px)" />
+                        <img class="w-full h-auto" src="../assets/poster/Quick_VOD/mom_spring_lg.webp" loading="lazy" alt="엄마의 봄날" />
+                      </picture>
+                      <figcaption class="flex flex-col">
+                        <span class="contents-name">엄마의 봄날</span>
+                        <span class="contents-description">380화</span>
+                      </figcaption>
+                    </figure>
                     <div class="Quick-VOD">
                       <span>Quick VOD</span>
                     </div>
-                  </figure>
+                  </div>
                 </a>
               </li>
             </ul>
@@ -604,8 +619,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/popular_programs/chaebol_son_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/popular_programs/chaebol_son_md.webp 224w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/popular_programs/chaebol_son_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/popular_programs/chaebol_son_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/popular_programs/chaebol_son_lg.webp" loading="lazy" alt="재벌집 막내아들" />
                     </picture>
                     <figcaption class="flex overflow-visible items-baseline -mt-[15%]">
@@ -620,8 +635,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/popular_programs/drunk_urban_women_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/popular_programs/drunk_urban_women_md.webp 224w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/popular_programs/drunk_urban_women_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/popular_programs/drunk_urban_women_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/popular_programs/drunk_urban_women_lg.webp" loading="lazy" alt="술꾼도시여자들2" />
                     </picture>
                     <figcaption class="flex items-baseline -mt-[15%]">
@@ -636,8 +651,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/popular_programs/twilight_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/popular_programs/twilight_md.webp 224w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/popular_programs/twilight_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/popular_programs/twilight_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/popular_programs/twilight_lg.webp" loading="lazy" alt="환혼" />
                     </picture>
                     <figcaption class="flex items-baseline -mt-[15%]">
@@ -652,8 +667,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/popular_programs/Canada_checkin_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/popular_programs/Canada_checkin_md.webp 224w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/popular_programs/Canada_checkin_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/popular_programs/Canada_checkin_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/popular_programs/Canada_checkin_lg.webp" loading="lazy" alt="캐나다 체크인" />
                     </picture>
                     <figcaption class="flex items-baseline -mt-[15%]">
@@ -668,8 +683,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/popular_programs/Saturday_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/popular_programs/Saturday_md.webp 224w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/popular_programs/Saturday_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/popular_programs/Saturday_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/popular_programs/Saturday_lg.webp" loading="lazy" alt="놀라운 토요일" />
                     </picture>
                     <figcaption class="flex items-baseline -mt-[15%]">
@@ -684,8 +699,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/popular_programs/Show_me_the_money_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/popular_programs/Show_me_the_money_md.webp 224w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/popular_programs/Show_me_the_money_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/popular_programs/Show_me_the_money_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/popular_programs/Show_me_the_money_lg.webp" loading="lazy" alt="SHOW ME THE MONEY" />
                     </picture>
                     <figcaption class="flex items-baseline -mt-[15%]">
@@ -700,8 +715,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/popular_programs/love_catcher_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/popular_programs/love_catcher_md.webp 224w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/popular_programs/love_catcher_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/popular_programs/love_catcher_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/popular_programs/love_catcher_lg.webp" loading="lazy" alt="러브캐처 인 발리" />
                     </picture>
                     <figcaption class="flex items-baseline -mt-[15%]">
@@ -716,8 +731,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/popular_programs/useful_job_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/popular_programs/useful_job_md.webp 224w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/popular_programs/useful_job_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/popular_programs/useful_job_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/popular_programs/useful_job_lg.webp" loading="lazy" alt="알뜰신잡" />
                     </picture>
                     <figcaption class="flex items-baseline -mt-[15%]">
@@ -743,8 +758,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/LIVE/JTBC_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/LIVE/JTBC_md.webp 225w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/LIVE/JTBC_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/LIVE/JTBC_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/LIVE/JTBC_lg.webp" loading="lazy" alt="JTBC 뉴스룸" />
                     </picture>
                     <figcaption class="flex flex-col">
@@ -764,8 +779,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/LIVE/tvN_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/LIVE/tvN_md.webp 225w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/LIVE/tvN_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/LIVE/tvN_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/LIVE/tvN_lg.webp" loading="lazy" alt="줄 서는 식당 43회" />
                     </picture>
                     <figcaption class="flex flex-col">
@@ -785,8 +800,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/LIVE/YTN_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/LIVE/YTN_md.webp 225w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/LIVE/YTN_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/LIVE/YTN_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/LIVE/YTN_lg.webp" loading="lazy" alt="뉴스가 있는 저녁" />
                     </picture>
                     <figcaption class="flex flex-col">
@@ -806,8 +821,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/LIVE/JTBC2_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/LIVE/JTBC2_md.webp 225w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/LIVE/JTBC2_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/LIVE/JTBC2_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/LIVE/JTBC2_lg.webp" loading="lazy" alt="재벌집 막내 아들 5화" />
                     </picture>
                     <figcaption class="flex flex-col">
@@ -827,8 +842,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/LIVE/YonhapNewsTV_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/LIVE/YonhapNewsTV_md.webp 225w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/LIVE/YonhapNewsTV_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/LIVE/YonhapNewsTV_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/LIVE/YonhapNewsTV_lg.webp" loading="lazy" alt="뉴스프라임" />
                     </picture>
                     <figcaption class="flex flex-col">
@@ -848,8 +863,8 @@
                 <a href="#">
                   <figure class="main-card">
                     <picture>
-                      <source srcset="../assets/poster/LIVE/Toonibus_sm.webp 145w" media="(max-width: 768px)" />
-                      <source srcset="../assets/poster/LIVE/Toonibus_md.webp 225w" media="(max-width: 1024px)" />
+                      <source srcset="../assets/poster/LIVE/Toonibus_sm.webp" media="(max-width: 768px)" />
+                      <source srcset="../assets/poster/LIVE/Toonibus_md.webp" media="(max-width: 1024px)" />
                       <img class="w-full h-auto" src="../assets/poster/LIVE/Toonibus_lg.webp" loading="lazy" alt="명탐정 코난 6기 6화" />
                     </picture>
                     <figcaption class="flex flex-col">
@@ -879,8 +894,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/only/Universal_sm.webp 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/only/Universal_md.webp 225w" media="(max-width: 1024px)" />
+                    <source srcset="../assets/poster/only/Universal_sm.webp" media="(max-width: 768px)" />
+                    <source srcset="../assets/poster/only/Universal_md.webp" media="(max-width: 1024px)" />
                     <img class="w-full h-auto" src="../assets/poster/only/Universal_lg.webp" loading="lazy" alt="전체관람가: 숏버스터" />
                   </picture>
                 </a>
@@ -888,8 +903,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/only/love_catcher_sm.webp 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/only/love_catcher_md.webp 225w" media="(max-width: 1024px)" />
+                    <source srcset="../assets/poster/only/love_catcher_sm.webp" media="(max-width: 768px)" />
+                    <source srcset="../assets/poster/only/love_catcher_md.webp" media="(max-width: 1024px)" />
                     <img class="w-full h-auto" src="../assets/poster/only/love_catcher_lg.webp" loading="lazy" alt="러브캐처 인 발리" />
                   </picture>
                 </a>
@@ -897,8 +912,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/only/transfer_love_sm.webp 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/only/transfer_love_md.webp 225w" media="(max-width: 1024px)" />
+                    <source srcset="../assets/poster/only/transfer_love_sm.webp" media="(max-width: 768px)" />
+                    <source srcset="../assets/poster/only/transfer_love_md.webp" media="(max-width: 1024px)" />
                     <img class="w-full h-auto" src="../assets/poster/only/transfer_love_lg.webp" loading="lazy" alt="환승연애2" />
                   </picture>
                 </a>
@@ -906,8 +921,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/only/ransom_sm.webp 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/only/ransom_md.webp 225w" media="(max-width: 1024px)" />
+                    <source srcset="../assets/poster/only/ransom_sm.webp" media="(max-width: 768px)" />
+                    <source srcset="../assets/poster/only/ransom_md.webp" media="(max-width: 1024px)" />
                     <img class="w-full h-auto" src="../assets/poster/only/ransom_lg.webp" loading="lazy" alt="몸값" />
                   </picture>
                 </a>
@@ -915,8 +930,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/only/drunk_urban_women_sm.webp 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/only/drunk_urban_women_md.webp 225w" media="(max-width: 1024px)" />
+                    <source srcset="../assets/poster/only/drunk_urban_women_sm.webp" media="(max-width: 768px)" />
+                    <source srcset="../assets/poster/only/drunk_urban_women_md.webp" media="(max-width: 1024px)" />
                     <img class="w-full h-auto" src="../assets/poster/only/drunk_urban_women_lg.webp" loading="lazy" alt="술꾼도시여자들" />
                   </picture>
                 </a>
@@ -924,8 +939,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/only/strange_sm.webp 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/only/strange_md.webp 225w" media="(max-width: 1024px)" />
+                    <source srcset="../assets/poster/only/strange_sm.webp" media="(max-width: 768px)" />
+                    <source srcset="../assets/poster/only/strange_md.webp" media="(max-width: 1024px)" />
                     <img class="w-full h-auto" src="../assets/poster/only/strange_lg.webp" loading="lazy" alt="괴이" />
                   </picture>
                 </a>
@@ -933,8 +948,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/only/food_chronicle_sm.webp 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/only/food_chronicle_md.webp 225w" media="(max-width: 1024px)" />
+                    <source srcset="../assets/poster/only/food_chronicle_sm.webp" media="(max-width: 768px)" />
+                    <source srcset="../assets/poster/only/food_chronicle_md.webp" media="(max-width: 1024px)" />
                     <img class="w-full h-auto" src="../assets/poster/only/food_chronicle_lg.webp" loading="lazy" alt="푸드 크로니클" />
                   </picture>
                 </a>
@@ -949,8 +964,8 @@
         <div class="flex justify-center max-w-screen overflow-x-auto scrollbar-hide my-5 md:my-10">
           <a href="#" class="contents">
             <picture class="w-[19rem] md:w-[43.125rem] lg:min-w-[110.125rem]">
-              <source srcset="../assets/poster/banner_sm.webp 145w" media="(max-width: 768px)" />
-              <source srcset="../assets/poster/banner_md.webp 225w" media="(max-width: 1024px)" />
+              <source srcset="../assets/poster/banner_sm.webp" media="(max-width: 768px)" />
+              <source srcset="../assets/poster/banner_md.webp" media="(max-width: 1024px)" />
               <img class="w-full h-auto" src="../assets/poster/banner_lg.webp" loading="lazy" alt="TAING SPORTC 경기 생중계" />
             </picture>
           </a>
@@ -966,8 +981,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/events/sinbi_apart_sm.webp 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/events/sinbi_apart_md.webp 225w" media="(max-width: 1024px)" />
+                    <source srcset="../assets/poster/events/sinbi_apart_sm.webp" media="(max-width: 768px)" />
+                    <source srcset="../assets/poster/events/sinbi_apart_md.webp" media="(max-width: 1024px)" />
                     <img class="w-full h-auto" src="../assets/poster/events/sinbi_apart_lg.webp" loading="lazy" alt="극장판 신비아파트 예매권 증정 이벤트" />
                   </picture>
                 </a>
@@ -975,8 +990,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/events/chaebol_son_sm.webp 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/events/chaebol_son_md.webp 225w" media="(max-width: 1024px)" />
+                    <source srcset="../assets/poster/events/chaebol_son_sm.webp" media="(max-width: 768px)" />
+                    <source srcset="../assets/poster/events/chaebol_son_md.webp" media="(max-width: 1024px)" />
                     <img class="w-full h-auto" src="../assets/poster/events/chaebol_son_lg.webp" loading="lazy" alt="재벌집 막내아들 시청하고 1일 재벌 체험하기" />
                   </picture>
                 </a>
@@ -984,8 +999,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/events/transfer_relationship_sm.webp 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/events/transfer_relationship_md.webp 225w" media="(max-width: 1024px)" />
+                    <source srcset="../assets/poster/events/transfer_relationship_sm.webp" media="(max-width: 768px)" />
+                    <source srcset="../assets/poster/events/transfer_relationship_md.webp" media="(max-width: 1024px)" />
                     <img class="w-full h-auto" src="../assets/poster/events/transfer_relationship_lg.webp" loading="lazy" alt="환승연애2의 진한 여운을 잇는 과몰입 도파민 충전 이벤트" />
                   </picture>
                 </a>
@@ -993,8 +1008,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/events/shurup_sm.webp 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/events/shurup_md.webp 225w" media="(max-width: 1024px)" />
+                    <source srcset="../assets/poster/events/shurup_sm.webp" media="(max-width: 768px)" />
+                    <source srcset="../assets/poster/events/shurup_md.webp" media="(max-width: 1024px)" />
                     <img class="w-full h-auto" src="../assets/poster/events/shurup_lg.webp" loading="lazy" alt="슈룹 시청하고 공식 우산 굿즈 받기" />
                   </picture>
                 </a>
@@ -1002,8 +1017,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/events/desert_maker_sm.webp 145w" media="(max-width: 768px)" />
-                    <source srcset="../assets/poster/events/desert_maker_md.webp 225w" media="(max-width: 1024px)" />
+                    <source srcset="../assets/poster/events/desert_maker_sm.webp" media="(max-width: 768px)" />
+                    <source srcset="../assets/poster/events/desert_maker_md.webp" media="(max-width: 1024px)" />
                     <img class="w-full h-auto" src="../assets/poster/events/desert_maker_lg.webp" loading="lazy" alt="디저트 메이커를 찾습니다!" />
                   </picture>
                 </a>
@@ -1011,8 +1026,8 @@
               <li class="hover-float">
                 <a href="#">
                   <picture class="main-card gap-0">
-                    <source srcset="../assets/poster/events/let_me_in_sm.webp 145w" media="(max-width: 768px)" />
-                    <img class="w-full h-auto" src="../assets/poster/events/let_me_in_lg.webp" loading="lazy" alt="소설 원작 렛미인 감상하고 원작 도서 세트 받기" />
+                    <source srcset="../assets/poster/events/let_me_in_sm.webp" media="(max-width: 768px)" />
+                    <img class="w-full h-auto" src="../assets/poster/events/l_in_lg.webp" loading="lazy" alt="소설 원작 렛미인 감상하고 원작 도서 세트 받기" />
                   </picture>
                 </a>
               </li>

@@ -2,6 +2,13 @@ import '../style.css';
 
 // 문서의 모든 요소가 다 로드가 됐을 시, 실행
 document.addEventListener('DOMContentLoaded', () => {
+  function togglePopover() {
+    const popover = document.getElementById('empty-popover');
+    const isVisible = popover.getAttribute('aria-hidden') === 'false';
+    popover.setAttribute('aria-hidden', isVisible ? 'true' : 'false');
+    popover.classList.toggle('hidden', isVisible);
+  }
+
   const sections = document.querySelectorAll('.fade-in-section');
 
   const observer = new IntersectionObserver(
