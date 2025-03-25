@@ -11,270 +11,274 @@
     <script type="module" src="/src/main.js"></script>
   </head>
   <body class="bg-[#e4e4e4] mt-8">
-    <h1 class="text-xl md:text-2xl lg:text-3xl mb-10 font-semibold text-center flex flex-col gap-1 md:gap-1.5 lg:gap-2">
-      <span>멋쟁이 사자처럼 프론트엔드 부트캠프 13기</span>
-      <span class="text-2xl md:text-3xl lg:text-4xl">6팀 &lt;삼식이&gt; TAING 프로젝트</span>
-    </h1>
+    <header>
+      <h1 class="text-xl md:text-2xl lg:text-3xl mb-10 font-semibold text-center flex flex-col gap-1 md:gap-1.5 lg:gap-2">
+        <span>멋쟁이 사자처럼 프론트엔드 부트캠프 13기</span>
+        <span class="text-2xl md:text-3xl lg:text-4xl">6팀 &lt;삼식이&gt; TAING 프로젝트</span>
+      </h1>
+    </header>
 
-    <div class="grid grid-cols-[repeat(1,_minmax(15rem,_0.8fr))] md:grid-cols-[repeat(2,_minmax(15rem,_25rem))] lg:grid-cols-[repeat(3,_minmax(15rem,_25rem))] justify-center gap-5">
-      <!-- 역할분담 -->
-      <div class="bg-[#FCFCFC] min-h-[15.625rem] rounded-b-4xl shadow-2xl flex flex-col">
-        <div class="bg-indigo-400 w-full h-[1.5625rem]"></div>
-        <div class="bg-indigo-400 rounded-[50%] w-[3.75rem] h-[3.75rem] relative mt-[1.875rem] ml-[1.875rem]">
-          <svg class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[30px] h-[30px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-            <path
-              d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192l42.7 0c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0L21.3 320C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7l42.7 0C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3l-213.3 0zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352l117.3 0C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7l-330.7 0c-14.7 0-26.7-11.9-26.7-26.7z"
-            />
-          </svg>
+    <main>
+      <div class="grid grid-cols-[repeat(1,_minmax(15rem,_0.8fr))] md:grid-cols-[repeat(2,_minmax(15rem,_25rem))] lg:grid-cols-[repeat(3,_minmax(15rem,_25rem))] justify-center gap-5">
+        <!-- 역할분담 -->
+        <div class="bg-[#FCFCFC] min-h-[15.625rem] rounded-b-4xl shadow-2xl flex flex-col">
+          <div class="bg-indigo-400 w-full h-[1.5625rem]"></div>
+          <div class="bg-indigo-400 rounded-[50%] w-[3.75rem] h-[3.75rem] relative mt-[1.875rem] ml-[1.875rem]">
+            <svg class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[30px] h-[30px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+              <path
+                d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192l42.7 0c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0L21.3 320C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7l42.7 0C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3l-213.3 0zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352l117.3 0C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7l-330.7 0c-14.7 0-26.7-11.9-26.7-26.7z"
+              />
+            </svg>
+          </div>
+          <div class="m-[1.25rem] flex flex-col gap-[.625rem]">
+            <h2 class="text-2xl font-semibold">Members</h2>
+            <ul class="text-xs md:text-sm lg:text-base grid grid-cols-3 gap-x-5">
+              <li>
+                <details>
+                  <summary>이선진(팀장)</summary>
+                  <ul>
+                    <li>메인 페이지</li>
+                    <li>랜딩 페이지</li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>남상호</summary>
+                  로그인 관련 <br />
+                  페이지
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>김하영</summary>
+                  <ul>
+                    <li>프로필 페이지</li>
+                    <li>검색 페이지</li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="m-[1.25rem] flex flex-col gap-[.625rem]">
-          <h2 class="text-2xl font-semibold">Members</h2>
-          <ul class="text-xs md:text-sm lg:text-base grid grid-cols-3 gap-x-5">
-            <li>
-              <details>
-                <summary>이선진(팀장)</summary>
-                <ul>
-                  <li>메인 페이지</li>
-                  <li>랜딩 페이지</li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>남상호</summary>
-                로그인 관련 <br />
-                페이지
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>김하영</summary>
-                <ul>
-                  <li>프로필 페이지</li>
-                  <li>검색 페이지</li>
-                </ul>
-              </details>
-            </li>
-          </ul>
+
+        <!-- 스크럼 회의 자료 -->
+        <div class="bg-[#FCFCFC] min-h-[15.625rem] rounded-b-4xl shadow-2xl flex flex-col">
+          <div class="bg-green-400 w-full h-[1.5625rem]"></div>
+          <div class="bg-green-400 rounded-[50%] w-[3.75rem] h-[3.75rem] relative mt-[1.875rem] ml-[1.875rem]">
+            <svg class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[30px] h-[30px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+              <path
+                d="M272.2 64.6l-51.1 51.1c-15.3 4.2-29.5 11.9-41.5 22.5L153 161.9C142.8 171 129.5 176 115.8 176L96 176l0 128c20.4 .6 39.8 8.9 54.3 23.4l35.6 35.6 7 7c0 0 0 0 0 0L219.9 397c6.2 6.2 16.4 6.2 22.6 0c1.7-1.7 3-3.7 3.7-5.8c2.8-7.7 9.3-13.5 17.3-15.3s16.4 .6 22.2 6.5L296.5 393c11.6 11.6 30.4 11.6 41.9 0c5.4-5.4 8.3-12.3 8.6-19.4c.4-8.8 5.6-16.6 13.6-20.4s17.3-3 24.4 2.1c9.4 6.7 22.5 5.8 30.9-2.6c9.4-9.4 9.4-24.6 0-33.9L340.1 243l-35.8 33c-27.3 25.2-69.2 25.6-97 .9c-31.7-28.2-32.4-77.4-1.6-106.5l70.1-66.2C303.2 78.4 339.4 64 377.1 64c36.1 0 71 13.3 97.9 37.2L505.1 128l38.9 0 40 0 40 0c8.8 0 16 7.2 16 16l0 208c0 17.7-14.3 32-32 32l-32 0c-11.8 0-22.2-6.4-27.7-16l-84.9 0c-3.4 6.7-7.9 13.1-13.5 18.7c-17.1 17.1-40.8 23.8-63 20.1c-3.6 7.3-8.5 14.1-14.6 20.2c-27.3 27.3-70 30-100.4 8.1c-25.1 20.8-62.5 19.5-86-4.1L159 404l-7-7-35.6-35.6c-5.5-5.5-12.7-8.7-20.4-9.3C96 369.7 81.6 384 64 384l-32 0c-17.7 0-32-14.3-32-32L0 144c0-8.8 7.2-16 16-16l40 0 40 0 19.8 0c2 0 3.9-.7 5.3-2l26.5-23.6C175.5 77.7 211.4 64 248.7 64L259 64c4.4 0 8.9 .2 13.2 .6zM544 320l0-144-48 0c-5.9 0-11.6-2.2-15.9-6.1l-36.9-32.8c-18.2-16.2-41.7-25.1-66.1-25.1c-25.4 0-49.8 9.7-68.3 27.1l-70.1 66.2c-10.3 9.8-10.1 26.3 .5 35.7c9.3 8.3 23.4 8.1 32.5-.3l71.9-66.4c9.7-9 24.9-8.4 33.9 1.4s8.4 24.9-1.4 33.9l-.8 .8 74.4 74.4c10 10 16.5 22.3 19.4 35.1l74.8 0zM64 336a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zm528 16a16 16 0 1 0 0-32 16 16 0 1 0 0 32z"
+              />
+            </svg>
+          </div>
+          <div class="m-[1.25rem] flex flex-col gap-[.625rem]">
+            <h2 class="text-2xl font-semibold">Scrum Meeting</h2>
+            <a class="underline" href="https://www.notion.so/6-1b573873401a80fa8325cc584a6a43ab">View notion</a>
+          </div>
         </div>
+
+        <!-- 깃허브 저장소 -->
+        <div class="bg-[#FCFCFC] min-h-[15.625rem] rounded-b-4xl shadow-2xl flex flex-col">
+          <div class="bg-sky-400 w-full h-[1.5625rem]"></div>
+          <div class="bg-sky-400 rounded-[50%] w-[3.75rem] h-[3.75rem] relative mt-[1.875rem] ml-[1.875rem]">
+            <svg class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[30px] h-[30px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+              <path
+                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+              />
+            </svg>
+          </div>
+          <div class="m-[1.25rem] flex flex-col gap-[.625rem]">
+            <h2 class="text-2xl font-semibold">Github</h2>
+            <ul class="text-xs md:text-sm lg:text-base grid grid-rows-2 grid-cols-2">
+              <li>
+                <a class="underline" href="https://github.com/FRONTENDBOOTCAMP-13th/samsix/">깃허브 저장소</a>
+              </li>
+              <li>
+                <a class="underline" href="https://github.com/FRONTENDBOOTCAMP-13th/samsix/issues">이슈</a>
+              </li>
+              <li>
+                <a class="underline" href="https://github.com/FRONTENDBOOTCAMP-13th/samsix/pulls">PR</a>
+              </li>
+              <li>
+                <a class="underline" href="https://github.com/FRONTENDBOOTCAMP-13th/samsix/milestones">마일스톤</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 제작한 페이지 -->
+        <div class="bg-[#FCFCFC] min-h-[15.625rem] rounded-b-4xl shadow-2xl flex flex-col">
+          <div class="bg-pink-400 w-full h-[1.5625rem]"></div>
+          <div class="bg-pink-400 rounded-[50%] w-[3.75rem] h-[3.75rem] relative mt-[1.875rem] ml-[1.875rem]">
+            <svg class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[30px] h-[30px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path d="M88.7 223.8L0 375.8 0 96C0 60.7 28.7 32 64 32l117.5 0c17 0 33.3 6.7 45.3 18.7l26.5 26.5c12 12 28.3 18.7 45.3 18.7L416 96c35.3 0 64 28.7 64 64l0 32-336 0c-22.8 0-43.8 12.1-55.3 31.8zm27.6 16.1C122.1 230 132.6 224 144 224l400 0c11.5 0 22 6.1 27.7 16.1s5.7 22.2-.1 32.1l-112 192C453.9 474 443.4 480 432 480L32 480c-11.5 0-22-6.1-27.7-16.1s-5.7-22.2 .1-32.1l112-192z" />
+            </svg>
+          </div>
+          <div class="m-[1.25rem] flex flex-col gap-[.625rem]">
+            <h2 class="text-2xl font-semibold">Pages</h2>
+            <ul class="text-xs md:text-sm lg:text-base grid grid-cols-3">
+              <li><a class="underline" href="./src/pages/landing_page.html">Landing Page</a></li>
+              <li><a class="underline" href="./src/pages/main_page.html">Main Page</a></li>
+              <li><a class="underline" href="./src/pages/login_page.html">Login Page</a></li>
+              <li><a class="underline" href="./src/pages/profile_page.html">Profile Page</a></li>
+              <li><a class="underline" href="./src/pages/search_page.html">Search Page</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 컴포넌트 종류 -->
+        <div class="bg-[#FCFCFC] min-h-[15.625rem] rounded-b-4xl shadow-2xl flex flex-col md:col-span-2">
+          <div class="bg-amber-400 w-full h-[1.5625rem]"></div>
+          <div class="bg-amber-400 rounded-[50%] w-[3.75rem] h-[3.75rem] relative mt-[1.875rem] ml-[1.875rem]">
+            <svg class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[30px] h-[30px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+              <path
+                d="M372.2 52c0 20.9-12.4 39-30.2 47.2L448 192l102.2-20.4 2.2-.4c-5.3-7.7-8.4-17.1-8.4-27.1c0-26.5 21.5-48 48-48s48 21.5 48 48c0 26-20.6 47.1-46.4 48l-9.8 21.8L481 442.3c-10.3 23-33.2 37.7-58.4 37.7l-205.2 0c-25.2 0-48-14.8-58.4-37.7L56.2 213.8 46.4 192C20.6 191.1 0 170 0 144c0-26.5 21.5-48 48-48s48 21.5 48 48c0 10.1-3.1 19.4-8.4 27.1l2.2 .4L192 192 298.1 99.1c-17.7-8.3-30-26.3-30-47.1c0-28.7 23.3-52 52-52s52 23.3 52 52zm44.2 176.1L320 143.8l-96.4 84.3c-11.2 9.8-26.4 13.9-41 10.9L114 225.4l88.7 197.2c2.6 5.7 8.3 9.4 14.6 9.4l205.2 0c6.3 0 12-3.7 14.6-9.4L526 225.4l-68.5 13.7c-14.6 2.9-29.8-1.1-41-10.9z"
+              />
+            </svg>
+          </div>
+          <div class="m-[1.25rem] flex flex-col gap-[.625rem]">
+            <h2 class="text-2xl font-semibold">Components</h2>
+            <ul class="text-xs md:text-sm lg:text-base grid grid-cols-5 gap-y-5">
+              <li>
+                <details>
+                  <summary>landing</summary>
+                  <ul>
+                    <li><a class="underline" href="./src/components/landing/landing_banner.html">랜딩 배너</a></li>
+                    <li><a class="underline" href="./src/components/landing/landing_card_1set.html">애니메이션 1세트</a></li>
+                    <li><a class="underline" href="./src/components/landing/landing_card_2sets.html">애니메이션 2세트</a></li>
+                    <li><a class="underline" href="./src/components/landing/landing_modal.html">모달 창</a></li>
+                    <li><a class="underline" href="./src/components/landing/landing_side.html">하단 사이드 정보</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>login</summary>
+                  <ul>
+                    <li><a class="underline" href="./src/components/login/login_header.html">로고</a></li>
+                    <li><a class="underline" href="./src/components/login/login_description.html">제목 & 설명</a></li>
+                    <li><a class="underline" href="./src/components/login/login_form.html">로그인 폼 & 버튼</a></li>
+                    <li><a class="underline" href="./src/components/login/login_footer.html">유틸리티 링크 & 저작권</a></li>
+                    <li><a class="underline" href="./src/components/login/modal_components.html">로그아웃 모달</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>main</summary>
+                  <ul>
+                    <li><a class="underline" href="./src/components/main/main_banner.html">메인 스와이퍼 배너</a></li>
+                    <li><a class="underline" href="./src/components/main/main_card.html">카드 컴포넌트</a></li>
+                    <li><a class="underline" href="./src/components/main/main_navigation.html">메인페이지 내비게이션</a></li>
+                    <li><a class="underline" href="./src/components/main/modal.html">광고 모달</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>profile</summary>
+                  <ul>
+                    <li><a class="underline" href="./src/components/profile/01_profile_head.html">프로필페이지 헤더</a></li>
+                    <li><a class="underline" href="./src/components/profile/02_profile_content.html">프로필페이지 콘텐츠</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>search</summary>
+                  <ul>
+                    <li><a class="underline" href="./src/components/search/01_search_head.html">검색 페이지 헤더</a></li>
+                    <li><a class="underline" href="./src/components/search/02_search_searchbar.html">검색창</a></li>
+                    <li><a class="underline" href="./src/components/search/03_search_popular.html">최근검색어/인기검색어</a></li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 프로젝트 소감 -->
+        <div class="bg-[#FCFCFC] min-h-[15.625rem] rounded-b-4xl shadow-2xl flex flex-col md:col-span-2 lg:col-span-3">
+          <div class="bg-red-400 w-full h-[1.5625rem]"></div>
+          <div class="bg-red-400 rounded-[50%] w-[3.75rem] h-[3.75rem] relative mt-[1.875rem] ml-[1.875rem]">
+            <svg class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[30px] h-[30px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+            </svg>
+          </div>
+          <div class="m-[1.25rem] flex flex-col gap-[.625rem]">
+            <h2 class="text-2xl font-semibold">Project Reflection</h2>
+            <ul class="text-xs md:text-sm lg:text-base grid gap-2">
+              <li>
+                <details>
+                  <summary>이선진</summary>
+                  <br />
+                  <hr />
+                  <br />
+                  이번 프로젝트를 진행하면서 프론트엔드의 전반적인 지식을 활용할 수 있었습니다.
+                  <br />
+                  <br />
+                  팀장의 역할로 협업을 하면서 여러 가지를 배울수 있었는데, 스크럼 회의를 통해 그날의 목표를 정해서 <strong>개발 방향을 잡는 것의 중요성</strong>과 코드리뷰를 통해 <strong>더 나은 방식으로 리팩토링</strong> 할 수 있다는 점, 그리고 서로의 컴포넌트들을 이용해서 <strong>개발 시간을 단축</strong>시킬 수 있었다는 점을 배웠습니다.
+                  <br />
+                  <br />
+                  상당히 많은 것을 얻어가는 시간이었으며, 좋은 팀원들과 함께 재밌게 프로젝트를 할 수 있어서 좋았습니다.
+                  <br />
+                  <br />
+                  프로젝트를 완성하고, 프론트엔드 개발자에 한 뼘 더 가까워진 느낌이 들어 스스로 뿌듯했던 시간이었습니다.
+                  <br />
+                  <br />
+                  <hr />
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>남상호</summary>
+                  <br />
+                  <hr />
+                  <br />
+                  생애 첫 IT 관련 프로젝트였습니다.
+                  <br />
+                  <br />
+                  이번 프로젝트는 단순 UI 클론이기에, 목표는 <strong>"한 달 동안 배운 것들을 복습하고 내 것으로 만들자는 차원에서 자바스크립트 사용을 최소화 하고, HTML과 Tailwind CSS로 구현할 수 있는 부분은 최대한 반영하기"</strong> 였습니다.
+                  <br />
+                  <br />
+                  결과물은 꽤 만족스러웠습니다. 그 과정에서는 팀원들, 강사님, AI의 도움도 조금은 있었으나, 전반적으론 제 힘으로 해냈다는 것이 맘에 들었습니다.
+                  <br />
+                  <br />
+                  저희 팀은 결과적으론 3명이서 진행을 하게 됐지만, 다들 소통도 잘 해주시고 본인 할당량을 빠르게 채우는 성실한 팀원 분들이라, 일정에 지장이 없어서 좋았습니다!
+                  <br />
+                  <br />
+                  <hr />
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>김하영</summary>
+                  <br />
+                  <hr />
+                  <br />
+                  이번 프로젝트에서 하나하나 혼자 해내고 싶은 마음이 컸지만, 마음에 비해 기본적인 구조나 스타일링에서도 종종 막혔던 것 같습니다.
+                  <br />
+                  <br />
+                  하지만 시간이 걸리더라도 혼자 해낼 수 있을 만큼 발전했기 때문에, '자바스크립트 없이 HTML과 Tailwind CSS만으로 구현해보자'는 목표를 세우고, 그 안에서 최대한 해결하려 노력했습니다.
+                  <br />
+                  <br />
+                  데일리 스크럼과 간단한 이슈 공유, 코드 리팩토링 등을 통해 팀원들과의 협업이 얼마나 중요한지도 느꼈고, 혼자였으면 끝까지 해결하지 못했을 문제들도 함께 풀어나갈 수 있었습니다.
+                  <br />
+                  <br />
+                  직접 만들어낸 결과의 완성도는 높지 않을 수 있어도, <strong>직접 만들고 부딪혀보며 깨닫고 나아가는 과정</strong>이 매우 의미있는 경험이었습니다.
+                  <br />
+                  <br />
+                  <hr />
+                </details>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 프로젝트 링크 -->
+        <a class="mb-10 md:col-span-2 lg:col-span-3 bg-gray-700 shadow-2xl text-center py-[1.25rem] rounded-2xl text-white text-3xl mt-5 hover:bg-gray-800 order-10" href="./src/pages/landing_page.html">Enter our project 'TAING'!</a>
       </div>
-
-      <!-- 스크럼 회의 자료 -->
-      <div class="bg-[#FCFCFC] min-h-[15.625rem] rounded-b-4xl shadow-2xl flex flex-col">
-        <div class="bg-green-400 w-full h-[1.5625rem]"></div>
-        <div class="bg-green-400 rounded-[50%] w-[3.75rem] h-[3.75rem] relative mt-[1.875rem] ml-[1.875rem]">
-          <svg class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[30px] h-[30px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-            <path
-              d="M272.2 64.6l-51.1 51.1c-15.3 4.2-29.5 11.9-41.5 22.5L153 161.9C142.8 171 129.5 176 115.8 176L96 176l0 128c20.4 .6 39.8 8.9 54.3 23.4l35.6 35.6 7 7c0 0 0 0 0 0L219.9 397c6.2 6.2 16.4 6.2 22.6 0c1.7-1.7 3-3.7 3.7-5.8c2.8-7.7 9.3-13.5 17.3-15.3s16.4 .6 22.2 6.5L296.5 393c11.6 11.6 30.4 11.6 41.9 0c5.4-5.4 8.3-12.3 8.6-19.4c.4-8.8 5.6-16.6 13.6-20.4s17.3-3 24.4 2.1c9.4 6.7 22.5 5.8 30.9-2.6c9.4-9.4 9.4-24.6 0-33.9L340.1 243l-35.8 33c-27.3 25.2-69.2 25.6-97 .9c-31.7-28.2-32.4-77.4-1.6-106.5l70.1-66.2C303.2 78.4 339.4 64 377.1 64c36.1 0 71 13.3 97.9 37.2L505.1 128l38.9 0 40 0 40 0c8.8 0 16 7.2 16 16l0 208c0 17.7-14.3 32-32 32l-32 0c-11.8 0-22.2-6.4-27.7-16l-84.9 0c-3.4 6.7-7.9 13.1-13.5 18.7c-17.1 17.1-40.8 23.8-63 20.1c-3.6 7.3-8.5 14.1-14.6 20.2c-27.3 27.3-70 30-100.4 8.1c-25.1 20.8-62.5 19.5-86-4.1L159 404l-7-7-35.6-35.6c-5.5-5.5-12.7-8.7-20.4-9.3C96 369.7 81.6 384 64 384l-32 0c-17.7 0-32-14.3-32-32L0 144c0-8.8 7.2-16 16-16l40 0 40 0 19.8 0c2 0 3.9-.7 5.3-2l26.5-23.6C175.5 77.7 211.4 64 248.7 64L259 64c4.4 0 8.9 .2 13.2 .6zM544 320l0-144-48 0c-5.9 0-11.6-2.2-15.9-6.1l-36.9-32.8c-18.2-16.2-41.7-25.1-66.1-25.1c-25.4 0-49.8 9.7-68.3 27.1l-70.1 66.2c-10.3 9.8-10.1 26.3 .5 35.7c9.3 8.3 23.4 8.1 32.5-.3l71.9-66.4c9.7-9 24.9-8.4 33.9 1.4s8.4 24.9-1.4 33.9l-.8 .8 74.4 74.4c10 10 16.5 22.3 19.4 35.1l74.8 0zM64 336a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zm528 16a16 16 0 1 0 0-32 16 16 0 1 0 0 32z"
-            />
-          </svg>
-        </div>
-        <div class="m-[1.25rem] flex flex-col gap-[.625rem]">
-          <h2 class="text-2xl font-semibold">Scrum Meeting</h2>
-          <a class="underline" href="https://www.notion.so/6-1b573873401a80fa8325cc584a6a43ab">View notion</a>
-        </div>
-      </div>
-
-      <!-- 깃허브 저장소 -->
-      <div class="bg-[#FCFCFC] min-h-[15.625rem] rounded-b-4xl shadow-2xl flex flex-col">
-        <div class="bg-sky-400 w-full h-[1.5625rem]"></div>
-        <div class="bg-sky-400 rounded-[50%] w-[3.75rem] h-[3.75rem] relative mt-[1.875rem] ml-[1.875rem]">
-          <svg class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[30px] h-[30px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-            <path
-              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-            />
-          </svg>
-        </div>
-        <div class="m-[1.25rem] flex flex-col gap-[.625rem]">
-          <h2 class="text-2xl font-semibold">Github</h2>
-          <ul class="text-xs md:text-sm lg:text-base grid grid-rows-2 grid-cols-2">
-            <li>
-              <a class="underline" href="https://github.com/FRONTENDBOOTCAMP-13th/samsix/">깃허브 저장소</a>
-            </li>
-            <li>
-              <a class="underline" href="https://github.com/FRONTENDBOOTCAMP-13th/samsix/issues">이슈</a>
-            </li>
-            <li>
-              <a class="underline" href="https://github.com/FRONTENDBOOTCAMP-13th/samsix/pulls">PR</a>
-            </li>
-            <li>
-              <a class="underline" href="https://github.com/FRONTENDBOOTCAMP-13th/samsix/milestones">마일스톤</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 제작한 페이지 -->
-      <div class="bg-[#FCFCFC] min-h-[15.625rem] rounded-b-4xl shadow-2xl flex flex-col">
-        <div class="bg-pink-400 w-full h-[1.5625rem]"></div>
-        <div class="bg-pink-400 rounded-[50%] w-[3.75rem] h-[3.75rem] relative mt-[1.875rem] ml-[1.875rem]">
-          <svg class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[30px] h-[30px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-            <path d="M88.7 223.8L0 375.8 0 96C0 60.7 28.7 32 64 32l117.5 0c17 0 33.3 6.7 45.3 18.7l26.5 26.5c12 12 28.3 18.7 45.3 18.7L416 96c35.3 0 64 28.7 64 64l0 32-336 0c-22.8 0-43.8 12.1-55.3 31.8zm27.6 16.1C122.1 230 132.6 224 144 224l400 0c11.5 0 22 6.1 27.7 16.1s5.7 22.2-.1 32.1l-112 192C453.9 474 443.4 480 432 480L32 480c-11.5 0-22-6.1-27.7-16.1s-5.7-22.2 .1-32.1l112-192z" />
-          </svg>
-        </div>
-        <div class="m-[1.25rem] flex flex-col gap-[.625rem]">
-          <h2 class="text-2xl font-semibold">Pages</h2>
-          <ul class="text-xs md:text-sm lg:text-base grid grid-cols-3">
-            <li><a class="underline" href="./src/pages/landing_page.html">Landing Page</a></li>
-            <li><a class="underline" href="./src/pages/main_page.html">Main Page</a></li>
-            <li><a class="underline" href="./src/pages/login_page.html">Login Page</a></li>
-            <li><a class="underline" href="./src/pages/profile_page.html">Profile Page</a></li>
-            <li><a class="underline" href="./src/pages/search_page.html">Search Page</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 컴포넌트 종류 -->
-      <div class="bg-[#FCFCFC] min-h-[15.625rem] rounded-b-4xl shadow-2xl flex flex-col md:col-span-2">
-        <div class="bg-amber-400 w-full h-[1.5625rem]"></div>
-        <div class="bg-amber-400 rounded-[50%] w-[3.75rem] h-[3.75rem] relative mt-[1.875rem] ml-[1.875rem]">
-          <svg class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[30px] h-[30px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-            <path
-              d="M372.2 52c0 20.9-12.4 39-30.2 47.2L448 192l102.2-20.4 2.2-.4c-5.3-7.7-8.4-17.1-8.4-27.1c0-26.5 21.5-48 48-48s48 21.5 48 48c0 26-20.6 47.1-46.4 48l-9.8 21.8L481 442.3c-10.3 23-33.2 37.7-58.4 37.7l-205.2 0c-25.2 0-48-14.8-58.4-37.7L56.2 213.8 46.4 192C20.6 191.1 0 170 0 144c0-26.5 21.5-48 48-48s48 21.5 48 48c0 10.1-3.1 19.4-8.4 27.1l2.2 .4L192 192 298.1 99.1c-17.7-8.3-30-26.3-30-47.1c0-28.7 23.3-52 52-52s52 23.3 52 52zm44.2 176.1L320 143.8l-96.4 84.3c-11.2 9.8-26.4 13.9-41 10.9L114 225.4l88.7 197.2c2.6 5.7 8.3 9.4 14.6 9.4l205.2 0c6.3 0 12-3.7 14.6-9.4L526 225.4l-68.5 13.7c-14.6 2.9-29.8-1.1-41-10.9z"
-            />
-          </svg>
-        </div>
-        <div class="m-[1.25rem] flex flex-col gap-[.625rem]">
-          <h2 class="text-2xl font-semibold">Components</h2>
-          <ul class="text-xs md:text-sm lg:text-base grid grid-cols-5 gap-y-5">
-            <li>
-              <details>
-                <summary>landing</summary>
-                <ul>
-                  <li><a class="underline" href="./src/components/landing/landing_banner.html">랜딩 배너</a></li>
-                  <li><a class="underline" href="./src/components/landing/landing_card_1set.html">애니메이션 1세트</a></li>
-                  <li><a class="underline" href="./src/components/landing/landing_card_2sets.html">애니메이션 2세트</a></li>
-                  <li><a class="underline" href="./src/components/landing/landing_modal.html">모달 창</a></li>
-                  <li><a class="underline" href="./src/components/landing/landing_side.html">하단 사이드 정보</a></li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>login</summary>
-                <ul>
-                  <li><a class="underline" href="./src/components/login/login_header.html">로고</a></li>
-                  <li><a class="underline" href="./src/components/login/login_description.html">제목 & 설명</a></li>
-                  <li><a class="underline" href="./src/components/login/login_form.html">로그인 폼 & 버튼</a></li>
-                  <li><a class="underline" href="./src/components/login/login_footer.html">유틸리티 링크 & 저작권</a></li>
-                  <li><a class="underline" href="./src/components/login/modal_components.html">로그아웃 모달</a></li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>main</summary>
-                <ul>
-                  <li><a class="underline" href="./src/components/main/main_banner.html">메인 스와이퍼 배너</a></li>
-                  <li><a class="underline" href="./src/components/main/main_card.html">카드 컴포넌트</a></li>
-                  <li><a class="underline" href="./src/components/main/main_navigation.html">메인페이지 내비게이션</a></li>
-                  <li><a class="underline" href="./src/components/main/modal.html">광고 모달</a></li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>profile</summary>
-                <ul>
-                  <li><a class="underline" href="./src/components/profile/01_profile_head.html">프로필페이지 헤더</a></li>
-                  <li><a class="underline" href="./src/components/profile/02_profile_content.html">프로필페이지 콘텐츠</a></li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>search</summary>
-                <ul>
-                  <li><a class="underline" href="./src/components/search/01_search_head.html">검색 페이지 헤더</a></li>
-                  <li><a class="underline" href="./src/components/search/02_search_searchbar.html">검색창</a></li>
-                  <li><a class="underline" href="./src/components/search/03_search_popular.html">최근검색어/인기검색어</a></li>
-                </ul>
-              </details>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 프로젝트 소감 -->
-      <div class="bg-[#FCFCFC] min-h-[15.625rem] rounded-b-4xl shadow-2xl flex flex-col md:col-span-2 lg:col-span-3">
-        <div class="bg-red-400 w-full h-[1.5625rem]"></div>
-        <div class="bg-red-400 rounded-[50%] w-[3.75rem] h-[3.75rem] relative mt-[1.875rem] ml-[1.875rem]">
-          <svg class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] w-[30px] h-[30px] fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
-          </svg>
-        </div>
-        <div class="m-[1.25rem] flex flex-col gap-[.625rem]">
-          <h2 class="text-2xl font-semibold">Project Reflection</h2>
-          <ul class="text-xs md:text-sm lg:text-base grid gap-2">
-            <li>
-              <details>
-                <summary>이선진</summary>
-                <br />
-                <hr />
-                <br />
-                이번 프로젝트를 진행하면서 프론트엔드의 전반적인 지식을 활용할 수 있었습니다.
-                <br />
-                <br />
-                팀장의 역할로 협업을 하면서 여러 가지를 배울수 있었는데, 스크럼 회의를 통해 그날의 목표를 정해서 <strong>개발 방향을 잡는 것의 중요성</strong>과 코드리뷰를 통해 <strong>더 나은 방식으로 리팩토링</strong> 할 수 있다는 점, 그리고 서로의 컴포넌트들을 이용해서 <strong>개발 시간을 단축</strong>시킬 수 있었다는 점을 배웠습니다.
-                <br />
-                <br />
-                상당히 많은 것을 얻어가는 시간이었으며, 좋은 팀원들과 함께 재밌게 프로젝트를 할 수 있어서 좋았습니다.
-                <br />
-                <br />
-                프로젝트를 완성하고, 프론트엔드 개발자에 한 뼘 더 가까워진 느낌이 들어 스스로 뿌듯했던 시간이었습니다.
-                <br />
-                <br />
-                <hr />
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>남상호</summary>
-                <br />
-                <hr />
-                <br />
-                생애 첫 IT 관련 프로젝트였습니다.
-                <br />
-                <br />
-                이번 프로젝트는 단순 UI 클론이기에, 목표는 <strong>"한 달 동안 배운 것들을 복습하고 내 것으로 만들자는 차원에서 자바스크립트 사용을 최소화 하고, HTML과 Tailwind CSS로 구현할 수 있는 부분은 최대한 반영하기"</strong> 였습니다.
-                <br />
-                <br />
-                결과물은 꽤 만족스러웠습니다. 그 과정에서는 팀원들, 강사님, AI의 도움도 조금은 있었으나, 전반적으론 제 힘으로 해냈다는 것이 맘에 들었습니다.
-                <br />
-                <br />
-                저희 팀은 결과적으론 3명이서 진행을 하게 됐지만, 다들 소통도 잘 해주시고 본인 할당량을 빠르게 채우는 성실한 팀원 분들이라, 일정에 지장이 없어서 좋았습니다!
-                <br />
-                <br />
-                <hr />
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>김하영</summary>
-                <br />
-                <hr />
-                <br />
-                이번 프로젝트에서 하나하나 혼자 해내고 싶은 마음이 컸지만, 마음에 비해 기본적인 구조나 스타일링에서도 종종 막혔던 것 같습니다.
-                <br />
-                <br />
-                하지만 시간이 걸리더라도 혼자 해낼 수 있을 만큼 발전했기 때문에, '자바스크립트 없이 HTML과 Tailwind CSS만으로 구현해보자'는 목표를 세우고, 그 안에서 최대한 해결하려 노력했습니다.
-                <br />
-                <br />
-                데일리 스크럼과 간단한 이슈 공유, 코드 리팩토링 등을 통해 팀원들과의 협업이 얼마나 중요한지도 느꼈고, 혼자였으면 끝까지 해결하지 못했을 문제들도 함께 풀어나갈 수 있었습니다.
-                <br />
-                <br />
-                직접 만들어낸 결과의 완성도는 높지 않을 수 있어도, <strong>직접 만들고 부딪혀보며 깨닫고 나아가는 과정</strong>이 매우 의미있는 경험이었습니다.
-                <br />
-                <br />
-                <hr />
-              </details>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 프로젝트 링크 -->
-      <a class="mb-10 md:col-span-2 lg:col-span-3 bg-gray-700 shadow-2xl text-center py-[1.25rem] rounded-2xl text-white text-3xl mt-5 hover:bg-gray-800 order-10" href="./src/pages/landing_page.html">Enter our project 'TAING'!</a>
-    </div>
+    </main>
   </body>
 </html>
