@@ -18,7 +18,7 @@
           <!-- 로고 -->
           <li>
             <a href="../pages/main_page.html" aria-label="로고: 홈페이지 이동">
-              <svg width="53" height="22" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[4.8125rem] md:h-6 lg:w-[8rem] lg:h-[2.375rem]" alt="TAING 메인 이동">
+              <svg width="53" height="22" viewBox="0 0 132 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:w-[4.8125rem] md:h-6 lg:w-[8rem] lg:h-[2.375rem]">
                 <g clip-path="url(#clip0_3307_6764)">
                   <mask id="mask0_3307_6764" style="mask-type: luminance" maskUnits="userSpaceOnUse" x="0" y="4" width="132" height="34">
                     <path d="M0 4.87793H131.511V37.1249H0V4.87793Z" fill="white" />
@@ -63,7 +63,7 @@
 
         <!-- 이메일 입력 & 버튼 -->
         <form role="form" aria-labelledby="email-find-title">
-          <fieldset>
+          <div>
             <!-- 이메일 입력 -->
             <label class="sr-only" for="input_email">이메일</label>
             <input type="email" id="input_email" name="input_email" required placeholder="이메일" aria-errormessage="error_email" class="input-field peer" />
@@ -74,7 +74,7 @@
             <!-- 확인 버튼 -->
             <button type="submit" class="disabled-button bg-brand-red-1 peer-valid:hover:bg-brand-red-2 text-white peer-invalid:bg-gray-700 peer-invalid:text-gray-400">확인</button>
             <span id="button-description" class="sr-only">이메일 입력 후 활성화됩니다.</span>
-          </fieldset>
+          </div>
         </form>
 
         <!-- 구분선 -->
@@ -86,7 +86,7 @@
 
         <!-- 항목 & 설명 -->
         <div class="section-header">
-          <h2 class="section-title">본인인증으로 찾기</h2>
+          <h2 id="auth-find-title" class="section-title">본인인증으로 찾기</h2>
           <p class="section-description">이미 본인인증이 완료된 계정에 한하여 아이디 찾기가 가능합니다.</p>
         </div>
 
